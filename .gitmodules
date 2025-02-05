@@ -1,3 +1,4 @@
 [submodule "site/plugins/kirby-plugin-auth-ldap"]
 	path = site/plugins/kirby-plugin-auth-ldap
 	url = git@github.com:medienhaus/kirby-plugin-auth-ldap.git
+	branch = refactor

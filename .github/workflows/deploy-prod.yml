@@ -26,7 +26,6 @@ jobs:
         with:
           ref: ${{ github.event.inputs.ref }}
           ssh-key: ${{ secrets.SSH_DEPLOY_AT_RUNDGANG_CMS_MEDIENHAUS_UDK_BERLIN_DE }}
-          submodules: "true"
 
       - run: mkdir -p ~/.ssh/
       - run: echo "$ssh_key" > ~/.ssh/private.key

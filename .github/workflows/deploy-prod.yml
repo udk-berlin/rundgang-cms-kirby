@@ -50,7 +50,10 @@ jobs:
             --progress \
             --verbose \
             . \
-            remote:/home/deploy/rundgang-kirby-cms/
+            remote:/home/deploy/rundgang-cms-kirby/
+
+      - name: Initialize or update medienhaus/kirby-plugin-auth-ldap submodule (private repository)
+        run: ssh remote "cd /home/deploy/rundgang-cms-kirby/ && git submodule update --init --remote"
 
       - name: Run rsync to synchronize the repository on the remote host to /var/www/
         run: |

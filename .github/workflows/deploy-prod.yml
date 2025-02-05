@@ -64,7 +64,7 @@ jobs:
             --devices \
             --specials \
             --chown=www-data:www-data \
-            /home/deploy/rundgang-kirby-cms/ \
+            /home/deploy/rundgang-cms-kirby/ \
             /var/www/kirby
 
       - name: Restart the nginx webserver service

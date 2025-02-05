@@ -10,6 +10,14 @@ columns:
           text:
             type: textarea
             size: huge
+          author:
+            type: users
+            default: true
+            disabled: true
+          coauthor:
+            type: users
+            label: Co-Authors
+            multiple: true
   sidebar:
     width: 1/3
     sections:

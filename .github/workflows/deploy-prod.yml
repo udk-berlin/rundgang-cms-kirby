@@ -1,0 +1,69 @@
+name: "⚠️‼️ deploy-prod → rundgang-cms.medienhaus.udk-berlin.de"
+
+on:
+  push:
+   branches: [ "main" ]
+  pull_request:
+   branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: The branch, tag or SHA to checkout
+        required: true
+        default: "main"
+
+jobs:
+  deploy_prod:
+    runs-on: ubuntu-latest
+
+    env:
+      ssh_user: "deploy"
+      ssh_host: "rundgang-cms.medienhaus.udk-berlin.de"
+      ssh_key: ${{ secrets.SSH_DEPLOY_AT_RUNDGANG_CMS_MEDIENHAUS_UDK_BERLIN_DE }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.ref }}
+          ssh-key: ${{ secrets.SSH_DEPLOY_AT_RUNDGANG_CMS_MEDIENHAUS_UDK_BERLIN_DE }}
+          submodules: "true"
+
+      - run: mkdir -p ~/.ssh/
+      - run: echo "$ssh_key" > ~/.ssh/private.key
+      - run: chmod 600 ~/.ssh/private.key
+      - run: |
+          cat > ~/.ssh/config << EOF
+          Host remote
+            HostName $ssh_host
+            User $ssh_user
+            IdentityFile ~/.ssh/private.key
+            StrictHostKeyChecking no
+          EOF
+
+      - name: Run rsync to securely synchronize the repository to the remote host
+        run: |
+          rsync \
+            --archive \
+            --compress \
+            --delete \
+            --rsh="ssh -i ~/.ssh/private.key" \
+            --progress \
+            --verbose \
+            . \
+            remote:/home/deploy/rundgang-kirby-cms/
+
+      - name: Run rsync to synchronize the repository on the remote host to /var/www/
+        run: |
+          ssh remote sudo rsync \
+            --recursive \
+            --links \
+            --perms \
+            --times \
+            --devices \
+            --specials \
+            --chown=www-data:www-data \
+            /home/deploy/rundgang-kirby-cms/ \
+            /var/www/kirby
+
+      - name: Restart the nginx webserver service
+        run: ssh remote sudo systemctl restart nginx.service

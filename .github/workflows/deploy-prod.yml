@@ -22,10 +22,10 @@ jobs:
       ssh_key: ${{ secrets.SSH_DEPLOY_AT_RUNDGANG_CMS_MEDIENHAUS_UDK_BERLIN_DE }}
 
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.inputs.ref }}
-          ssh-key: ${{ secrets.SSH_DEPLOY_AT_RUNDGANG_CMS_MEDIENHAUS_UDK_BERLIN_DE }}
+      #- uses: actions/checkout@v4
+      #  with:
+      #    ref: ${{ github.event.inputs.ref }}
+      #    ssh-key: ${{ secrets.SSH_DEPLOY_AT_RUNDGANG_CMS_MEDIENHAUS_UDK_BERLIN_DE }}
 
       - run: mkdir -p ~/.ssh/
       - run: echo "$ssh_key" > ~/.ssh/private.key
@@ -39,22 +39,25 @@ jobs:
             StrictHostKeyChecking no
           EOF
 
-      - name: Run rsync to securely synchronize the repository to the remote host
-        run: |
-          rsync \
-            --archive \
-            --compress \
-            --delete \
-            --rsh="ssh -i ~/.ssh/private.key" \
-            --progress \
-            --verbose \
-            . \
-            remote:/home/deploy/rundgang-cms-kirby/
+      #- name: Run rsync to securely synchronize the repository to the remote host
+      #  run: |
+      #    rsync \
+      #      --archive \
+      #      --compress \
+      #      --delete \
+      #      --rsh="ssh -i ~/.ssh/private.key" \
+      #      --progress \
+      #      --verbose \
+      #      . \
+      #      remote:/home/deploy/rundgang-cms-kirby/
 
-      - name: Initialize or update medienhaus/kirby-plugin-auth-ldap submodule (private repository)
+      - name: Git fetch and update the udk-berlin/rundgang-cms-kirby repository
+        run: ssh remote "cd /home/deploy/rundgang-cms-kirby/ && git fetch --all && git pull"
+
+      - name: Git submodule init and update the medienhaus/kirby-plugin-auth-ldap submodule
         run: ssh remote "cd /home/deploy/rundgang-cms-kirby/ && git submodule update --init --remote"
 
-      - name: Run rsync to synchronize the repository on the remote host to /var/www/
+      - name: Synchronize the repository to /var/www/ and change ownership to www-data
         run: |
           ssh remote sudo rsync \
             --recursive \

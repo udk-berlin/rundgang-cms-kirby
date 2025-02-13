@@ -3,8 +3,6 @@ name: "⚠️‼️ deploy-prod → rundgang-cms.medienhaus.udk-berlin.de"
 on:
   push:
    branches: [ "main" ]
-  pull_request:
-   branches: [ "main" ]
   workflow_dispatch:
     inputs:
       ref:

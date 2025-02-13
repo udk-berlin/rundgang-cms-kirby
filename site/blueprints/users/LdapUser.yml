@@ -27,18 +27,18 @@ permissions:
     "*": false
     access: true
     #changeSlug: true
-    #changeStatus: true
+    changeStatus: true
     #changeTemplate: true
-    #changeTitle: true
+    changeTitle: true
     create: true
-    #delete: true
+    delete: true
     list: true
     #move: true
-    #duplicate: true
-    #preview: true
+    duplicate: true
+    preview: true
     read: true
     #sort: true
-    #update: true
+    update: true
   site:
     #changeTitle: true
     #preview: true

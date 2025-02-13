@@ -1,0 +1,83 @@
+title: Editor
+description: Account is externally managed via LDAP server
+
+permissions:
+  access:
+    "*": false
+    account: true
+    panel: true
+    site: true
+    #languages: true
+    #system: true
+    #users: true
+  files:
+    "*": false
+    #create: true
+    #changeName: true
+    #changeTemplate: true
+    #delete: true
+    #read: true
+    #replace: true
+    #update: true
+  languages:
+    "*": false
+    #create: true
+    #delete: true
+  pages:
+    "*": false
+    access: true
+    #changeSlug: true
+    #changeStatus: true
+    #changeTemplate: true
+    #changeTitle: true
+    create: true
+    #delete: true
+    list: true
+    #move: true
+    #duplicate: true
+    #preview: true
+    read: true
+    #sort: true
+    #update: true
+  site:
+    #changeTitle: true
+    #preview: true
+    #update: true
+    "*": false
+  user:
+    "*": false
+    #changeEmail: true
+    changeLanguage: true
+    changeName: true
+    #changePassword: true
+    #changeRole: true
+    #delete: true
+    #update: true
+  users:
+    "*": false
+    #changeEmail: true
+    #changeLanguage: true
+    #changeName: true
+    #changePassword: true
+    #changeRole: true
+    #create: true
+    #delete: true
+    #update: true
+
+sections:
+  ldap_dn:
+    type: info
+    label: DN
+    text: "{{ user.getLdapDn }}"
+  ldap_uid:
+    type: info
+    label: UID
+    text: "{{ user.getLdapUid }}"
+  ldap_mail:
+    type: info
+    label: Mail
+    text: "{{ user.getLdapMail }}"
+  ldap_name:
+    type: info
+    label: Name
+    text: "{{ user.getLdapName }}"

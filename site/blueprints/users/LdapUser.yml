@@ -36,7 +36,7 @@ permissions:
     list: true
     #move: true
     duplicate: true
-    preview: true
+    preview: false
     read: true
     #sort: true
     update: true

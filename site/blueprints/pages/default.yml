@@ -24,6 +24,7 @@ columns:
           coauthor:
             type: users
             label: Co-Authors
+            help: "Add co-authors to <strong>{{ page.title.short(30) }}</strong> to grant access (for editing) to this project. You can search for names or email addresses."
             info: "{{ user.email }}"
             limit: 10
             link: false

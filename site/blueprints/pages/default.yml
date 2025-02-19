@@ -24,6 +24,7 @@ columns:
           coauthor:
             type: users
             label: Co-Authors
+            info: "{{ user.email }}"
             limit: 10
             link: false
             multiple: true

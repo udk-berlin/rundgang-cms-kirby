@@ -10,7 +10,8 @@ columns:
         fields:
           text:
             type: textarea
-            size: huge
+            size: large
+            required: true
   sidebar:
     width: 1/3
     sections:
@@ -23,7 +24,7 @@ columns:
             disabled: true
           coauthor:
             type: users
-            label: Co-Authors
+            label: Co-Authors (optional)
             help: "Add co-authors to <strong>{{ page.title.short(30) }}</strong> to grant them editing access. You can search for names or email addresses."
             info: "{{ user.email }}"
             limit: 10
@@ -36,7 +37,7 @@ columns:
         fields:
           date:
             type: structure
-            label: Date & Time
+            label: Date & Time (optional)
             columns:
               date:
                 mobile: true

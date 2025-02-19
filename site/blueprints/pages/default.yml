@@ -31,5 +31,29 @@ columns:
             multiple: true
             query: kirby.users.filterBy("role", "LdapUser").not(kirby.user)
             search: true
+      date:
+        type: fields
+        fields:
+          date:
+            type: structure
+            title: Date & Time
+            columns:
+              date:
+                mobile: true
+              time:
+                mobile: true
+            fields:
+              date:
+                type: date
+                help: "The date and time of the event."
+                default: "2025-07-18"
+                min: "2025-07-18"
+                max: "2025-07-20"
+              time:
+                type: time
+                help: "The date and time of the event."
+                default: "13:00"
+                min: "10:00"
+                max: "23:59"
       files:
         type: files

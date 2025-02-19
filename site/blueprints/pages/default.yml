@@ -1,10 +1,6 @@
 ---
 title: Content
 
-options:
-  create:
-    "*": false
-
 columns:
   main:
     width: 2/3

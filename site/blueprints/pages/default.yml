@@ -36,7 +36,7 @@ columns:
         fields:
           date:
             type: structure
-            title: Date & Time
+            label: Date & Time
             columns:
               date:
                 mobile: true
@@ -50,21 +50,27 @@ columns:
             fields:
               date:
                 type: date
+                label: Date
                 help: "The date of the event."
                 default: "2025-07-18" # needs to be quoted to work ?!
                 min: 2025-07-18 # does not work, neither with quotes nor without ?!
                 max: 2025-07-20 # does not work, neither with quotes nor without ?!
+                required: true
               from:
                 type: time
+                label: Start
                 help: "The time the event starts."
                 default: 13:00
                 min: 10:00
                 max: 23:59
+                required: true
               to:
                 type: time
+                label: End
                 help: "The time the event end."
                 default: 15:00
                 min: 10:00
                 max: 23:59
+                required: true
       files:
         type: files

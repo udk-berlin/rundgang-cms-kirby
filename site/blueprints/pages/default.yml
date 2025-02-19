@@ -40,20 +40,28 @@ columns:
             columns:
               date:
                 mobile: true
-              time:
+              from:
+                mobile: true
+              to:
                 mobile: true
             fields:
               date:
                 type: date
                 help: "The date and time of the event."
-                default: "2025-07-18"
-                min: "2025-07-18"
-                max: "2025-07-20"
-              time:
+                default: "2025-07-18" # needs to be quoted to work ?!
+                min: 2025-07-18 # does not work, neither with quotes nor without ?!
+                max: 2025-07-20 # does not work, neither with quotes nor without ?!
+              from:
                 type: time
                 help: "The date and time of the event."
-                default: "13:00"
-                min: "10:00"
-                max: "23:59"
+                default: 13:00
+                min: 10:00
+                max: 23:59
+              to:
+                type: time
+                help: "The date and time of the event."
+                default: 15:00
+                min: 10:00
+                max: 23:59
       files:
         type: files

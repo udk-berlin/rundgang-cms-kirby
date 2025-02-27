@@ -26,7 +26,7 @@ columns:
           coauthor:
             type: users
             label: Co-Authors (optional)
-            help: "Add co-authors to <strong>{{ page.title.short(30) }}</strong> to grant them editing access. You can search for names or email addresses."
+            help: "Add co-authors to <strong>{{ page.title.short(30) }}</strong> to grant them editing access. You can search for names or email addresses of other institution members."
             info: "{{ user.email }}"
             limit: 10
             link: false
@@ -39,6 +39,7 @@ columns:
           date:
             type: structure
             label: Date & Time (optional)
+            help: "Add date(s) and time(s) for your event; this should only be filled for concerts, performances, et cetera happening at only specific times."
             columns:
               date:
                 mobile: true

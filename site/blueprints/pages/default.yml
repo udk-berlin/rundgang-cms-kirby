@@ -69,7 +69,7 @@ columns:
               to:
                 type: time
                 label: End
-                help: "The time the event end."
+                help: "The time the event ends."
                 default: 15:00
                 min: 10:00
                 max: 23:59

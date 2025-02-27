@@ -1,0 +1,8 @@
+---
+title:
+  en: Images
+  de: Bilder
+
+accept:
+  extension: gif, jpeg, jpg, png
+  #type: image

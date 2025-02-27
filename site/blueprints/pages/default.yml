@@ -106,3 +106,4 @@ columns:
         help:
           en: "The following file/image types can be uploaded: <code>gif</code>, <code>jpg</code>,<code>png</code>"
           de: "Folgende Bilddateien können hochgeladen werden: <code>gif</code>, <code>jpg</code>,<code>png</code>"
+        template: images

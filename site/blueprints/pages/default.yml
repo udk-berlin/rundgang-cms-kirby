@@ -22,6 +22,7 @@ columns:
             type: users
             default: true
             disabled: true
+            required: true
           coauthor:
             type: users
             label: Co-Authors (optional)

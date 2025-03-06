@@ -1,6 +1,8 @@
 ---
 title: Content
 
+# docs: https://getkirby.com/docs/reference/panel/blueprints/page
+#
 columns:
   main:
     width: 2/3

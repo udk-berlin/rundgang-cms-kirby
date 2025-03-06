@@ -1,7 +1,11 @@
 ---
+# docs: https://getkirby.com/docs/reference/panel/blueprints/user
+#
 title: Editor
 description: Account is externally managed via LDAP server
 
+# docs: https://getkirby.com/docs/reference/panel/blueprints/user#permissions
+#
 permissions:
   access:
     "*": false
@@ -66,6 +70,8 @@ permissions:
     #delete: true
     #update: true
 
+# docs: https://getkirby.com/docs/reference/panel/sections
+#
 sections:
   ldap_dn:
     type: info

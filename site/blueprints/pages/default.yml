@@ -8,10 +8,23 @@ columns:
       editor:
         type: fields
         fields:
+          intro:
+            type: textarea
+            label:
+              en: Short Description
+              de: Kurzbeschreibung
+            buttons: false
+            maxlength: 500
+            required: true
+            size: small
+            uploads: false
           text:
             type: textarea
-            size: large
+            label:
+              en: Content
+              de: Inhalt
             required: true
+            size: large
   sidebar:
     width: 1/3
     sections:

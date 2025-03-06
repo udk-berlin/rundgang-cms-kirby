@@ -24,7 +24,8 @@ foreach ($data['faculties'] as $faculty) {
             foreach ($course['classes'] as $class) {
                 $id = $class['name'];
                 $text = $class['name'];
-                $info = $faculty['name'] . ' - ' . $course['name'];
+                $info = $class['name'] . ' - ' . $course['name'] . ' - ' . $institute['name'] . ' - ' . $faculty['name'];
+
                 $options[] = [
                     'value' => $id,
                     'text' => $text,
@@ -34,6 +35,11 @@ foreach ($data['faculties'] as $faculty) {
         }
     }
 }
+
+// sort options by text key
+usort($options, function ($a, $b) {
+    return strcasecmp($a['text'], $b['text']);
+});
 
 
 $yaml = [
@@ -62,7 +68,7 @@ $yaml = [
                     'fields' => [
                         'categories' => [
                             'label' => 'Categories',
-                            'type' => 'multiselect',
+                            'type' => 'multiselect_custom',
                             'max' => 1,
                             'options' => $options,
                         ],

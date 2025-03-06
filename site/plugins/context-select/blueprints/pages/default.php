@@ -23,8 +23,13 @@ foreach ($data['faculties'] as $faculty) {
 
             foreach ($course['classes'] as $class) {
                 $id = $class['name'];
-                $options[$id] = $class['name'] . ' - Course: ' . $course['name'] . ' - Faculty: ' . $faculty['name'];
-                $options['value'] = $id;
+                $text = $class['name'];
+                $info = $faculty['name'] . ' - ' . $course['name'];
+                $options[] = [
+                    'value' => $id,
+                    'text' => $text,
+                    'info' => $info,
+                ];
             }
         }
     }

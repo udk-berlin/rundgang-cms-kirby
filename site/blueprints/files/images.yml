@@ -1,0 +1,12 @@
+---
+# docs: https://getkirby.com/docs/reference/panel/blueprints/file
+#
+title:
+  en: Images
+  de: Bilder
+
+# docs: https://getkirby.com/docs/reference/panel/blueprints/file#accept
+#
+accept:
+  extension: gif, jpeg, jpg, png
+  #type: image

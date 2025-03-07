@@ -1,0 +1,125 @@
+---
+title: Content
+
+# docs: https://getkirby.com/docs/reference/panel/blueprints/page
+#
+columns:
+  main:
+    width: 2/3
+    sections:
+      editor:
+        type: fields
+        fields:
+          intro:
+            type: textarea
+            label:
+              en: Short Description
+              de: Kurzbeschreibung
+            buttons: false
+            maxlength: 500
+            required: true
+            size: small
+            uploads: false
+          text:
+            type: textarea
+            label:
+              en: Content
+              de: Inhalt
+            required: true
+            size: large
+  sidebar:
+    width: 1/3
+    sections:
+      authorship:
+        type: fields
+        fields:
+          author:
+            type: users
+            label:
+              en: Author
+              de: Autor:in
+            default: true
+            disabled: true
+            required: true
+          coauthor:
+            type: users
+            label:
+              en: Co-Authors (optional)
+              de: Co-Author:innen (optional)
+            help:
+              en: "Add co-authors to <strong>{{ page.title.short(30) }}</strong> to grant them editing access. You can search for names or email addresses of other institution members."
+              de: "Füge Co-Autor:innen zu <strong>{{ page.title.short(30) }}</strong> hinzu, um diesen das Editieren zu ermöglichen. Du kannst nach Namen und Mail-Adresse von anderen Institutionsmitgliedern suchen."
+            info: "{{ user.email }}"
+            limit: 10
+            link: false
+            multiple: true
+            query: kirby.users.filterBy("role", "LdapUser").not(kirby.user)
+            search: true
+      date:
+        type: fields
+        fields:
+          date:
+            type: structure
+            label:
+              en: "Date & Time (optional)"
+              de: "Datum & Uhrzeit (optional)"
+            help:
+              en: "Add date(s) and time(s) for your event; this should only be filled for concerts, performances, et cetera happening at only specific times."
+              de: "Füge Tage und Uhrzeiten für dein Event hinzu; dies sollte ausschließlich für Konzerte, Performances, et cetera gemacht werden, welche nur zu bestimmten Zeitpunkten stattfinden."
+            columns:
+              date:
+                mobile: true
+                width: 1/2
+              from:
+                mobile: true
+                width: 1/4
+              to:
+                mobile: true
+                width: 1/4
+            fields:
+              date:
+                type: date
+                label:
+                  en: Date
+                  de: Datum
+                help:
+                  en: "The date of the event."
+                  de: "Das Datum des Events."
+                default: "2025-07-18" # needs to be quoted to work ?!
+                min: 2025-07-18 # does not work, neither with quotes nor without ?!
+                max: 2025-07-20 # does not work, neither with quotes nor without ?!
+                required: true
+              from:
+                type: time
+                label:
+                  en: Start
+                  de: Beginn
+                help:
+                  en: "The time the event starts."
+                  de: "Die Uhrzeit, zu der das Event beginnt."
+                default: 13:00
+                min: 10:00
+                max: 23:59
+                required: true
+              to:
+                type: time
+                label:
+                  en: End
+                  de: Ende
+                help:
+                  en: "The time the event ends."
+                  de: "Die Uhrzeit, zu der das Event endet."
+                default: 15:00
+                min: 10:00
+                max: 23:59
+                required: true
+      files:
+        type: files
+        label:
+          en: Images
+          de: Bilder
+        help:
+          en: "The following file/image types can be uploaded: <code>gif</code>, <code>jpg</code>,<code>png</code>"
+          de: "Folgende Bilddateien können hochgeladen werden: <code>gif</code>, <code>jpg</code>,<code>png</code>"
+        link: false # does not work, though correct according to reference ?!
+        template: images

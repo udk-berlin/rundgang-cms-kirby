@@ -1,7 +1,11 @@
 ---
+# docs: https://getkirby.com/docs/reference/panel/blueprints/user
+#
 title: Editor
 description: Account is externally managed via LDAP server
 
+# docs: https://getkirby.com/docs/reference/panel/blueprints/user#permissions
+#
 permissions:
   access:
     "*": false
@@ -12,14 +16,15 @@ permissions:
     #system: true
     #users: true
   files:
-    "*": false
-    #create: true
-    #changeName: true
-    #changeTemplate: true
-    #delete: true
-    #read: true
-    #replace: true
-    #update: true
+    #"*": false # if set to false, files are not visible to the user, even with all permissions set to true
+    create: true
+    changeName: false
+    changeTemplate: false
+    delete: true
+    read: true
+    replace: true
+    sort: true
+    update: true
   languages:
     "*": false
     #create: true
@@ -65,6 +70,8 @@ permissions:
     #delete: true
     #update: true
 
+# docs: https://getkirby.com/docs/reference/panel/sections
+#
 sections:
   ldap_dn:
     type: info

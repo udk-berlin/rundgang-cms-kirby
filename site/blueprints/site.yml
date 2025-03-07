@@ -1,6 +1,43 @@
 ---
-title: Site
+# docs: https://getkirby.com/docs/reference/panel/blueprints/site
+#
+title:
+  en: Rundgang CMS
+  de: Rundgang CMS
 
+# docs: https://getkirby.com/docs/reference/panel/sections
+#
 sections:
-  pages:
+  # docs: https://getkirby.com/docs/reference/panel/sections/fields
+  #
+  intro:
+    type: fields
+    fields:
+      copy:
+        type: info
+        label: false
+        text:
+          en: |
+            Welcome <strong>{{ user }}</strong>,
+
+            With kind regards.
+          de: |
+            Willkommen <strong>{{ user }}</strong>,
+
+            Mit freundlichen Grüßen.
+        theme: text
+
+# docs: https://getkirby.com/docs/reference/panel/sections/pages
+#
+  pages_2025:
     type: pages
+    label: Rundgang 2025
+    create:
+      - 2025
+    template: 2025
+  #pages_2026:
+  #  type: pages
+  #  label: Rundgang 2026
+  #  create:
+  #    - 2026
+  #  template: 2026

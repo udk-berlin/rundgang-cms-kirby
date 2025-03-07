@@ -1,0 +1,14 @@
+.k-choice-input-label {
+    display: flex;
+    flex-direction: column;
+}
+
+.k-choice-input-label-text {
+    order: 2;
+}
+
+.k-choice-input-label-info {
+    order: 1;
+    font-size: 1.1rem;
+    font-weight: bold;
+}

@@ -158,5 +158,5 @@ columns:
           de: "Folgende Bilddateien können hochgeladen werden: <code>gif</code>, <code>jpg</code>, <code>png</code>"
         link: false # does not exist for file sections ?!
         max: 50
-        template: images
+        template: 2025
         translate: false

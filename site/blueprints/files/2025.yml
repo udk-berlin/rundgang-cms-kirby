@@ -35,3 +35,28 @@ image:
   #cover: true
   #ratio: 1/1
   back: pattern
+
+# docs: https://getkirby.com/docs/reference/panel/blueprints/file#options
+#
+# NOTE: uncomment complete `options` block to prevent editing/modification
+# of files after publication deadline and/or after the Rundgang is over !!
+#
+#options:
+#  changeName:
+#    "*": false
+#    admin: true
+#  changeTemplate:
+#    "*": false
+#    admin: true
+#  delete:
+#    "*": false
+#    admin: true
+#  #read:
+#  #  "*": false
+#  #  admin: true
+#  replace:
+#    "*": false
+#    admin: true
+#  update:
+#    "*": false
+#    admin: true

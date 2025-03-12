@@ -8,6 +8,8 @@ columns:
     width: 2/3
     sections:
       editor:
+      # docs: https://getkirby.com/docs/reference/panel/sections/fields
+      #
         type: fields
         fields:
           intro:
@@ -30,6 +32,8 @@ columns:
   sidebar:
     width: 1/3
     sections:
+      # docs: https://getkirby.com/docs/reference/panel/sections/fields
+      #
       authorship:
         type: fields
         fields:
@@ -55,9 +59,13 @@ columns:
             multiple: true
             query: kirby.users.filterBy("role", "LdapUser").not(kirby.user)
             search: true
+      # docs: https://getkirby.com/docs/reference/panel/sections/fields
+      #
       date:
         type: fields
         fields:
+          # docs: https://getkirby.com/docs/reference/panel/fields/structure
+          #
           date:
             type: structure
             label:
@@ -113,6 +121,8 @@ columns:
                 min: 10:00
                 max: 23:59
                 required: true
+      # docs: https://getkirby.com/docs/reference/panel/sections/files
+      #
       files:
         type: files
         label:

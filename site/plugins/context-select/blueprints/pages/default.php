@@ -22,8 +22,8 @@ foreach ($data['faculties'] as $faculty) {
             }
 
             foreach ($course['classes'] as $class) {
-                $id = $class['name'];
-                $text = $class['name'] . ' - ' . $course['name'] . ' - ' . $institute['name'] . ' - ' . $faculty['name'];
+                $id = $class['name'] . ' - ' . $course['name'] . ' - ' . $institute['name'] . ' - ' . $faculty['name'];
+                $text = $class['name'];
                 $info = $id;
 
                 $options[] = [
@@ -68,8 +68,12 @@ $yaml = [
                     'fields' => [
                         'categories' => [
                             'label' => 'Categories',
-                            'type' => 'multiselect_custom',
+                            'type' => 'multiselect',
                             'max' => 1,
+                            'search' => [
+                                'placeholder' => 'Search categories',
+                                'field' => 'info',
+                            ],
                             'options' => $options,
                         ],
                         'author' => [

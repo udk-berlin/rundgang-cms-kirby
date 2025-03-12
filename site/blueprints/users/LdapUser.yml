@@ -4,6 +4,12 @@
 title: Editor
 description: Account is externally managed via LDAP server
 
+# info: https://getkirby.com/releases/5/view-buttons
+#
+buttons:
+  settings: true
+  theme: true
+
 # docs: https://getkirby.com/docs/reference/panel/blueprints/user#permissions
 #
 permissions:

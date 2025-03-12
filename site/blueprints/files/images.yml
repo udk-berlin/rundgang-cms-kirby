@@ -5,6 +5,13 @@ title:
   en: Images
   de: Bilder
 
+# info: https://getkirby.com/releases/5/view-buttons
+#
+buttons:
+  preview: true
+  settings: true
+  #languages: true
+
 # docs: https://getkirby.com/docs/reference/panel/blueprints/file#accept
 #
 accept:

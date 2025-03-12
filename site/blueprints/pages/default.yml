@@ -1,6 +1,14 @@
 ---
 title: Content
 
+# info: https://getkirby.com/releases/5/view-buttons
+#
+buttons:
+  #preview: true
+  settings: true
+  #languages: true
+  status: true
+
 # docs: https://getkirby.com/docs/reference/panel/blueprints/page
 #
 columns:
@@ -133,3 +141,4 @@ columns:
           de: "Folgende Bilddateien können hochgeladen werden: <code>gif</code>, <code>jpg</code>,<code>png</code>"
         link: false # does not work, though correct according to reference ?!
         template: images
+        translate: false

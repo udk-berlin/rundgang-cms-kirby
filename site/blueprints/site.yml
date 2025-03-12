@@ -5,6 +5,10 @@ title:
   en: Rundgang CMS
   de: Rundgang CMS
 
+# info: https://getkirby.com/releases/5/view-buttons
+#
+buttons: false
+
 # docs: https://getkirby.com/docs/reference/panel/sections
 #
 sections:

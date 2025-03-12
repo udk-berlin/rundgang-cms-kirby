@@ -10,6 +10,10 @@ buttons:
   settings: true
   theme: true
 
+# docs: https://getkirby.com/docs/reference/panel/blueprints/user#home-option
+#
+#home: /panel/home
+
 # docs: https://getkirby.com/docs/reference/panel/blueprints/user#permissions
 #
 permissions:

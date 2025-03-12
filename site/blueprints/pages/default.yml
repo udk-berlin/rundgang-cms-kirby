@@ -17,7 +17,7 @@ columns:
     sections:
       # docs: https://getkirby.com/docs/reference/panel/sections/fields
       #
-      LdapUser:
+      editor:
         type: fields
         fields:
           intro:

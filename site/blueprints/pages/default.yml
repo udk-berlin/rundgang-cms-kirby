@@ -6,7 +6,7 @@ title: Content
 buttons:
   #preview: true
   settings: true
-  #languages: true
+  languages: true
   status: true
 
 # docs: https://getkirby.com/docs/reference/panel/blueprints/page
@@ -42,6 +42,19 @@ columns:
     sections:
       # docs: https://getkirby.com/docs/reference/panel/sections/fields
       #
+      info:
+        type: fields
+        fields:
+          info:
+            type: info
+            label:
+              en: Multi-Language Support
+              de: Mehrsprachenunterstützung
+            icon: translate
+            text:
+              en: You can select the language for your <strong>Short Description</strong> and <strong>Content</strong> in the dropdown menu above, next to the page title.
+              de: Wähle die Sprache für deine <strong>Kurzbeschreibung</strong> und deinen <strong>Inhalt</strong> im Dropdown-Menü neben/unter dem Seiten-Titel aus.
+            theme: info
       authorship:
         type: fields
         fields:
@@ -137,8 +150,9 @@ columns:
           en: Images
           de: Bilder
         help:
-          en: "The following file/image types can be uploaded: <code>gif</code>, <code>jpg</code>,<code>png</code>"
-          de: "Folgende Bilddateien können hochgeladen werden: <code>gif</code>, <code>jpg</code>,<code>png</code>"
-        link: false # does not work, though correct according to reference ?!
+          en: "The following file/image types can be uploaded: <code>gif</code>, <code>jpg</code>, <code>png</code>"
+          de: "Folgende Bilddateien können hochgeladen werden: <code>gif</code>, <code>jpg</code>, <code>png</code>"
+        link: false # does not exist for file sections ?!
+        max: 50
         template: images
         translate: false

@@ -9,39 +9,61 @@ title:
 #
 buttons: false
 
-# docs: https://getkirby.com/docs/reference/panel/sections
+# docs: https://getkirby.com/docs/reference/panel/blueprints/page
 #
-sections:
-  # docs: https://getkirby.com/docs/reference/panel/sections/fields
-  #
-  intro:
-    type: fields
-    fields:
-      copy:
-        type: info
-        label: false
-        text:
-          en: |
-            Welcome <strong>{{ user }}</strong>,
+columns:
+  main:
+    width: 1/2
+    # docs: https://getkirby.com/docs/reference/panel/sections
+    #
+    sections:
+      # docs: https://getkirby.com/docs/reference/panel/sections/fields
+      #
+      welcome:
+        type: fields
+        fields:
+          intro:
+            type: info
+            label:
+              en: Rundgang CMS
+              de: Rundgang CMS
+            text:
+              en: |
+                Welcome <strong>{{ user }}</strong>,
 
-            With kind regards.
-          de: |
-            Willkommen <strong>{{ user }}</strong>,
+                With kind regards.
+              de: |
+                Willkommen <strong>{{ user }}</strong>,
 
-            Mit freundlichen Grüßen.
-        theme: text
+                Mit freundlichen Grüßen.
+            theme: text
+          info:
+            type: info
+            label: false
+            icon: translate
+            text: |
+              <strong>(en)</strong> You can configure the interface language via the <a href="/panel/account">account</a> page.
 
-# docs: https://getkirby.com/docs/reference/panel/sections/pages
-#
-  pages_2025:
-    type: pages
-    label: Rundgang 2025
-    create:
-      - 2025
-    template: 2025
-  #pages_2026:
-  #  type: pages
-  #  label: Rundgang 2026
-  #  create:
-  #    - 2026
-  #  template: 2026
+              <strong>(de)</strong> Du kannst die Interface-Sprache via der <a href="/panel/account">Account</a>-Seite konfigurieren.
+            theme: passive
+  sidebar:
+    width: 1/2
+    # docs: https://getkirby.com/docs/reference/panel/sections
+    #
+    sections:
+      # docs: https://getkirby.com/docs/reference/panel/sections/pages
+      #
+      pages_2025:
+        type: pages
+        label:
+          en: Content for Rundgang 2025
+          de: Inhalte für Rundgang 2025
+        create:
+          - 2025
+        template: 2025
+      #pages_2026:
+      #  type: pages
+      #  label: Rundgang 2026
+      #  create:
+      #    - 2026
+      #  template: 2026

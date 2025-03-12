@@ -63,7 +63,9 @@ columns:
         template: 2025
       #pages_2026:
       #  type: pages
-      #  label: Rundgang 2026
+      #  label:
+      #    en: Content for Rundgang 2026
+      #    de: Inhalte für Rundgang 2026
       #  create:
       #    - 2026
       #  template: 2026

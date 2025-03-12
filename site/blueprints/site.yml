@@ -14,14 +14,19 @@ buttons: false
 columns:
   main:
     width: 1/2
+
     # docs: https://getkirby.com/docs/reference/panel/sections
     #
     sections:
+
       # docs: https://getkirby.com/docs/reference/panel/sections/fields
       #
       welcome:
         type: fields
         fields:
+
+          # docs: https://getkirby.com/docs/reference/panel/fields/info
+          #
           intro:
             type: info
             label:
@@ -37,6 +42,9 @@ columns:
 
                 Mit freundlichen Grüßen.
             theme: text
+
+          # docs: https://getkirby.com/docs/reference/panel/fields/info
+          #
           info:
             type: info
             label: false
@@ -46,11 +54,13 @@ columns:
 
               <strong>(de)</strong> Du kannst die Interface-Sprache via der <a href="/panel/account">Account</a>-Seite konfigurieren.
             theme: passive
+
   sidebar:
     width: 1/2
     # docs: https://getkirby.com/docs/reference/panel/sections
     #
     sections:
+
       # docs: https://getkirby.com/docs/reference/panel/sections/pages
       #
       pages_2025:
@@ -61,6 +71,9 @@ columns:
         create:
           - 2025
         template: 2025
+
+      # docs: https://getkirby.com/docs/reference/panel/sections/pages
+      #
       #pages_2026:
       #  type: pages
       #  label:

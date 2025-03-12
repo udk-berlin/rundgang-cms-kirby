@@ -89,7 +89,9 @@ columns:
               de: Autor:in
             default: true
             disabled: true
+            link: false
             required: true
+            translate: false
 
           # docs: https://getkirby.com/docs/reference/panel/fields/users
           #
@@ -106,6 +108,7 @@ columns:
             multiple: true
             query: kirby.users.filterBy("role", "LdapUser").not(kirby.user)
             search: true
+            translate: false
 
       # docs: https://getkirby.com/docs/reference/panel/sections/fields
       #
@@ -123,6 +126,7 @@ columns:
             help:
               en: "Add date(s) and time(s) for your event; this should only be filled for concerts, performances, et cetera happening at only specific times."
               de: "Füge Tage und Uhrzeiten für dein Event hinzu; dies sollte ausschließlich für Konzerte, Performances, et cetera gemacht werden, welche nur zu bestimmten Zeitpunkten stattfinden."
+            translate: false
             columns:
               date:
                 mobile: true
@@ -149,6 +153,7 @@ columns:
                 min: 2026-07-17 # does not work, neither with quotes nor without ?!
                 max: 2026-07-19 # does not work, neither with quotes nor without ?!
                 required: true
+                translate: false
 
               # docs: https://getkirby.com/docs/reference/panel/fields/time
               #
@@ -164,6 +169,7 @@ columns:
                 min: 10:00
                 max: 23:59
                 required: true
+                translate: false
 
               # docs: https://getkirby.com/docs/reference/panel/fields/time
               #
@@ -179,6 +185,7 @@ columns:
                 min: 10:00
                 max: 23:59
                 required: true
+                translate: false
 
       # docs: https://getkirby.com/docs/reference/panel/sections/files
       #
@@ -193,7 +200,6 @@ columns:
         link: false # does not exist for file sections ?!
         max: 50
         template: 2026
-        translate: false
 
 # docs: https://getkirby.com/docs/reference/panel/blueprints/page#options
 #

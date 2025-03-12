@@ -160,3 +160,52 @@ columns:
         max: 50
         template: 2025
         translate: false
+
+# docs: https://getkirby.com/docs/reference/panel/blueprints/page#options
+#
+# NOTE: uncomment complete `options` block to prevent editing/modification
+# of pages after publication deadline and/or after the Rundgang is over !!
+#
+#options:
+#  #access:
+#  #  "*": false
+#  #  admin: true
+#  changeSlug:
+#    "*": false
+#    admin: true
+#  changeStatus:
+#    "*": false
+#    admin: true
+#  changeTemplate:
+#    "*": false
+#    admin: true
+#  changeTitle:
+#    "*": false
+#    admin: true
+#  create:
+#    "*": false
+#    admin: true
+#  delete:
+#    "*": false
+#    admin: true
+#  #list:
+#  #  "*": false
+#  #  admin: true
+#  move:
+#    "*": false
+#    admin: true
+#  duplicate:
+#    "*": false
+#    admin: true
+#  preview:
+#    "*": false
+#    admin: true
+#  read:
+#    "*": false
+#    admin: true
+#  sort:
+#    "*": false
+#    admin: true
+#  update:
+#    "*": false
+#    admin: true

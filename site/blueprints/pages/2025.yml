@@ -140,5 +140,6 @@ columns:
         link: false # does not work, though correct according to reference ?!
           en: "The following file/image types can be uploaded: <code>gif</code>, <code>jpg</code>, <code>png</code>"
           de: "Folgende Bilddateien können hochgeladen werden: <code>gif</code>, <code>jpg</code>, <code>png</code>"
+        max: 50
         template: images
         translate: false

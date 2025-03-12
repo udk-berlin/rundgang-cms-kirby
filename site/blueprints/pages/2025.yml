@@ -14,6 +14,8 @@ buttons:
 columns:
   main:
     width: 2/3
+    # docs: https://getkirby.com/docs/reference/panel/sections
+    #
     sections:
       # docs: https://getkirby.com/docs/reference/panel/sections/fields
       #
@@ -39,6 +41,8 @@ columns:
             size: large
   sidebar:
     width: 1/3
+    # docs: https://getkirby.com/docs/reference/panel/sections
+    #
     sections:
       # docs: https://getkirby.com/docs/reference/panel/sections/fields
       #

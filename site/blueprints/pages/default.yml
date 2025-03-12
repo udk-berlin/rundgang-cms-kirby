@@ -7,9 +7,9 @@ columns:
   main:
     width: 2/3
     sections:
-      editor:
       # docs: https://getkirby.com/docs/reference/panel/sections/fields
       #
+      LdapUser:
         type: fields
         fields:
           intro:

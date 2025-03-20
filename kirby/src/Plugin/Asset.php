@@ -107,7 +107,7 @@ class Asset implements Stringable
 	}
 
 	/**
-	 * @see self::mediaUrl()
+	 * @see ::mediaUrl
 	 */
 	public function url(): string
 	{
@@ -115,7 +115,7 @@ class Asset implements Stringable
 	}
 
 	/**
-	 * @see self::url()
+	 * @see ::url
 	 */
 	public function __toString(): string
 	{

@@ -300,7 +300,7 @@ class Collection extends Iterator implements Stringable
 	}
 
 	/**
-	 * @see self::filter()
+	 * @see \Kirby\Toolkit\Collection::filter()
 	 */
 	public function filterBy(...$args): static
 	{
@@ -562,7 +562,7 @@ class Collection extends Iterator implements Stringable
 	}
 
 	/**
-	 * @see self::group()
+	 * @see \Kirby\Toolkit\Collection::group()
 	 */
 	public function groupBy(...$args)
 	{
@@ -1073,7 +1073,7 @@ class Collection extends Iterator implements Stringable
 	}
 
 	/**
-	 * @see self::sort()
+	 * @see \Kirby\Toolkit\Collection::sort()
 	 */
 	public function sortBy(...$args): static
 	{
@@ -1144,7 +1144,7 @@ class Collection extends Iterator implements Stringable
 	}
 
 	/**
-	 * @see self::not()
+	 * @see \Kirby\Toolkit\Collection::not()
 	 */
 	public function without(string ...$keys): static
 	{

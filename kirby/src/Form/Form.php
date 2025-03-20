@@ -8,7 +8,6 @@ use Kirby\Cms\File;
 use Kirby\Cms\ModelWithContent;
 use Kirby\Data\Data;
 use Kirby\Exception\NotFoundException;
-use Kirby\Form\Field\ExceptionField;
 use Kirby\Toolkit\A;
 use Throwable;
 
@@ -83,10 +82,7 @@ class Form
 			try {
 				$field = Field::factory($props['type'], $props, $this->fields);
 			} catch (Throwable $e) {
-				$field = new ExceptionField(
-					name: $props['name'],
-					exception: $e
-				);
+				$field = static::exceptionField($e, $props);
 			}
 
 			if ($field->isSaveable() === true) {
@@ -146,6 +142,28 @@ class Form
 	public function errors(): array
 	{
 		return $this->fields->errors();
+	}
+
+	/**
+	 * Shows the error with the field
+	 */
+	public static function exceptionField(
+		Throwable $exception,
+		array $props = []
+	): Field {
+		$message = $exception->getMessage();
+
+		if (App::instance()->option('debug') === true) {
+			$message .= ' in file: ' . $exception->getFile();
+			$message .= ' line: ' . $exception->getLine();
+		}
+
+		return Field::factory('info', [
+			...$props,
+			'label' => 'Error in "' . $props['name'] . '" field.',
+			'theme' => 'negative',
+			'text'  => strip_tags($message),
+		]);
 	}
 
 	/**

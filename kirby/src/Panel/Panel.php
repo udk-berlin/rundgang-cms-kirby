@@ -328,7 +328,8 @@ class Panel
 				// trigger hook
 				$route = $kirby->apply(
 					'panel.route:before',
-					compact('route', 'path', 'method')
+					compact('route', 'path', 'method'),
+					'route'
 				);
 
 				// check for access before executing area routes

@@ -5,7 +5,6 @@ namespace Kirby\Cms;
 use Closure;
 use Generator;
 use Kirby\Content\Storage;
-use Kirby\Content\VersionCache;
 use Kirby\Data\Data;
 use Kirby\Email\Email as BaseEmail;
 use Kirby\Exception\ErrorPageException;
@@ -70,7 +69,6 @@ class App
 	protected Core $core;
 	protected Language|null $defaultLanguage = null;
 	protected Environment|null $environment = null;
-	protected Events $events;
 	protected Language|null $language = null;
 	protected Languages|null $languages = null;
 	protected bool|null $multilang = null;
@@ -99,9 +97,6 @@ class App
 	public function __construct(array $props = [], bool $setInstance = true)
 	{
 		$this->core = new Core($this);
-
-		// start with a fresh version cache
-		VersionCache::$cache = [];
 
 		// register all roots to be able to load stuff afterwards
 		$this->bakeRoots($props['roots'] ?? []);
@@ -133,6 +128,7 @@ class App
 		// configurable properties
 		$this->setLanguages($props['languages'] ?? null);
 		$this->setRoles($props['roles'] ?? null);
+		$this->setSite($props['site'] ?? null);
 		$this->setUser($props['user'] ?? null);
 		$this->setUsers($props['users'] ?? null);
 
@@ -150,13 +146,6 @@ class App
 		$this->extensionsFromPlugins();
 		$this->extensionsFromOptions();
 		$this->extensionsFromFolders();
-
-		$this->events = new Events(bind: $this);
-
-		// must be set after the extensions are loaded.
-		// the default storage instance must be defined
-		// and the App::$instance singleton needs to be set
-		$this->setSite($props['site'] ?? null);
 
 		// trigger hook for use in plugins
 		$this->trigger('system.loadPlugins:after');
@@ -225,16 +214,47 @@ class App
 	 * Applies a hook to the given value
 	 *
 	 * @param string $name Full event name
-	 * @param array $args Associative array of named arguments
-	 * @param string|null $modify Key in $args that is modified by the hooks (default: first argument)
+	 * @param array $args Associative array of named event arguments
+	 * @param string $modify Key in $args that is modified by the hooks
+	 * @param \Kirby\Cms\Event|null $originalEvent Event object (internal use)
 	 * @return mixed Resulting value as modified by the hooks
 	 */
 	public function apply(
 		string $name,
 		array $args,
-		string|null $modify = null
+		string $modify,
+		Event|null $originalEvent = null
 	): mixed {
-		return $this->events->apply($name, $args, $modify);
+		$event = $originalEvent ?? new Event($name, $args);
+
+		if ($functions = $this->extension('hooks', $name)) {
+			foreach ($functions as $function) {
+				// bind the App object to the hook
+				$newValue = $event->call($this, $function);
+
+				// update value if one was returned
+				if ($newValue !== null) {
+					$event->updateArgument($modify, $newValue);
+				}
+			}
+		}
+
+		// apply wildcard hooks if available
+		$nameWildcards = $event->nameWildcards();
+		if ($originalEvent === null && $nameWildcards !== []) {
+			foreach ($nameWildcards as $nameWildcard) {
+				// the $event object is passed by reference
+				// and will be modified down the chain
+				$this->apply(
+					$nameWildcard,
+					$event->arguments(),
+					$modify,
+					$event
+				);
+			}
+		}
+
+		return $event->argument($modify);
 	}
 
 	/**
@@ -861,9 +881,9 @@ class App
 
 		$options = $this->options;
 
-		$text = $this->apply('kirbytags:before', compact('text', 'data', 'options'));
+		$text = $this->apply('kirbytags:before', compact('text', 'data', 'options'), 'text');
 		$text = KirbyTags::parse($text, $data, $options);
-		$text = $this->apply('kirbytags:after', compact('text', 'data', 'options'));
+		$text = $this->apply('kirbytags:after', compact('text', 'data', 'options'), 'text');
 
 		return $text;
 	}
@@ -875,7 +895,7 @@ class App
 	 */
 	public function kirbytext(string|null $text = null, array $options = []): string
 	{
-		$text = $this->apply('kirbytext:before', compact('text'));
+		$text = $this->apply('kirbytext:before', compact('text'), 'text');
 		$text = $this->kirbytags($text, $options);
 		$text = $this->markdown($text, $options['markdown'] ?? []);
 
@@ -883,7 +903,7 @@ class App
 			$text = $this->smartypants($text);
 		}
 
-		$text = $this->apply('kirbytext:after', compact('text'));
+		$text = $this->apply('kirbytext:after', compact('text'), 'text');
 
 		return $text;
 	}
@@ -1511,7 +1531,7 @@ class App
 	 *
 	 * @return $this
 	 */
-	public function setSite(Site|array|null $site = null): static
+	protected function setSite(Site|array|null $site = null): static
 	{
 		if (is_array($site) === true) {
 			$site = new Site($site);
@@ -1636,13 +1656,47 @@ class App
 	 * Trigger a hook by name
 	 *
 	 * @param string $name Full event name
-	 * @param array $args Associative array of named arguments
+	 * @param array $args Associative array of named event arguments
+	 * @param \Kirby\Cms\Event|null $originalEvent Event object (internal use)
 	 */
 	public function trigger(
 		string $name,
-		array $args = []
+		array $args = [],
+		Event|null $originalEvent = null
 	): void {
-		$this->events->trigger($name, $args);
+		$event = $originalEvent ?? new Event($name, $args);
+
+		if ($functions = $this->extension('hooks', $name)) {
+			static $level = 0;
+			static $triggered = [];
+			$level++;
+
+			foreach ($functions as $index => $function) {
+				if (in_array($function, $triggered[$name] ?? []) === true) {
+					continue;
+				}
+
+				// mark the hook as triggered, to avoid endless loops
+				$triggered[$name][] = $function;
+
+				// bind the App object to the hook
+				$event->call($this, $function);
+			}
+
+			$level--;
+
+			if ($level === 0) {
+				$triggered = [];
+			}
+		}
+
+		// trigger wildcard hooks if available
+		$nameWildcards = $event->nameWildcards();
+		if ($originalEvent === null && $nameWildcards !== []) {
+			foreach ($nameWildcards as $nameWildcard) {
+				$this->trigger($nameWildcard, $args, $event);
+			}
+		}
 	}
 
 	/**

@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace Laminas\Escaper;
 
-use function assert;
 use function bin2hex;
 use function ctype_digit;
 use function hexdec;
 use function htmlspecialchars;
 use function in_array;
-use function is_string;
 use function mb_convert_encoding;
 use function ord;
 use function preg_match;
@@ -209,8 +207,6 @@ class Escaper
         }
 
         $result = preg_replace_callback('/[^a-z0-9,\.\-_]/iSu', $this->htmlAttrMatcher, $string);
-        assert(is_string($result));
-
         return $this->fromUtf8($result);
     }
 
@@ -233,8 +229,6 @@ class Escaper
         }
 
         $result = preg_replace_callback('/[^a-z0-9,\._]/iSu', $this->jsMatcher, $string);
-        assert(is_string($result));
-
         return $this->fromUtf8($result);
     }
 
@@ -264,8 +258,6 @@ class Escaper
         }
 
         $result = preg_replace_callback('/[^a-z0-9]/iSu', $this->cssMatcher, $string);
-        assert(is_string($result));
-
         return $this->fromUtf8($result);
     }
 

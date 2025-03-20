@@ -88,7 +88,7 @@ class View implements Stringable
 	}
 
 	/**
-	 * @see self::render()
+	 * @see ::render()
 	 */
 	public function toString(): string
 	{
@@ -99,7 +99,7 @@ class View implements Stringable
 	 * Magic string converter to enable
 	 * converting view objects to string
 	 *
-	 * @see self::render()
+	 * @see ::render()
 	 */
 	public function __toString(): string
 	{

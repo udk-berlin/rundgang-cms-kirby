@@ -61,6 +61,25 @@ columns:
         type: fields
         fields:
 
+          # docs: https://getkirby.com/docs/reference/panel/fields/toggle
+          #
+          terms:
+            type: toggle
+            label:
+              en: Terms & Conditions
+              de: Nutzungsbedingungen
+            icon: page
+            # TODO: add real link to real terms & conditions
+            help:
+              en: 'See: <a href="https://udk-berlin.de/impressum" target="_blank">Terms & Conditions</a>'
+              de: 'Siehe: <a href="https://udk-berlin.de/impressum" target="_blank">Nutzungsbedingungen</a>'
+            required: true
+            # TODO: add real link to real terms & conditions
+            text:
+              en: 'I hereby accept the <a href="https://udk-berlin.de/impressum" target="_blank">Terms & Conditions</a>.'
+              de: 'Ich akzeptiere die <a href="https://udk-berlin.de/impressum" target="_blank">Nutzungsbedingungen</a>.'
+            translate: false
+
           # docs: https://getkirby.com/docs/reference/panel/fields/info
           #
           info:

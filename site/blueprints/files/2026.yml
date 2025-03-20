@@ -10,7 +10,7 @@ title:
 buttons:
   preview: true
   settings: true
-  #languages: true
+  languages: true
 
 # docs: https://getkirby.com/docs/reference/panel/blueprints/file#accept
 #
@@ -41,6 +41,19 @@ image:
   #cover: true
   #ratio: 1/1
   back: pattern
+
+# docs: https://getkirby.com/docs/reference/panel/fields/files
+#
+fields:
+  alt:
+    type: text
+    label:
+      en: Alt Text
+      de: Alt Text
+    help:
+      en: Image content description for visually impaired people.
+      de: Bildbeschreibung für Menschen mit visueller Beeinträchtigung.
+    required: true
 
 # docs: https://getkirby.com/docs/reference/panel/blueprints/file#options
 #

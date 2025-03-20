@@ -4,6 +4,16 @@
 title: Editor
 description: Account is externally managed via LDAP server
 
+# info: https://getkirby.com/releases/5/view-buttons
+#
+buttons:
+  settings: true
+  theme: true
+
+# docs: https://getkirby.com/docs/reference/panel/blueprints/user#home-option
+#
+#home: /panel/home
+
 # docs: https://getkirby.com/docs/reference/panel/blueprints/user#permissions
 #
 permissions:
@@ -75,17 +85,29 @@ permissions:
 sections:
   ldap_dn:
     type: info
-    label: DN
+    label:
+      en: LDAP DN
+      de: LDAP DN
     text: "{{ user.getLdapDn }}"
+    theme: code
   ldap_uid:
     type: info
-    label: UID
+    label:
+      en: LDAP UID
+      de: LDAP UID
     text: "{{ user.getLdapUid }}"
+    theme: code
   ldap_mail:
     type: info
-    label: Mail
+    label:
+      en: Mail Address
+      de: Mail-Adresse
     text: "{{ user.getLdapMail }}"
+    theme: code
   ldap_name:
     type: info
-    label: Name
+    label:
+      en: Name
+      de: Name
     text: "{{ user.getLdapName }}"
+    theme: code

@@ -1,5 +1,9 @@
 <?php
 
+// info: https://getkirby.com/releases/5/view-buttons
+//
+// docs: https://getkirby.com/docs/reference/panel/blueprints/page
+
 // Load your JSON file
 $json = file_get_contents(kirby()->root('assets') . '/exportedNested.json');
 $data = json_decode($json, true);
@@ -41,21 +45,31 @@ usort($options, function ($a, $b) {
     return strcasecmp($a['text'], $b['text']);
 });
 
-
 $yaml = [
     'title' => 'Rundgang 2025',
+
+    // info: https://getkirby.com/releases/5/view-buttons
     'buttons' => [
+        // 'preview' => true,
         'settings' => true,
         'languages' => true,
         'status' => true,
     ],
+
+    // docs: https://getkirby.com/docs/reference/panel/blueprints/page
     'columns' => [
         'main' => [
             'width' => '2/3',
+
+            // docs: https://getkirby.com/docs/reference/panel/sections
             'sections' => [
+
+                // docs: https://getkirby.com/docs/reference/panel/sections/fields
                 'editor' => [
                     'type' => 'fields',
                     'fields' => [
+
+                        // docs: https://getkirby.com/docs/reference/panel/fields/textarea
                         'intro' => [
                             'type' => 'textarea',
                             'label' => [
@@ -68,6 +82,8 @@ $yaml = [
                             'size' => 'small',
                             'uploads' => false,
                         ],
+
+                        // docs: https://getkirby.com/docs/reference/panel/fields/textarea
                         'text' => [
                             'type' => 'textarea',
                             'label' => [
@@ -83,10 +99,38 @@ $yaml = [
         ],
         'sidebar' => [
             'width' => '1/3',
+
+            // docs: https://getkirby.com/docs/reference/panel/sections
             'sections' => [
+
+                // docs: https://getkirby.com/docs/reference/panel/sections/fields
                 'info' => [
                     'type' => 'fields',
                     'fields' => [
+
+                        // docs: https://getkirby.com/docs/reference/panel/fields/toggle
+                        'terms' => [
+                            'type' => 'toggle',
+                            'label' => [
+                                'en' => 'Terms & Conditions',
+                                'de' => 'Nutzungsbedingungen',
+                            ],
+                            'icon' => 'page',
+                            // TODO: add real link to real terms & conditions
+                            'help' => [
+                                'en' => 'See: <a href="https://udk-berlin.de/impressum" target="_blank">Terms & Conditions</a>',
+                                'de' => 'Siehe: <a href="https://udk-berlin.de/impressum" target="_blank">Nutzungsbedingungen</a>',
+                            ],
+                            'required' => true,
+                            // TODO: add real link to real terms & conditions
+                            'text' => [
+                                'en' => 'I hereby accept the <a href="https://udk-berlin.de/impressum" target="_blank">Terms & Conditions</a>.',
+                                'de' => 'Ich akzeptiere die <a href="https://udk-berlin.de/impressum" target="_blank">Nutzungsbedingungen</a>.',
+                            ],
+                            'translate' => false,
+                        ],
+
+                        // docs: https://getkirby.com/docs/reference/panel/fields/info
                         'info' => [
                             'type' => 'info',
                             'label' => [
@@ -102,9 +146,13 @@ $yaml = [
                         ],
                     ],
                 ],
+
+                // docs: https://getkirby.com/docs/reference/panel/sections/fields
                 'authorship' => [
                     'type' => 'fields',
                     'fields' => [
+
+                        // docs: https://getkirby.com/docs/reference/panel/fields/users
                         'author' => [
                             'type' => 'users',
                             'label' => [
@@ -117,6 +165,8 @@ $yaml = [
                             'required' => true,
                             'translate' => false,
                         ],
+
+                        // docs: https://getkirby.com/docs/reference/panel/fields/users
                         'coauthor' => [
                             'type' => 'users',
                             'label' => [
@@ -124,16 +174,18 @@ $yaml = [
                                 'de' => 'Co-Author:innen (optional)',
                             ],
                             'help' => [
-                                'en' => 'Add co-authors to <strong>{{ page.title.short(30) }}</strong> to grant them editing access. You can search for names or email addresses of other institution members.',
-                                'de' => 'Füge Co-Autor:innen zu <strong>{{ page.title.short(30) }}</strong> hinzu, um diesen das Editieren zu ermöglichen. Du kannst nach Namen und Mail-Adresse von anderen Institutionsmitgliedern suchen.',
+                                'en' => "Add co-authors to <strong>{{ page.title.short(30) }}</strong> to grant them editing access. You can search for names or email addresses of other institution members.",
+                                'de' => "Füge Co-Autor:innen zu <strong>{{ page.title.short(30) }}</strong> hinzu, um diesen das Editieren zu ermöglichen. Du kannst nach Namen und Mail-Adresse von anderen Institutionsmitgliedern suchen.",
                             ],
-                            'info' => '{{ user.email }}',
+                            'info' => "{{ user.email }}",
                             'link' => false,
                             'multiple' => true,
                             'query' => 'kirby.users.filterBy("role", "LdapUser").not(kirby.user)',
                             'search' => true,
                             'translate' => false,
                         ],
+
+                        // Categories field from your example
                         'categories' => [
                             'label' => 'Categories',
                             'type' => 'multiselect',
@@ -143,9 +195,13 @@ $yaml = [
                         ],
                     ],
                 ],
+
+                // docs: https://getkirby.com/docs/reference/panel/sections/fields
                 'date' => [
                     'type' => 'fields',
                     'fields' => [
+
+                        // docs: https://getkirby.com/docs/reference/panel/fields/structure
                         'date' => [
                             'type' => 'structure',
                             'label' => [
@@ -153,8 +209,8 @@ $yaml = [
                                 'de' => 'Datum & Uhrzeit (optional)',
                             ],
                             'help' => [
-                                'en' => 'Add date(s) and time(s) for your event; this should only be filled for concerts, performances, et cetera happening at only specific times.',
-                                'de' => 'Füge Tage und Uhrzeiten für dein Event hinzu; dies sollte ausschließlich für Konzerte, Performances, et cetera gemacht werden, welche nur zu bestimmten Zeitpunkten stattfinden.',
+                                'en' => "Add date(s) and time(s) for your event; this should only be filled for concerts, performances, et cetera happening at only specific times.",
+                                'de' => "Füge Tage und Uhrzeiten für dein Event hinzu; dies sollte ausschließlich für Konzerte, Performances, et cetera gemacht werden, welche nur zu bestimmten Zeitpunkten stattfinden.",
                             ],
                             'translate' => false,
                             'columns' => [
@@ -172,6 +228,8 @@ $yaml = [
                                 ],
                             ],
                             'fields' => [
+
+                                // docs: https://getkirby.com/docs/reference/panel/fields/date
                                 'date' => [
                                     'type' => 'date',
                                     'label' => [
@@ -179,15 +237,17 @@ $yaml = [
                                         'de' => 'Datum',
                                     ],
                                     'help' => [
-                                        'en' => 'The date of the event.',
-                                        'de' => 'Das Datum des Events.',
+                                        'en' => "The date of the event.",
+                                        'de' => "Das Datum des Events.",
                                     ],
-                                    'default' => '2025-07-18',
-                                    'min' => '2025-07-18',
-                                    'max' => '2025-07-20',
+                                    'default' => "2025-07-18", // needs to be quoted to work ?!
+                                    'min' => '2025-07-18', // using strings to ensure it works properly
+                                    'max' => '2025-07-20', // using strings to ensure it works properly
                                     'required' => true,
                                     'translate' => false,
                                 ],
+
+                                // docs: https://getkirby.com/docs/reference/panel/fields/time
                                 'from' => [
                                     'type' => 'time',
                                     'label' => [
@@ -195,8 +255,8 @@ $yaml = [
                                         'de' => 'Beginn',
                                     ],
                                     'help' => [
-                                        'en' => 'The time the event starts.',
-                                        'de' => 'Die Uhrzeit, zu der das Event beginnt.',
+                                        'en' => "The time the event starts.",
+                                        'de' => "Die Uhrzeit, zu der das Event beginnt.",
                                     ],
                                     'default' => '13:00',
                                     'min' => '10:00',
@@ -204,6 +264,8 @@ $yaml = [
                                     'required' => true,
                                     'translate' => false,
                                 ],
+
+                                // docs: https://getkirby.com/docs/reference/panel/fields/time
                                 'to' => [
                                     'type' => 'time',
                                     'label' => [
@@ -211,8 +273,8 @@ $yaml = [
                                         'de' => 'Ende',
                                     ],
                                     'help' => [
-                                        'en' => 'The time the event ends.',
-                                        'de' => 'Die Uhrzeit, zu der das Event endet.',
+                                        'en' => "The time the event ends.",
+                                        'de' => "Die Uhrzeit, zu der das Event endet.",
                                     ],
                                     'default' => '15:00',
                                     'min' => '10:00',
@@ -224,6 +286,8 @@ $yaml = [
                         ],
                     ],
                 ],
+
+                // docs: https://getkirby.com/docs/reference/panel/sections/files
                 'files' => [
                     'type' => 'files',
                     'label' => [
@@ -231,16 +295,80 @@ $yaml = [
                         'de' => 'Bilder',
                     ],
                     'help' => [
-                        'en' => 'The following file/image types can be uploaded: <code>jpg</code>, <code>png</code>',
-                        'de' => 'Folgende Bilddateien können hochgeladen werden: <code>jpg</code>, <code>png</code>',
+                        'en' => "The following file/image types can be uploaded: <code>jpg</code>, <code>png</code>",
+                        'de' => "Folgende Bilddateien können hochgeladen werden: <code>jpg</code>, <code>png</code>",
                     ],
-                    'link' => false,
                     'max' => 50,
                     'template' => '2025',
                 ],
             ],
         ],
     ],
+
+    // docs: https://getkirby.com/docs/reference/panel/blueprints/page#options
+    //
+    // NOTE: uncomment complete `options` block to prevent editing/modification
+    // of pages after publication deadline and/or after the Rundgang is over !!
+    /*
+    'options' => [
+        //'access' => [
+        //  "*" => false,
+        //  "admin" => true,
+        //],
+        'changeSlug' => [
+            "*" => false,
+            "admin" => true,
+        ],
+        'changeStatus' => [
+            "*" => false,
+            "admin" => true,
+        ],
+        'changeTemplate' => [
+            "*" => false,
+            "admin" => true,
+        ],
+        'changeTitle' => [
+            "*" => false,
+            "admin" => true,
+        ],
+        'create' => [
+            "*" => false,
+            "admin" => true,
+        ],
+        'delete' => [
+            "*" => false,
+            "admin" => true,
+        ],
+        //'list' => [
+        //  "*" => false,
+        //  "admin" => true,
+        //],
+        'move' => [
+            "*" => false,
+            "admin" => true,
+        ],
+        'duplicate' => [
+            "*" => false,
+            "admin" => true,
+        ],
+        'preview' => [
+            "*" => false,
+            "admin" => true,
+        ],
+        'read' => [
+            "*" => false,
+            "admin" => true,
+        ],
+        'sort' => [
+            "*" => false,
+            "admin" => true,
+        ],
+        'update' => [
+            "*" => false,
+            "admin" => true,
+        ],
+    ],
+    */
 ];
 
 return $yaml;

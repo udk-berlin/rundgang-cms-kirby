@@ -9,216 +9,377 @@ buttons:
   languages: true
   status: true
 
-# docs: https://getkirby.com/docs/reference/panel/blueprints/page
+# guide: https://getkirby.com/docs/guide/blueprints/layout
 #
-columns:
-  main:
-    width: 2/3
+tabs:
 
-    # docs: https://getkirby.com/docs/reference/panel/sections
+  # guide: https://getkirby.com/docs/guide/blueprints/layout
+  #
+  metadata_tab:
+    label:
+      en: Metadata
+      de: Metadaten
+    icon: info
+
+    # docs: https://getkirby.com/docs/reference/panel/blueprints/page
     #
-    sections:
+    columns:
+      metadata_column_main:
+        width: 1/2
 
-      # docs: https://getkirby.com/docs/reference/panel/sections/fields
-      #
-      editor:
-        type: fields
-        fields:
+        # docs: https://getkirby.com/docs/reference/panel/sections
+        #
+        sections:
 
-          # docs: https://getkirby.com/docs/reference/panel/fields/textarea
+          # docs: https://getkirby.com/docs/reference/panel/sections/fields
           #
-          intro:
-            type: textarea
-            label:
-              en: Short Description
-              de: Kurzbeschreibung
-            buttons: false
-            maxlength: 500
-            required: true
-            size: small
-            uploads: false
-
-          # docs: https://getkirby.com/docs/reference/panel/fields/textarea
-          #
-          text:
-            type: textarea
-            label:
-              en: Content
-              de: Inhalt
-            required: true
-            size: large
-
-  sidebar:
-    width: 1/3
-
-    # docs: https://getkirby.com/docs/reference/panel/sections
-    #
-    sections:
-
-      # docs: https://getkirby.com/docs/reference/panel/sections/fields
-      #
-      info:
-        type: fields
-        fields:
-
-          # docs: https://getkirby.com/docs/reference/panel/fields/toggle
-          #
-          terms:
-            type: toggle
-            label:
-              en: Terms & Conditions
-              de: Nutzungsbedingungen
-            icon: page
-            # TODO: add real link to real terms & conditions
-            help:
-              en: 'See: <a href="https://udk-berlin.de/impressum" target="_blank">Terms & Conditions</a>'
-              de: 'Siehe: <a href="https://udk-berlin.de/impressum" target="_blank">Nutzungsbedingungen</a>'
-            required: true
-            # TODO: add real link to real terms & conditions
-            text:
-              en: 'I hereby accept the <a href="https://udk-berlin.de/impressum" target="_blank">Terms & Conditions</a>.'
-              de: 'Ich akzeptiere die <a href="https://udk-berlin.de/impressum" target="_blank">Nutzungsbedingungen</a>.'
-            translate: false
-
-          # docs: https://getkirby.com/docs/reference/panel/fields/info
-          #
-          info:
-            type: info
-            label:
-              en: Multi-Language Support
-              de: Mehrsprachenunterstützung
-            icon: translate
-            text:
-              en: You can select the language for your <strong>Short Description</strong> and <strong>Content</strong> in the dropdown menu above, next to the page title.
-              de: Wähle die Sprache für deine <strong>Kurzbeschreibung</strong> und deinen <strong>Inhalt</strong> im Dropdown-Menü neben/unter dem Seiten-Titel aus.
-            theme: info
-
-      # docs: https://getkirby.com/docs/reference/panel/sections/fields
-      #
-      authorship:
-        type: fields
-        fields:
-
-          # docs: https://getkirby.com/docs/reference/panel/fields/users
-          #
-          author:
-            type: users
-            label:
-              en: Author
-              de: Autor:in
-            default: true
-            disabled: true
-            link: false
-            required: true
-            translate: false
-
-          # docs: https://getkirby.com/docs/reference/panel/fields/users
-          #
-          coauthor:
-            type: users
-            label:
-              en: Co-Authors (optional)
-              de: Co-Author:innen (optional)
-            help:
-              en: "Add co-authors to <strong>{{ page.title.short(30) }}</strong> to grant them editing access. You can search for names or email addresses of other institution members."
-              de: "Füge Co-Autor:innen zu <strong>{{ page.title.short(30) }}</strong> hinzu, um diesen das Editieren zu ermöglichen. Du kannst nach Namen und Mail-Adresse von anderen Institutionsmitgliedern suchen."
-            info: "{{ user.email }}"
-            link: false
-            multiple: true
-            query: kirby.users.filterBy("role", "LdapUser").not(kirby.user)
-            search: true
-            translate: false
-
-      # docs: https://getkirby.com/docs/reference/panel/sections/fields
-      #
-      date:
-        type: fields
-        fields:
-
-          # docs: https://getkirby.com/docs/reference/panel/fields/structure
-          #
-          date:
-            type: structure
-            label:
-              en: "Date & Time (optional)"
-              de: "Datum & Uhrzeit (optional)"
-            help:
-              en: "Add date(s) and time(s) for your event; this should only be filled for concerts, performances, et cetera happening at only specific times."
-              de: "Füge Tage und Uhrzeiten für dein Event hinzu; dies sollte ausschließlich für Konzerte, Performances, et cetera gemacht werden, welche nur zu bestimmten Zeitpunkten stattfinden."
-            translate: false
-            columns:
-              date:
-                mobile: true
-                width: 1/2
-              from:
-                mobile: true
-                width: 1/4
-              to:
-                mobile: true
-                width: 1/4
+          metadata_section_authorship:
+            type: fields
             fields:
 
-              # docs: https://getkirby.com/docs/reference/panel/fields/date
+              # docs: https://getkirby.com/docs/reference/panel/fields/users
               #
-              date:
-                type: date
+              metadata_field_author:
+                type: users
                 label:
-                  en: Date
-                  de: Datum
-                help:
-                  en: "The date of the event."
-                  de: "Das Datum des Events."
-                default: "2025-07-18" # needs to be quoted to work ?!
-                min: 2025-07-18 # does not work, neither with quotes nor without ?!
-                max: 2025-07-20 # does not work, neither with quotes nor without ?!
+                  en: Author
+                  de: Autor:in
+                default: true
+                disabled: true
+                link: false
                 required: true
                 translate: false
 
-              # docs: https://getkirby.com/docs/reference/panel/fields/time
+              # docs: https://getkirby.com/docs/reference/panel/fields/users
               #
-              from:
-                type: time
+              metadata_field_coauthors:
+                type: users
                 label:
-                  en: Start
-                  de: Beginn
+                  en: Co-Authors (optional)
+                  de: Co-Author:innen (optional)
                 help:
-                  en: "The time the event starts."
-                  de: "Die Uhrzeit, zu der das Event beginnt."
-                default: 13:00
-                min: 10:00
-                max: 23:59
-                required: true
+                  en: "Add co-authors to <strong>{{ page.title.short(30) }}</strong> to grant them editing access. You can search for names or email addresses of other institution members."
+                  de: "Füge Co-Autor:innen zu <strong>{{ page.title.short(30) }}</strong> hinzu, um diesen das Editieren zu ermöglichen. Du kannst nach Namen und Mail-Adresse von anderen Institutionsmitgliedern suchen."
+                info: "{{ user.email }}"
+                link: false
+                multiple: true
+                query: kirby.users.filterBy("role", "LdapUser").not(kirby.user)
+                search: true
                 translate: false
 
-              # docs: https://getkirby.com/docs/reference/panel/fields/time
+              # docs: https://getkirby.com/docs/reference/panel/fields/info
               #
-              to:
-                type: time
+              metadata_field_date_and_time:
+                type: info
                 label:
-                  en: End
-                  de: Ende
+                  en: Date & Time
+                  de: Datum & Uhrzeit
+                icon: clock
+                text:
+                  en: Add <strong>Date(s) & Time</strong> for your event; this should only be filled for concerts, performances, et cetera which are <strong>happening at only specific times</strong>.
+                  de: Füge <strong>Datum & Uhrzeit</strong> für dein Event hinzu; dies sollte ausschließlich für Konzerte, Performances, et cetera gemacht werden, welche <strong>nur zu bestimmten Zeitpunkten stattfinden</strong>.
+                theme: notice
+
+      metadata_column_side:
+        width: 1/2
+
+        # docs: https://getkirby.com/docs/reference/panel/sections
+        #
+        sections:
+
+          # docs: https://getkirby.com/docs/reference/panel/sections/fields
+          #
+          metadata_section_right:
+            type: fields
+            fields:
+
+              # docs: https://getkirby.com/docs/reference/panel/fields/info
+              #
+              metadata_field_info:
+                type: info
+                label:
+                  en: Multi-Language Support
+                  de: Mehrsprachenunterstützung
+                icon: translate
+                text:
+                  en: You can select the language for <strong>Intro (EN/DE)</strong> and <strong>Content (EN/DE)</strong> in the dropdown menu above, next to the page title.
+                  de: Wähle die Sprache für <strong>Intro (EN/DE)</strong> und <strong>Inhalt (EN/DE)</strong> im Dropdown-Menü neben/unter dem Seiten-Titel aus.
+                theme: info
+
+              # docs: https://getkirby.com/docs/reference/panel/fields/toggle
+              #
+              metadata_field_terms:
+                type: toggle
+                label:
+                  en: Terms & Conditions
+                  de: Nutzungsbedingungen
+                icon: page
+                # TODO: add real link to real terms & conditions
                 help:
-                  en: "The time the event ends."
-                  de: "Die Uhrzeit, zu der das Event endet."
-                default: 15:00
-                min: 10:00
-                max: 23:59
+                  en: 'See: <a href="https://udk-berlin.de/impressum" target="_blank">Terms & Conditions</a>'
+                  de: 'Siehe: <a href="https://udk-berlin.de/impressum" target="_blank">Nutzungsbedingungen</a>'
                 required: true
+                # TODO: add real link to real terms & conditions
+                text:
+                  en: 'I hereby accept the <a href="https://udk-berlin.de/impressum" target="_blank">Terms & Conditions</a>.'
+                  de: 'Ich akzeptiere die <a href="https://udk-berlin.de/impressum" target="_blank">Nutzungsbedingungen</a>.'
                 translate: false
 
-      # docs: https://getkirby.com/docs/reference/panel/sections/files
-      #
-      files:
-        type: files
-        label:
-          en: Images
-          de: Bilder
-        help:
-          en: "The following file/image types can be uploaded: <code>jpg</code>, <code>png</code>"
-          de: "Folgende Bilddateien können hochgeladen werden: <code>jpg</code>, <code>png</code>"
-        link: false # does not exist for file sections ?!
-        max: 50
-        template: 2025
+  # guide: https://getkirby.com/docs/guide/blueprints/layout
+  #
+  event_tab:
+    label:
+      en: Date & Time
+      de: Datum & Uhrzeit
+    icon: calendar
+
+    # docs: https://getkirby.com/docs/reference/panel/blueprints/page
+    #
+    columns:
+      event_column_main:
+        width: 1/1
+
+        # docs: https://getkirby.com/docs/reference/panel/sections
+        #
+        sections:
+
+          # docs: https://getkirby.com/docs/reference/panel/sections/fields
+          #
+          event_section:
+            type: fields
+            fields:
+
+              # docs: https://getkirby.com/docs/reference/panel/fields/info
+              #
+              event_field_info:
+                type: info
+                label: false
+                icon: clock
+                text:
+                  en: Add <strong>Date(s) & Time</strong> for your event; this should only be filled for concerts, performances, et cetera which are <strong>happening at only specific times</strong>.
+                  de: Füge <strong>Datum & Uhrzeit</strong> für dein Event hinzu; dies sollte ausschließlich für Konzerte, Performances, et cetera gemacht werden, welche <strong>nur zu bestimmten Zeitpunkten stattfinden</strong>.
+                theme: notice
+
+              # docs: https://getkirby.com/docs/reference/panel/fields/structure
+              #
+              event_field_date_time:
+                type: structure
+                label:
+                  en: Date & Time
+                  de: Datum & Uhrzeit
+                #help:
+                #  en: "Add date(s) and time(s) for your event; this should only be filled for concerts, performances, et cetera happening at only specific times."
+                #  de: "Füge Tage und Uhrzeiten für dein Event hinzu; dies sollte ausschließlich für Konzerte, Performances, et cetera gemacht werden, welche nur zu bestimmten Zeitpunkten stattfinden."
+                translate: false
+                columns:
+                  event_structure_field_date:
+                    mobile: true
+                    width: 1/3
+                  event_structure_field_from:
+                    mobile: true
+                    width: 1/3
+                  event_structure_field_to:
+                    mobile: true
+                    width: 1/3
+                fields:
+
+                  # docs: https://getkirby.com/docs/reference/panel/fields/date
+                  #
+                  event_structure_field_date:
+                    type: date
+                    label:
+                      en: Date
+                      de: Datum
+                    help:
+                      en: "The date of the event."
+                      de: "Das Datum des Events."
+                    default: "2025-07-18" # needs to be quoted to work ?!
+                    min: 2025-07-18 # does not work, neither with quotes nor without ?!
+                    max: 2025-07-20 # does not work, neither with quotes nor without ?!
+                    required: true
+                    translate: false
+
+                  # docs: https://getkirby.com/docs/reference/panel/fields/time
+                  #
+                  event_structure_field_from:
+                    type: time
+                    label:
+                      en: Start
+                      de: Beginn
+                    help:
+                      en: "The time the event starts."
+                      de: "Die Uhrzeit, zu der das Event beginnt."
+                    default: 13:00
+                    min: 10:00
+                    max: 23:59
+                    required: true
+                    translate: false
+
+                  # docs: https://getkirby.com/docs/reference/panel/fields/time
+                  #
+                  event_structure_field_to:
+                    type: time
+                    label:
+                      en: End
+                      de: Ende
+                    help:
+                      en: "The time the event ends."
+                      de: "Die Uhrzeit, zu der das Event endet."
+                    default: 15:00
+                    min: 10:00
+                    max: 23:59
+                    required: true
+                    translate: false
+
+  # guide: https://getkirby.com/docs/guide/blueprints/layout
+  #
+  intro_tab:
+    label:
+      en: Intro (EN/DE)
+      de: Intro (EN/DE)
+    icon: paragraph
+
+    # docs: https://getkirby.com/docs/reference/panel/blueprints/page
+    #
+    columns:
+
+      intro_column_banner:
+        width: 1/1
+
+        # docs: https://getkirby.com/docs/reference/panel/sections
+        #
+        sections:
+
+          # docs: https://getkirby.com/docs/reference/panel/sections/fields
+          #
+          intro_section_info:
+            type: fields
+            fields:
+
+              # docs: https://getkirby.com/docs/reference/panel/fields/info
+              #
+              intro_field_multi_language:
+                type: info
+                label: false
+                #label:
+                #  en: Multi-Language Support
+                #  de: Mehrsprachenunterstützung
+                icon: translate
+                text:
+                  en: You can select the language for <strong>Intro (EN/DE)</strong> in the dropdown menu above, next to the page title.
+                  de: Wähle die Sprache für <strong>Intro (EN/DE)</strong> im Dropdown-Menü neben/unter dem Seiten-Titel aus.
+                theme: info
+
+      intro_column_main:
+        width: 1/1
+
+        # docs: https://getkirby.com/docs/reference/panel/sections
+        #
+        sections:
+
+          # docs: https://getkirby.com/docs/reference/panel/sections/fields
+          #
+          intro_section_intro:
+            type: fields
+            fields:
+
+              # docs: https://getkirby.com/docs/reference/panel/fields/textarea
+              #
+              intro_field_intro:
+                type: textarea
+                label:
+                  en: Intro
+                  de: Intro
+                  #en: Short Description
+                  #de: Kurzbeschreibung
+                buttons: false
+                maxlength: 500
+                required: true
+                size: small
+                uploads: false
+
+  # guide: https://getkirby.com/docs/guide/blueprints/layout
+  #
+  content_tab:
+    label:
+      en: Content (EN/DE)
+      de: Inhalt (EN/DE)
+    icon: text
+
+    # docs: https://getkirby.com/docs/reference/panel/blueprints/page
+    #
+    columns:
+
+      content_column_banner:
+        width: 1/1
+
+        # docs: https://getkirby.com/docs/reference/panel/sections
+        #
+        sections:
+
+          # docs: https://getkirby.com/docs/reference/panel/sections/fields
+          #
+          content_section_info:
+            type: fields
+            fields:
+
+              # docs: https://getkirby.com/docs/reference/panel/fields/info
+              #
+              content_field_multi_language:
+                type: info
+                label: false
+                #label:
+                #  en: Multi-Language Support
+                #  de: Mehrsprachenunterstützung
+                icon: translate
+                text:
+                  en: You can select the language for <strong>Content (EN/DE)</strong> in the dropdown menu above, next to the page title.
+                  de: Wähle die Sprache für <strong>Inhalt (EN/DE)</strong> im Dropdown-Menü neben/unter dem Seiten-Titel aus.
+                theme: info
+
+      content_column_main:
+        width: 2/3
+
+        # docs: https://getkirby.com/docs/reference/panel/sections
+        #
+        sections:
+
+          # docs: https://getkirby.com/docs/reference/panel/sections/fields
+          #
+          content_section_text:
+            type: fields
+            fields:
+
+              # docs: https://getkirby.com/docs/reference/panel/fields/textarea
+              #
+              content_field_text:
+                type: textarea
+                label:
+                  en: Content
+                  de: Inhalt
+                required: true
+                size: large
+
+      content_column_side:
+        width: 1/3
+
+        # docs: https://getkirby.com/docs/reference/panel/sections
+        #
+        sections:
+
+          # docs: https://getkirby.com/docs/reference/panel/sections/files
+          #
+          content_section_files:
+            type: files
+            label:
+              en: Images
+              de: Bilder
+            help:
+              en: "The following file/image types can be uploaded: <code>jpg</code>, <code>png</code>"
+              de: "Folgende Bilddateien können hochgeladen werden: <code>jpg</code>, <code>png</code>"
+            link: false # does not exist for file sections ?!
+            max: 50
+            template: 2025
 
 # docs: https://getkirby.com/docs/reference/panel/blueprints/page#options
 #

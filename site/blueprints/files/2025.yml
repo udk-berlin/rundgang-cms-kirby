@@ -15,7 +15,13 @@ buttons:
 # docs: https://getkirby.com/docs/reference/panel/blueprints/file#accept
 #
 accept:
-  extension: gif, jpeg, jpg, png
+  #extension:
+  #  - jpeg
+  #  - jpg
+  #  - png
+  mime:
+    - image/jpeg
+    - image/png
   #type: image
 
 # docs: https://getkirby.com/docs/reference/panel/blueprints/file#optimize-uploaded-images-create

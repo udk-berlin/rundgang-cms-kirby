@@ -195,8 +195,8 @@ columns:
           en: Images
           de: Bilder
         help:
-          en: "The following file/image types can be uploaded: <code>gif</code>, <code>jpg</code>, <code>png</code>"
-          de: "Folgende Bilddateien können hochgeladen werden: <code>gif</code>, <code>jpg</code>, <code>png</code>"
+          en: "The following file/image types can be uploaded: <code>jpg</code>, <code>png</code>"
+          de: "Folgende Bilddateien können hochgeladen werden: <code>jpg</code>, <code>png</code>"
         link: false # does not exist for file sections ?!
         max: 50
         template: 2026

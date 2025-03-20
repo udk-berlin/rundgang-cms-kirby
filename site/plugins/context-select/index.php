@@ -4,8 +4,8 @@ use Kirby\Cms\App as Kirby;
 
 Kirby::plugin('medienhaus/default', [
     'blueprints' => [
-        'pages/default' => function ($kirby) {
-            return include __DIR__ . '/blueprints/pages/default.php';
+        'pages/2025' => function ($kirby) {
+            return include __DIR__ . '/blueprints/pages/2025.php';
         },
     ],
 ]);

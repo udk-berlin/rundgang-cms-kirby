@@ -9,6 +9,16 @@ buttons:
   languages: true
   status: true
 
+# docs: https://getkirby.com/docs/reference/panel/blueprints/page#statuses
+#
+status:
+  draft:
+    en: Draft
+    de: Entwurf
+  listed:
+    en: Published
+    de: Veröffentlicht
+
 # guide: https://getkirby.com/docs/guide/blueprints/layout
 #
 tabs:
@@ -25,7 +35,7 @@ tabs:
     #
     columns:
       metadata_column_main:
-        width: 1/2
+        width: 1/1
 
         # docs: https://getkirby.com/docs/reference/panel/sections
         #
@@ -39,7 +49,7 @@ tabs:
 
               # docs: https://getkirby.com/docs/reference/panel/fields/users
               #
-              metadata_field_author:
+              author: # this field MUST be named `author`, else the page is not visible to the user
                 type: users
                 label:
                   en: Author
@@ -52,7 +62,7 @@ tabs:
 
               # docs: https://getkirby.com/docs/reference/panel/fields/users
               #
-              metadata_field_coauthors:
+              coauthor: # this field MUST be named `coauthor`, else the page is not visible to the user
                 type: users
                 label:
                   en: Co-Authors (optional)
@@ -67,44 +77,23 @@ tabs:
                 search: true
                 translate: false
 
-              # docs: https://getkirby.com/docs/reference/panel/fields/info
+              # docs: https://getkirby.com/docs/reference/panel/fields/users
               #
-              metadata_field_date_and_time:
+              coauthor_removal_notice:
                 type: info
-                label:
-                  en: Date & Time
-                  de: Datum & Uhrzeit
-                icon: clock
+                label: false
+                icon: alert
                 text:
-                  en: Add <strong>Date(s) & Time</strong> for your event; this should only be filled for concerts, performances, et cetera which are <strong>happening at only specific times</strong>.
-                  de: Füge <strong>Datum & Uhrzeit</strong> für dein Event hinzu; dies sollte ausschließlich für Konzerte, Performances, et cetera gemacht werden, welche <strong>nur zu bestimmten Zeitpunkten stattfinden</strong>.
-                theme: notice
+                  en: If you are a co-author, you can remove yourself from the project, but doing so will result in losing editing access to the project.
+                  de: Wenn du als Co-Autor:in eingetragen bist, kannst du dich selbst entfernen, aber dadurch verlierst du Editier-Zugriff für das Projekt.
+                theme: passive
 
-      metadata_column_side:
-        width: 1/2
-
-        # docs: https://getkirby.com/docs/reference/panel/sections
-        #
-        sections:
 
           # docs: https://getkirby.com/docs/reference/panel/sections/fields
           #
-          metadata_section_right:
+          metadata_section_terms:
             type: fields
             fields:
-
-              # docs: https://getkirby.com/docs/reference/panel/fields/info
-              #
-              metadata_field_info:
-                type: info
-                label:
-                  en: Multi-Language Support
-                  de: Mehrsprachenunterstützung
-                icon: translate
-                text:
-                  en: You can select the language for <strong>Intro (EN/DE)</strong> and <strong>Content (EN/DE)</strong> in the dropdown menu above, next to the page title.
-                  de: Wähle die Sprache für <strong>Intro (EN/DE)</strong> und <strong>Inhalt (EN/DE)</strong> im Dropdown-Menü neben/unter dem Seiten-Titel aus.
-                theme: info
 
               # docs: https://getkirby.com/docs/reference/panel/fields/toggle
               #
@@ -235,8 +224,8 @@ tabs:
   #
   intro_tab:
     label:
-      en: Intro (EN/DE)
-      de: Intro (EN/DE)
+      en: Short Description (EN/DE)
+      de: Kurzbeschreibung (EN/DE)
     icon: paragraph
 
     # docs: https://getkirby.com/docs/reference/panel/blueprints/page
@@ -266,8 +255,8 @@ tabs:
                 #  de: Mehrsprachenunterstützung
                 icon: translate
                 text:
-                  en: You can select the language for <strong>Intro (EN/DE)</strong> in the dropdown menu above, next to the page title.
-                  de: Wähle die Sprache für <strong>Intro (EN/DE)</strong> im Dropdown-Menü neben/unter dem Seiten-Titel aus.
+                  en: You can select the language for <strong>Short Description (EN/DE)</strong> in the dropdown menu above, next to the page title.
+                  de: Wähle die Sprache für <strong>Kurzbeschreibung (EN/DE)</strong> im Dropdown-Menü neben/unter dem Seiten-Titel aus.
                 theme: info
 
       intro_column_main:
@@ -288,10 +277,8 @@ tabs:
               intro_field_intro:
                 type: textarea
                 label:
-                  en: Intro
-                  de: Intro
-                  #en: Short Description
-                  #de: Kurzbeschreibung
+                  en: Short Description
+                  de: Kurzbeschreibung
                 buttons: false
                 maxlength: 500
                 required: true
@@ -337,6 +324,24 @@ tabs:
                   de: Wähle die Sprache für <strong>Inhalt (EN/DE)</strong> im Dropdown-Menü neben/unter dem Seiten-Titel aus.
                 theme: info
 
+          # docs: https://getkirby.com/docs/reference/panel/sections/fields
+          #
+          #content_section_blocks:
+          #  type: fields
+          #  fields:
+
+          #    # docs: https://getkirby.com/docs/reference/panel/fields/blocks
+          #    #
+          #    content_field_content:
+          #      type: blocks
+          #      fieldsets:
+          #        - heading
+          #        - text
+          #        - image
+          #        - list
+          #        - code
+          #      #required: true
+
       content_column_main:
         width: 2/3
 
@@ -357,8 +362,23 @@ tabs:
                 label:
                   en: Content
                   de: Inhalt
+                buttons:
+                  - headlines
+                  - '|'
+                  - bold
+                  - italic
+                  - code
+                  - '|'
+                  - link
+                  - email
+                  #- file
+                  - '|'
+                  - ul
+                  - ol
                 required: true
                 size: large
+                uploads:
+                  template: 2025 # does not work, neither with quotes nor without ?!
 
       content_column_side:
         width: 1/3

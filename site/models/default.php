@@ -1,4 +1,5 @@
 <?php
+
 class DefaultPage extends Page
 {
     // Checks if the current user is allowed to read the page
@@ -14,7 +15,7 @@ class DefaultPage extends Page
             return true;
         }
 
-        // Check if the current user is listed as a coauthor of the page
+        // Check if the current user is listed as a co-author of the page
         if (($user = $this->coauthor()->toUser()) && $user->is($this->kirby()->user())) {
             return true;
         }
@@ -23,4 +24,4 @@ class DefaultPage extends Page
         return false;
     }
 }
-?>
+

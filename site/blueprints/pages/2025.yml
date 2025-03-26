@@ -43,6 +43,26 @@ tabs:
 
           # docs: https://getkirby.com/docs/reference/panel/sections/fields
           #
+          metadata_section_info:
+            type: fields
+            fields:
+
+              # docs: https://getkirby.com/docs/reference/panel/fields/info
+              #
+              metadata_field_single_language:
+                type: info
+                label: false
+                #label:
+                #  en: Multi-Language Support
+                #  de: Mehrsprachenunterstützung
+                icon: translate
+                text:
+                  en: The <strong>Metadata</strong> fields can only be filled for the default language, i.e. <strong>DE</strong> in the dropdown menu above, next to the page title.
+                  de: Die <strong>Metadaten</strong> können nur für die Standard-Sprache eingetragen werden, d.h. <strong>DE</strong> im Dropdown-Menü neben/unter dem Seiten-Titel.
+                theme: notice
+
+          # docs: https://getkirby.com/docs/reference/panel/sections/fields
+          #
           metadata_section_authorship:
             type: fields
             fields:

@@ -20,7 +20,8 @@ fields:
     query: model.images
     multiple: false
     image:
-      back: black
+      #back: black
+      back: pattern
     uploads:
       #template: blocks/image
       template: 2025

@@ -22,7 +22,8 @@ fields:
     image:
       back: black
     uploads:
-      template: blocks/image
+      #template: blocks/image
+      template: 2025
     #when:
     #  location: kirby
   #src:
@@ -37,6 +38,7 @@ fields:
       en: Image content description for visually impaired people.
       de: Bildbeschreibung für Menschen mit visueller Beeinträchtigung.
     icon: title
+    required: true
   #caption:
   #  label: field.blocks.image.caption
   #  type: writer

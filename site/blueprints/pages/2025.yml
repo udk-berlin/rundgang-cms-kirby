@@ -300,6 +300,26 @@ tabs:
 
       # docs: https://getkirby.com/docs/reference/panel/sections/fields
       #
+      content_section_info:
+        type: fields
+        fields:
+
+          # docs: https://getkirby.com/docs/reference/panel/fields/info
+          #
+          content_field_multi_language:
+            type: info
+            label: false
+            #label:
+            #  en: Multi-Language Support
+            #  de: Mehrsprachenunterstützung
+            icon: translate
+            text:
+              en: You can select the language for <strong>Content (EN/DE)</strong> in the dropdown menu above, next to the page title.
+              de: Wähle die Sprache für <strong>Inhalt (EN/DE)</strong> im Dropdown-Menü neben/unter dem Seiten-Titel aus.
+            theme: info
+
+      # docs: https://getkirby.com/docs/reference/panel/sections/fields
+      #
       content_section_blocks:
         type: fields
         fields:

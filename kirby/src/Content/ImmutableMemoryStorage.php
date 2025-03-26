@@ -3,7 +3,6 @@
 namespace Kirby\Content;
 
 use Kirby\Cms\Language;
-use Kirby\Cms\ModelWithContent;
 use Kirby\Exception\LogicException;
 
 /**
@@ -15,28 +14,11 @@ use Kirby\Exception\LogicException;
  */
 class ImmutableMemoryStorage extends MemoryStorage
 {
-	public function __construct(
-		protected ModelWithContent $model,
-		protected ModelWithContent|null $nextModel = null
-	) {
-		parent::__construct($model);
-	}
-
-	/**
-	 * Immutable storage entries cannot be deleted
-	 *
-	 * @throws \Kirby\Exception\LogicException
-	 */
 	public function delete(VersionId $versionId, Language $language): void
 	{
-		$this->preventMutation('deleted');
+		$this->preventMutation();
 	}
 
-	/**
-	 * Immutable storage entries cannot be moved
-	 *
-	 * @throws \Kirby\Exception\LogicException
-	 */
 	public function move(
 		VersionId $fromVersionId,
 		Language $fromLanguage,
@@ -44,16 +26,7 @@ class ImmutableMemoryStorage extends MemoryStorage
 		Language|null $toLanguage = null,
 		Storage|null $toStorage = null
 	): void {
-		$this->preventMutation('moved');
-	}
-
-	/**
-	 * Returns the next state of the model if the
-	 * reference is given
-	 */
-	public function nextModel(): ModelWithContent|null
-	{
-		return $this->nextModel;
+		$this->preventMutation();
 	}
 
 	/**
@@ -61,30 +34,20 @@ class ImmutableMemoryStorage extends MemoryStorage
 	 *
 	 * @throws \Kirby\Exception\LogicException
 	 */
-	protected function preventMutation(string $mutation): void
+	protected function preventMutation(): void
 	{
 		throw new LogicException(
-			message: 'Storage for the ' . $this->model::CLASS_ALIAS . ' is immutable and cannot be ' . $mutation . '. Make sure to use the last alteration of the object.'
+			message: 'Storage for the ' . $this->model::CLASS_ALIAS . ' is immutable and cannot be deleted. Make sure to use the last alteration of the object.'
 		);
 	}
 
-	/**
-	 * Immutable storage entries cannot be touched
-	 *
-	 * @throws \Kirby\Exception\LogicException
-	 */
 	public function touch(VersionId $versionId, Language $language): void
 	{
-		$this->preventMutation('touched');
+		$this->preventMutation();
 	}
 
-	/**
-	 * Immutable storage entries cannot be updated
-	 *
-	 * @throws \Kirby\Exception\LogicException
-	 */
 	public function update(VersionId $versionId, Language $language, array $fields): void
 	{
-		$this->preventMutation('updated');
+		$this->preventMutation();
 	}
 }

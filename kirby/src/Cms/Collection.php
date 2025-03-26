@@ -387,18 +387,4 @@ class Collection extends BaseCollection
 			$map ?? fn ($object) => $object->toArray()
 		);
 	}
-
-	/**
-	 * Updates an object in the collection
-	 *
-	 * @return $this
-	 */
-	public function update(string|object $key, $object = null): static
-	{
-		if (is_object($key) === true) {
-			return $this->update($key->id(), $key);
-		}
-
-		return $this->set($key, $object);
-	}
 }

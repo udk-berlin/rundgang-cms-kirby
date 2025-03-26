@@ -418,7 +418,7 @@ abstract class Uuid implements Stringable
 	}
 
 	/**
-	 * @see self::render()
+	 * @see ::render
 	 */
 	public function __toString(): string
 	{

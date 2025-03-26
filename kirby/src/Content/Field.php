@@ -77,7 +77,7 @@ class Field implements Stringable
 	 * Simplifies the var_dump result
 	 * @codeCoverageIgnore
 	 *
-	 * @see self::toArray()
+	 * @see Field::toArray
 	 */
 	public function __debugInfo(): array
 	{
@@ -88,7 +88,7 @@ class Field implements Stringable
 	 * Makes it possible to simply echo
 	 * or stringify the entire object
 	 *
-	 * @see self::toString()
+	 * @see Field::toString
 	 */
 	public function __toString(): string
 	{
@@ -138,7 +138,7 @@ class Field implements Stringable
 	}
 
 	/**
-	 * @see self::parent()
+	 * @see Field::parent()
 	 */
 	public function model(): ModelWithContent|null
 	{

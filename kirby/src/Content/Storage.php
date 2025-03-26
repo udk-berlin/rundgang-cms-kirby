@@ -36,9 +36,9 @@ abstract class Storage
 	public function all(): Generator
 	{
 		foreach (Languages::ensure() as $language) {
-			foreach ($this->model->versions() as $version) {
-				if ($this->exists($version->id(), $language) === true) {
-					yield $version->id() => $language;
+			foreach (VersionId::all() as $versionId) {
+				if ($this->exists($versionId, $language) === true) {
+					yield $versionId => $language;
 				}
 			}
 		}
@@ -58,17 +58,6 @@ abstract class Storage
 		$toVersionId ??= $fromVersionId;
 		$toLanguage  ??= $fromLanguage;
 		$toStorage   ??= $this;
-
-		// don't copy content to the same version-language-storage combination
-		if ($this->isSameStorageLocation(
-			fromVersionId: $fromVersionId,
-			fromLanguage: $fromLanguage,
-			toVersionId: $toVersionId,
-			toLanguage: $toLanguage,
-			toStorage: $toStorage
-		)) {
-			return;
-		}
 
 		// read the existing fields
 		$content = $this->read($fromVersionId, $fromLanguage);
@@ -109,8 +98,8 @@ abstract class Storage
 	 */
 	public function deleteLanguage(Language $language): void
 	{
-		foreach ($this->model->versions() as $version) {
-			$this->delete($version->id(), $language);
+		foreach (VersionId::all() as $versionId) {
+			$this->delete($versionId, $language);
 		}
 	}
 
@@ -134,32 +123,6 @@ abstract class Storage
 		$fromStorage->copyAll($toStorage);
 
 		return $toStorage;
-	}
-
-	/**
-	 * Compare two version-language-storage combinations
-	 */
-	public function isSameStorageLocation(
-		VersionId $fromVersionId,
-		Language $fromLanguage,
-		VersionId|null $toVersionId = null,
-		Language|null $toLanguage = null,
-		Storage|null $toStorage = null
-	) {
-		// fallbacks to allow keeping the method call lean
-		$toVersionId ??= $fromVersionId;
-		$toLanguage  ??= $fromLanguage;
-		$toStorage   ??= $this;
-
-		if (
-			$fromVersionId->is($toVersionId) &&
-			$fromLanguage->is($toLanguage) &&
-			$this === $toStorage
-		) {
-			return true;
-		}
-
-		return false;
 	}
 
 	/**
@@ -189,17 +152,6 @@ abstract class Storage
 		$toVersionId ??= $fromVersionId;
 		$toLanguage  ??= $fromLanguage;
 		$toStorage   ??= $this;
-
-		// don't move content to the same version-language-storage combination
-		if ($this->isSameStorageLocation(
-			fromVersionId: $fromVersionId,
-			fromLanguage: $fromLanguage,
-			toVersionId: $toVersionId,
-			toLanguage: $toLanguage,
-			toStorage: $toStorage
-		)) {
-			return;
-		}
 
 		// copy content to new version
 		$this->copy(
@@ -233,13 +185,9 @@ abstract class Storage
 		Language $fromLanguage,
 		Language $toLanguage
 	): void {
-		foreach ($this->model->versions() as $version) {
-			if ($this->exists($version->id(), $fromLanguage) === true) {
-				$this->move(
-					$version->id(),
-					$fromLanguage,
-					toLanguage: $toLanguage
-				);
+		foreach (VersionId::all() as $versionId) {
+			if ($this->exists($versionId, $fromLanguage) === true) {
+				$this->move($versionId, $fromLanguage, toLanguage: $toLanguage);
 			}
 		}
 	}
@@ -264,20 +212,12 @@ abstract class Storage
 		$fields = $this->read($versionId, $language);
 		$fields = A::map(
 			$fields,
-			function ($value) use ($map) {
-				// skip fields with null values
-				if ($value === null) {
-					return null;
-				}
-
-				return str_replace(
-					array_keys($map),
-					array_values($map),
-					$value
-				);
-			}
+			fn ($field) => str_replace(
+				array_keys($map),
+				array_values($map),
+				$field
+			)
 		);
-
 		$this->update($versionId, $language, $fields);
 	}
 
@@ -295,9 +235,9 @@ abstract class Storage
 	 */
 	public function touchLanguage(Language $language): void
 	{
-		foreach ($this->model->versions() as $version) {
-			if ($this->exists($version->id(), $language) === true) {
-				$this->touch($version->id(), $language);
+		foreach (VersionId::all() as $versionId) {
+			if ($this->exists($versionId, $language) === true) {
+				$this->touch($versionId, $language);
 			}
 		}
 	}

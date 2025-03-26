@@ -3,14 +3,13 @@
 namespace Kirby\Cms;
 
 use Closure;
-use Kirby\Content\MemoryStorage;
-use Kirby\Content\VersionCache;
 use Kirby\Content\VersionId;
 use Kirby\Exception\DuplicateException;
 use Kirby\Exception\InvalidArgumentException;
 use Kirby\Exception\LogicException;
 use Kirby\Exception\NotFoundException;
 use Kirby\Filesystem\Dir;
+use Kirby\Form\Form;
 use Kirby\Toolkit\A;
 use Kirby\Toolkit\I18n;
 use Kirby\Toolkit\Str;
@@ -53,10 +52,9 @@ trait PageActions
 
 		return $this->commit('changeNum', ['page' => $this, 'num' => $num], function ($oldPage, $num) {
 			$newPage = $oldPage->clone([
-				'num'      => $num,
-				'dirname'  => null,
-				'root'     => null,
-				'template' => $oldPage->intendedTemplate()->name(),
+				'num'     => $num,
+				'dirname' => null,
+				'root'    => null
 			]);
 
 			// actually move the page on disk
@@ -71,6 +69,9 @@ trait PageActions
 					);
 				}
 			}
+
+			// overwrite the child in the parent page
+			static::updateParentCollections($newPage, 'set');
 
 			return $newPage;
 		});
@@ -105,10 +106,9 @@ trait PageActions
 		$arguments = ['page' => $this, 'slug' => $slug, 'languageCode' => null];
 		return $this->commit('changeSlug', $arguments, function ($oldPage, $slug) {
 			$newPage = $oldPage->clone([
-				'slug'     => $slug,
-				'dirname'  => null,
-				'root'     => null,
-				'template' => $oldPage->intendedTemplate()->name(),
+				'slug'    => $slug,
+				'dirname' => null,
+				'root'    => null
 			]);
 
 			// clear UUID cache recursively (for children and files as well)
@@ -122,18 +122,14 @@ trait PageActions
 					);
 				}
 
-				// hard reset for the version cache
-				// to avoid broken/overlapping page references
-				VersionCache::$cache = [];
-
 				// remove from the siblings
-				ModelState::update(
-					method: 'remove',
-					current: $oldPage,
-				);
+				static::updateParentCollections($oldPage, 'remove');
 
 				Dir::remove($oldPage->mediaRoot());
 			}
+
+			// overwrite the new page in the parent collection
+			static::updateParentCollections($newPage, 'set');
 
 			return $newPage;
 		});
@@ -170,7 +166,12 @@ trait PageActions
 				$slug = null;
 			}
 
-			return $page->save(['slug' => $slug], $languageCode);
+			$newPage = $page->save(['slug' => $slug], $languageCode);
+
+			// overwrite the updated page in the parent collection
+			static::updateParentCollections($newPage, 'set');
+
+			return $newPage;
 		});
 	}
 
@@ -291,7 +292,12 @@ trait PageActions
 
 		return $this->commit('changeTemplate', ['page' => $this, 'template' => $template], function ($oldPage, $template) {
 			// convert for new template/blueprint
-			return $oldPage->convertTo($template);
+			$page = $oldPage->convertTo($template);
+
+			// update the parent collection
+			static::updateParentCollections($page, 'set');
+
+			return $page;
 		});
 	}
 
@@ -316,7 +322,12 @@ trait PageActions
 		$arguments = ['page' => $this, 'title' => $title, 'languageCode' => $languageCode];
 
 		return $this->commit('changeTitle', $arguments, function ($page, $title, $languageCode) {
-			return $page->save(['title' => $title], $languageCode);
+			$page = $page->save(['title' => $title], $languageCode);
+
+			// flush the parent cache to get children and drafts right
+			static::updateParentCollections($page, 'set');
+
+			return $page;
 		});
 	}
 
@@ -334,12 +345,50 @@ trait PageActions
 		array $arguments,
 		Closure $callback
 	): mixed {
-		$commit = new ModelCommit(
-			model: $this,
-			action: $action
+		$kirby = $this->kirby();
+
+		// store copy of the model to be passed
+		// to the `after` hook for comparison
+		$old = $this->hardcopy();
+
+		// check page rules
+		$this->rules()->$action(...array_values($arguments));
+
+		// run `before` hook and pass all arguments;
+		// the very first argument (which should be the model)
+		// is modified by the return value from the hook (if any returned)
+		$appliedTo = array_key_first($arguments);
+		$arguments[$appliedTo] = $kirby->apply(
+			'page.' . $action . ':before',
+			$arguments,
+			$appliedTo
 		);
 
-		return $commit->call($arguments, $callback);
+		// check page rules again, after the hook got applied
+		$this->rules()->$action(...array_values($arguments));
+
+		// run the main action closure
+		$result = $callback(...array_values($arguments));
+
+		// determine arguments for `after` hook depending on the action
+		$argumentsAfter = match ($action) {
+			'create'    => ['page' => $result],
+			'duplicate' => ['duplicatePage' => $result, 'originalPage' => $old],
+			'delete'    => ['status' => $result, 'page' => $old],
+			default     => ['newPage' => $result, 'oldPage' => $old]
+		};
+
+		// run `after` hook and apply return to action result
+		// (first argument, usually the new model) if anything returned
+		$result = $kirby->apply(
+			'page.' . $action . ':after',
+			$argumentsAfter,
+			array_key_first($argumentsAfter)
+		);
+
+		$kirby->cache('pages')->flush();
+
+		return $result;
 	}
 
 	/**
@@ -401,11 +450,7 @@ trait PageActions
 		);
 
 		// add copy to siblings
-		ModelState::update(
-			method: 'append',
-			current: $copy,
-			parent: $parentModel
-		);
+		static::updateParentCollections($copy, 'append', $parentModel);
 
 		return $copy;
 	}
@@ -415,39 +460,40 @@ trait PageActions
 	 */
 	public static function create(array $props): Page
 	{
-		$props = self::normalizeProps($props);
+		// clean up the slug
+		$props['slug']      = Url::slug($props['slug'] ?? $props['content']['title'] ?? null);
+		$props['template']  = $props['model'] = strtolower($props['template'] ?? 'default');
+		$props['isDraft'] ??= $props['draft'] ?? true;
 
-		// create the instance without content or translations
-		// to avoid that the page is created in memory storage
-		$page = static::factory([
-			...$props,
-			'content'      => null,
-			'translations' => null
-		]);
+		// make sure that a UUID gets generated and
+		// added to content right away
+		$props['content'] ??= [];
 
-		// merge the content with the defaults
-		$props['content'] = [
-			...$page->createDefaultContent(),
-			...$props['content'],
-		];
-
-		// make sure that a UUID gets generated
-		// and added to content right away
 		if (Uuids::enabled() === true) {
 			$props['content']['uuid'] ??= Uuid::generate();
 		}
 
-		// keep the initial storage class
-		$storage = $page->storage()::class;
+		// create a temporary page object
+		$page = Page::factory($props);
 
-		// make sure that the temporary page is stored in memory
-		$page->changeStorage(MemoryStorage::class);
+		// always create pages in the default language
+		$languageCode = match ($page->kirby()->multilang()) {
+			true  => $page->kirby()->defaultLanguage()->code(),
+			false => null
+		};
+
+		// create a form for the page
+		// use always default language to fill form with default values
+		$form = Form::for(
+			$page,
+			[
+				'language' => $languageCode,
+				'values'   => $props['content']
+			]
+		);
 
 		// inject the content
-		$page->setContent($props['content']);
-
-		// inject the translations
-		$page->setTranslations($props['translations'] ?? null);
+		$page = $page->clone(['content' => $form->strings(true)]);
 
 		// run the hooks and creation action
 		$page = $page->commit(
@@ -456,9 +502,14 @@ trait PageActions
 				'page'  => $page,
 				'input' => $props
 			],
-			function ($page) use ($storage) {
-				// move to final storage
-				return $page->changeStorage($storage);
+			function ($page, $props) use ($languageCode) {
+				// write the content file
+				$page = $page->save($page->content()->toArray(), $languageCode);
+
+				// flush the parent cache to get children and drafts right
+				static::updateParentCollections($page, 'append');
+
+				return $page;
 			}
 		);
 
@@ -483,7 +534,7 @@ trait PageActions
 			'site'   => $this->site(),
 		];
 
-		$modelClass = static::$models[$props['template'] ?? null] ?? static::class;
+		$modelClass = Page::$models[$props['template'] ?? null] ?? Page::class;
 		return $modelClass::create($props);
 	}
 
@@ -503,7 +554,8 @@ trait PageActions
 				// the $format needs to produce only digits,
 				// so it can be converted to integer below
 				$format = $mode === 'date' ? 'Ymd' : 'YmdHi';
-				$field  = $this->content('default')->get('date');
+				$lang   = $this->kirby()->defaultLanguage() ?? null;
+				$field  = $this->content($lang)->get('date');
 				$date   = $field->isEmpty() ? 'now' : $field;
 				return (int)date($format, strtotime($date));
 			case 'default':
@@ -536,7 +588,7 @@ trait PageActions
 
 				$template = Str::template($mode, [
 					'kirby' => $app,
-					'page'  => $this,
+					'page'  => $app->page($this->id()),
 					'site'  => $app->site(),
 				], ['fallback' => '']);
 
@@ -563,10 +615,26 @@ trait PageActions
 				$child->delete(true);
 			}
 
-			// delete all versions,
-			// the plain text storage handler will then clean
-			// up the directory if it's empty
-			$page->versions()->delete();
+			// actually remove the page from disc
+			if ($page->exists() === true) {
+				// delete all public media files
+				Dir::remove($page->mediaRoot());
+
+				// delete the content folder for this page
+				Dir::remove($page->root());
+
+				// if the page is a draft and the _drafts folder
+				// is now empty. clean it up.
+				if ($page->isDraft() === true) {
+					$draftsDir = dirname($page->root());
+
+					if (Dir::isEmpty($draftsDir) === true) {
+						Dir::remove($draftsDir);
+					}
+				}
+			}
+
+			static::updateParentCollections($page, 'remove');
 
 			if ($page->isDraft() === false) {
 				$page->resortSiblingsAfterUnlisting();
@@ -656,21 +724,6 @@ trait PageActions
 		});
 	}
 
-	protected static function normalizeProps(array $props): array
-	{
-		$content  = $props['content']  ?? [];
-		$template = $props['template'] ?? 'default';
-
-		return [
-			...$props,
-			'content'  => $content,
-			'isDraft'  => $props['isDraft'] ?? $props['draft'] ?? true,
-			'model'    => $props['model']   ?? $template,
-			'slug'     => Url::slug($props['slug'] ?? $content['title'] ?? null),
-			'template' => $template,
-		];
-	}
-
 	/**
 	 * @return $this|static
 	 * @throws \Kirby\Exception\LogicException If the folder cannot be moved
@@ -683,9 +736,8 @@ trait PageActions
 		}
 
 		$page = $this->clone([
-			'isDraft'  => false,
-			'root'     => null,
-			'template' => $this->intendedTemplate()->name(),
+			'isDraft' => false,
+			'root'    => null
 		]);
 
 		// actually do it on disk
@@ -812,6 +864,23 @@ trait PageActions
 	}
 
 	/**
+	 * Stores the content on disk
+	 * @internal
+	 */
+	public function save(
+		array|null $data = null,
+		string|null $languageCode = null,
+		bool $overwrite = false
+	): static {
+		$page = parent::save($data, $languageCode, $overwrite);
+
+		// overwrite the updated page in the parent collection
+		static::updateParentCollections($page, 'set');
+
+		return $page;
+	}
+
+	/**
 	 * Convert a page from listed or
 	 * unlisted to draft.
 	 * @internal
@@ -826,11 +895,10 @@ trait PageActions
 		}
 
 		$page = $this->clone([
-			'isDraft'  => true,
-			'num'      => null,
-			'dirname'  => null,
-			'root'     => null,
-			'template' => $this->intendedTemplate()->name(),
+			'isDraft' => true,
+			'num'     => null,
+			'dirname' => null,
+			'root'    => null
 		]);
 
 		// actually do it on disk
@@ -879,6 +947,9 @@ trait PageActions
 			$page = $page->changeNum($page->createNum());
 		}
 
+		// overwrite the updated page in the parent collection
+		static::updateParentCollections($page, 'set');
+
 		return $page;
 	}
 
@@ -886,18 +957,28 @@ trait PageActions
 	 * Updates parent collections with the new page object
 	 * after a page action
 	 *
-	 * @deprecated 5.0.0 Use ModelState::update instead
+	 * @param \Kirby\Cms\Page $page
+	 * @param string $method Method to call on the parent collections
 	 */
 	protected static function updateParentCollections(
-		Page $page,
-		string|false $method,
-		Page|Site|null $parentModel = null
+		$page,
+		string $method,
+		$parentModel = null
 	): void {
-		ModelState::update(
-			method: $method,
-			current: $page,
-			next: $page,
-			parent: $parentModel
-		);
+		$parentModel ??= $page->parentModel();
+
+		// method arguments depending on the called method
+		$args = $method === 'remove' ? [$page] : [$page->id(), $page];
+
+		if ($page->isDraft() === true) {
+			$parentModel->drafts()->$method(...$args);
+		} else {
+			$parentModel->children()->$method(...$args);
+		}
+
+		// update the childrenAndDrafts() cache if it is initialized
+		if ($parentModel->childrenAndDrafts !== null) {
+			$parentModel->childrenAndDrafts()->$method(...$args);
+		}
 	}
 }

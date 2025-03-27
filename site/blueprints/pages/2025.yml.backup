@@ -1,3 +1,16 @@
+/**
+ * Rundgang 2025 Page Blueprint
+ * ============================
+ *
+ * IMPORTANT: BACKUP CONFIGURATION
+ * -------------------------------
+ *
+ * This blueprint serves as a fallback configuration for page creation
+ * in the Rundgang 2025 CMS when dynamic JSON-based category generation
+ * is not needed.
+ *
+ **/
+
 ---
 title: Rundgang 2025
 

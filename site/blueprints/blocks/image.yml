@@ -23,8 +23,7 @@ fields:
       #back: black
       back: pattern
     uploads:
-      #template: blocks/image
-      template: 2025
+      template: blocks/image
     #when:
     #  location: kirby
   #src:

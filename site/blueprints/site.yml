@@ -34,11 +34,11 @@ columns:
               de: Rundgang CMS
             text:
               en: |
-                Welcome <strong>{{ user }}</strong>,
+                Welcome <strong>{{ user.name }}</strong>,
 
                 With kind regards.
               de: |
-                Willkommen <strong>{{ user }}</strong>,
+                Willkommen <strong>{{ user.name }}</strong>,
 
                 Mit freundlichen Grüßen.
             theme: text

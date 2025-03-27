@@ -1,5 +1,5 @@
 ---
-title: Rundgang 2026
+title: Rundgang 2025
 
 # info: https://getkirby.com/releases/5/view-buttons
 #
@@ -202,9 +202,9 @@ tabs:
                     help:
                       en: "The date of the event."
                       de: "Das Datum des Events."
-                    default: "2026-07-17" # needs to be quoted to work ?!
-                    min: 2026-07-17 # does not work, neither with quotes nor without ?!
-                    max: 2026-07-19 # does not work, neither with quotes nor without ?!
+                    default: "2025-07-18" # needs to be quoted to work ?!
+                    min: 2025-07-18 # does not work, neither with quotes nor without ?!
+                    max: 2025-07-20 # does not work, neither with quotes nor without ?!
                     required: true
                     translate: false
 
@@ -440,7 +440,7 @@ tabs:
     #            required: true
     #            size: large
     #            uploads:
-    #              template: 2026 # does not work, neither with quotes nor without ?!
+    #              template: 2025 # does not work, neither with quotes nor without ?!
 
     #  content_column_side:
     #    width: 1/3
@@ -461,7 +461,7 @@ tabs:
     #          de: "Folgende Bilddateien können hochgeladen werden: <code>jpg</code>, <code>png</code>"
     #        link: false # does not exist for file sections ?!
     #        max: 50
-    #        template: 2026
+    #        template: 2025
 
 # docs: https://getkirby.com/docs/reference/panel/blueprints/page#options
 #

@@ -1,0 +1,81 @@
+---
+# docs: https://getkirby.com/docs/reference/panel/blueprints/file
+#
+title:
+  en: Images
+  de: Bilder
+
+# info: https://getkirby.com/releases/5/view-buttons
+#
+buttons:
+  preview: true
+  settings: true
+  languages: true
+
+# docs: https://getkirby.com/docs/reference/panel/blueprints/file#accept
+#
+accept:
+  #extension:
+  #  - jpeg
+  #  - jpg
+  #  - png
+  mime:
+    - image/jpeg
+    - image/png
+  #type: image
+
+# docs: https://getkirby.com/docs/reference/panel/blueprints/file#optimize-uploaded-images-create
+#
+create:
+  width: 1500
+  height: 1500
+  #crop: true
+
+# docs: https://getkirby.com/docs/reference/panel/blueprints/file#en-disable-setting-focus-in-panel
+#
+focus: false
+
+# docs: https://getkirby.com/docs/reference/panel/blueprints/file#image-options
+#
+image:
+  #cover: true
+  #ratio: 1/1
+  back: pattern
+
+# docs: https://getkirby.com/docs/reference/panel/fields/files
+#
+fields:
+  alt:
+    type: text
+    label:
+      en: Alt Text
+      de: Alt Text
+    help:
+      en: Image content description for visually impaired people.
+      de: Bildbeschreibung für Menschen mit visueller Beeinträchtigung.
+    required: true
+
+# docs: https://getkirby.com/docs/reference/panel/blueprints/file#options
+#
+# NOTE: uncomment complete `options` block to prevent editing/modification
+# of files after publication deadline and/or after the Rundgang is over !!
+#
+#options:
+#  changeName:
+#    "*": false
+#    admin: true
+#  changeTemplate:
+#    "*": false
+#    admin: true
+#  delete:
+#    "*": false
+#    admin: true
+#  #read:
+#  #  "*": false
+#  #  admin: true
+#  replace:
+#    "*": false
+#    admin: true
+#  update:
+#    "*": false
+#    admin: true

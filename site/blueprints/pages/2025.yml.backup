@@ -47,6 +47,9 @@ tabs:
     # docs: https://getkirby.com/docs/reference/panel/blueprints/page
     #
     columns:
+
+      # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+      #
       metadata_column_main:
         width: 1/1
 
@@ -158,6 +161,9 @@ tabs:
     # docs: https://getkirby.com/docs/reference/panel/blueprints/page
     #
     columns:
+
+      # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+      #
       event_column_main:
         width: 1/1
 
@@ -265,6 +271,8 @@ tabs:
     #
     columns:
 
+      # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+      #
       intro_column_banner:
         width: 1/1
 
@@ -292,6 +300,8 @@ tabs:
                   de: Wähle die Sprache für <strong>Kurzbeschreibung (EN/DE)</strong> im Dropdown-Menü neben/unter dem Seiten-Titel aus.
                 theme: info
 
+      # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+      #
       intro_column_main:
         width: 1/1
 
@@ -390,6 +400,8 @@ tabs:
     #
     #columns:
 
+    #  # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+    #  #
     #  content_column_banner:
     #    width: 1/1
 
@@ -417,6 +429,8 @@ tabs:
     #              de: Wähle die Sprache für <strong>Inhalt (EN/DE)</strong> im Dropdown-Menü neben/unter dem Seiten-Titel aus.
     #            theme: info
 
+    #  # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+    #  #
     #  content_column_main:
     #    width: 2/3
 
@@ -455,6 +469,8 @@ tabs:
     #            uploads:
     #              template: 2025 # does not work, neither with quotes nor without ?!
 
+    #  # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+    #  #
     #  content_column_side:
     #    width: 1/3
 

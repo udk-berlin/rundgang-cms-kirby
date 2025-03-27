@@ -65,9 +65,6 @@ jobs:
             --devices \
             --specials \
             --chown=www-data:www-data \
-            --delete \
-            --exclude=/assets \
-            --exclude=/content \
             /home/deploy/rundgang-cms-kirby/ \
             /var/www/kirby
 

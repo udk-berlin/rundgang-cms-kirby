@@ -151,7 +151,7 @@ return [
                                     'type' => 'users',
                                     'label' => [
                                         'en' => 'Co-Authors (optional)',
-                                        'de' => 'Co-Author:innen (optional)',
+                                        'de' => 'Co-Autor:innen (optional)',
                                     ],
                                     'help' => [
                                         'en' => "Add co-authors to <strong>{{ page.title.short(30) }}</strong> to grant them editing access. You can search for names or email addresses of other institution members.",

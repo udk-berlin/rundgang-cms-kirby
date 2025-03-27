@@ -7,16 +7,19 @@ from collections import defaultdict
 import logging
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+)
+
 
 def process_sheet(
     df: pd.DataFrame,
     sheet_name: str,
-    university_name: str = "Universität der Künste Berlin"
+    university_name: str = "Universität der Künste Berlin",
 ) -> Dict[str, Any]:
     """
     Process a single dataframe (sheet) and convert to nested structure
-    
+
     Parameters:
     -----------
     df : pandas.DataFrame
@@ -25,7 +28,7 @@ def process_sheet(
         Name of the sheet for logging and default faculty name
     university_name : str
         Name of the institution/university
-        
+
     Returns:
     --------
     dict
@@ -48,11 +51,17 @@ def process_sheet(
             institute_col = actual_col
         elif "studiengang" in col_lower:
             course_col = actual_col
-        elif "fachgebiet" in col_lower or "fachklasse" in col_lower or "klasse" in col_lower:
+        elif (
+            "fachgebiet" in col_lower
+            or "fachklasse" in col_lower
+            or "klasse" in col_lower
+        ):
             class_col = actual_col
 
-    logging.info(f"Sheet {sheet_name} - Detected columns: faculty={faculty_col}, institute={institute_col}, "
-                 f"course={course_col}, class={class_col}")
+    logging.info(
+        f"Sheet {sheet_name} - Detected columns: faculty={faculty_col}, institute={institute_col}, "
+        f"course={course_col}, class={class_col}"
+    )
 
     # Process faculty data
     faculty_name = sheet_name
@@ -66,11 +75,7 @@ def process_sheet(
             pass
 
     # Create faculty object with the faculty name as the key
-    faculty_data = {
-        "type": "faculty",
-        "parent": university_name,
-        "children": {}
-    }
+    faculty_data = {"type": "faculty", "parent": university_name, "children": {}}
 
     # Handle cases where faculty name comes from column:
     if faculty_col and len(df[faculty_col].dropna().unique()) > 1:
@@ -82,18 +87,14 @@ def process_sheet(
 
         # Create a placeholder for items with missing faculty
         missing_faculty_name = f"{sheet_name} (unspecified faculty)"
-        missing_faculty = {
-            "type": "faculty",
-            "parent": university_name,
-            "children": {}
-        }
+        missing_faculty = {"type": "faculty", "parent": university_name, "children": {}}
 
         # First, process rows with faculty values
         for faculty_name in faculties:
             current_faculty = {
                 "type": "faculty",
                 "parent": university_name,
-                "children": {}
+                "children": {},
             }
 
             # Filter for this faculty
@@ -101,7 +102,9 @@ def process_sheet(
 
             # Process institutes for this faculty
             if institute_col:
-                institutes = process_institutes(faculty_df, institute_col, course_col, class_col, faculty_name)
+                institutes = process_institutes(
+                    faculty_df, institute_col, course_col, class_col, faculty_name
+                )
                 if institutes:
                     current_faculty["children"] = institutes
 
@@ -112,7 +115,13 @@ def process_sheet(
 
         if not missing_faculty_df.empty:
             if institute_col:
-                institutes = process_institutes(missing_faculty_df, institute_col, course_col, class_col, missing_faculty_name)
+                institutes = process_institutes(
+                    missing_faculty_df,
+                    institute_col,
+                    course_col,
+                    class_col,
+                    missing_faculty_name,
+                )
                 if institutes:
                     missing_faculty["children"] = institutes
 
@@ -124,11 +133,14 @@ def process_sheet(
     else:
         # Single faculty - process its institutes
         if institute_col:
-            institutes = process_institutes(df, institute_col, course_col, class_col, faculty_name)
+            institutes = process_institutes(
+                df, institute_col, course_col, class_col, faculty_name
+            )
             if institutes:
                 faculty_data["children"] = institutes
 
         return {faculty_name: faculty_data}
+
 
 def process_institutes(df, institute_col, course_col, class_col, parent_name):
     """
@@ -146,7 +158,7 @@ def process_institutes(df, institute_col, course_col, class_col, parent_name):
             institute_data = {
                 "type": "institute",
                 "parent": parent_name,
-                "children": {}
+                "children": {},
             }
 
             # Filter for this institute
@@ -154,7 +166,9 @@ def process_institutes(df, institute_col, course_col, class_col, parent_name):
 
             # Process courses
             if course_col:
-                courses = process_courses(institute_df, course_col, class_col, institute_name)
+                courses = process_courses(
+                    institute_df, course_col, class_col, institute_name
+                )
                 if courses:
                     institute_data["children"] = courses
 
@@ -169,10 +183,12 @@ def process_institutes(df, institute_col, course_col, class_col, parent_name):
             missing_institute = {
                 "type": "institute",
                 "parent": parent_name,
-                "children": {}
+                "children": {},
             }
 
-            courses = process_courses(missing_institute_df, course_col, class_col, missing_institute_name)
+            courses = process_courses(
+                missing_institute_df, course_col, class_col, missing_institute_name
+            )
             if courses:
                 missing_institute["children"] = courses
 
@@ -182,11 +198,7 @@ def process_institutes(df, institute_col, course_col, class_col, parent_name):
     else:
         # No institute column - create a default institute
         default_institute_name = "Default Institute"
-        default_institute = {
-            "type": "institute",
-            "parent": parent_name,
-            "children": {}
-        }
+        default_institute = {"type": "institute", "parent": parent_name, "children": {}}
 
         # Process courses directly
         if course_col:
@@ -199,6 +211,7 @@ def process_institutes(df, institute_col, course_col, class_col, parent_name):
                 institutes_dict[default_institute_name] = default_institute
 
     return institutes_dict
+
 
 def process_courses(df, course_col, class_col, parent_name):
     """
@@ -213,11 +226,7 @@ def process_courses(df, course_col, class_col, parent_name):
         courses = df[df[course_col].notna()][course_col].unique()
 
         for course_name in courses:
-            course_data = {
-                "type": "course",
-                "parent": parent_name,
-                "children": {}
-            }
+            course_data = {"type": "course", "parent": parent_name, "children": {}}
 
             # Filter for this course
             course_df = df[df[course_col] == course_name]
@@ -236,11 +245,7 @@ def process_courses(df, course_col, class_col, parent_name):
         if not missing_course_df.empty and class_col:
             # Create a placeholder course for items with missing course
             missing_course_name = "Unspecified Course"
-            missing_course = {
-                "type": "course",
-                "parent": parent_name,
-                "children": {}
-            }
+            missing_course = {"type": "course", "parent": parent_name, "children": {}}
 
             classes = process_classes(missing_course_df, class_col, missing_course_name)
             if classes:
@@ -252,11 +257,7 @@ def process_courses(df, course_col, class_col, parent_name):
     else:
         # No course column - create a default course
         default_course_name = "Default Course"
-        default_course = {
-            "type": "course",
-            "parent": parent_name,
-            "children": {}
-        }
+        default_course = {"type": "course", "parent": parent_name, "children": {}}
 
         # Process classes directly
         if class_col:
@@ -270,6 +271,7 @@ def process_courses(df, course_col, class_col, parent_name):
 
     return courses_dict
 
+
 def process_classes(df, class_col, parent_name):
     """
     Helper function to process classes for a course
@@ -281,11 +283,13 @@ def process_classes(df, class_col, parent_name):
         classes = df[class_col].dropna().unique()
 
         for class_name in classes:
-            if pd.notna(class_name) and class_name.strip():  # Check if value is not empty or whitespace
+            if (
+                pd.notna(class_name) and class_name.strip()
+            ):  # Check if value is not empty or whitespace
                 class_data = {
                     "type": "class",
                     "parent": parent_name,
-                    "children": {}  # Empty children dict for leaf nodes
+                    "children": {},  # Empty children dict for leaf nodes
                 }
                 classes_dict[class_name] = class_data
     else:
@@ -295,17 +299,18 @@ def process_classes(df, class_col, parent_name):
             classes_dict[default_class_name] = {
                 "type": "class",
                 "parent": parent_name,
-                "children": {}  # Empty children dict for leaf nodes
+                "children": {},  # Empty children dict for leaf nodes
             }
 
     return classes_dict
+
 
 def excel_to_nested_json(
     excel_file: str,
     output_file: str = None,
     sheets: List[str] = None,
     indent: int = 2,
-    university_name: str = "Universität der Künste Berlin"
+    university_name: str = "Universität der Künste Berlin",
 ) -> Dict[str, Any]:
     """
     Convert Excel file to nested JSON following the hierarchy:
@@ -353,14 +358,16 @@ def excel_to_nested_json(
                 sheet_index = available_sheets_lower.index(sheet_lower)
                 sheets_to_process.append(available_sheets[sheet_index])
             else:
-                raise ValueError(f"Sheet '{sheet}' not found in Excel file. Available sheets: {available_sheets}")
+                raise ValueError(
+                    f"Sheet '{sheet}' not found in Excel file. Available sheets: {available_sheets}"
+                )
 
     # Create the main structure with university name as the key
     result = {
         university_name: {
             "type": "institution",
             "parent": None,  # Top-level has no parent
-            "children": {}
+            "children": {},
         }
     }
 
@@ -383,20 +390,33 @@ def excel_to_nested_json(
 
     # Save to file if output_file is specified
     if output_file:
-        with open(output_file, 'w', encoding='utf-8') as f:
+        with open(output_file, "w", encoding="utf-8") as f:
             json.dump(result, f, indent=indent, ensure_ascii=False)
         logging.info(f"Nested JSON data saved to {output_file}")
 
     return result
 
+
 def main():
-    parser = argparse.ArgumentParser(description="Convert Excel file to nested JSON with keys as node names")
+    parser = argparse.ArgumentParser(
+        description="Convert Excel file to nested JSON with keys as node names"
+    )
     parser.add_argument("excel_file", help="Path to the Excel file")
     parser.add_argument("-o", "--output", help="Path to the output JSON file")
-    parser.add_argument("-s", "--sheets", nargs="+", help="Specific sheet names to convert (default: all sheets)")
-    parser.add_argument("--indent", type=int, default=2, help="Number of spaces for indentation")
-    parser.add_argument("--university", default="Universität der Künste Berlin",
-                      help="University/institution name")
+    parser.add_argument(
+        "-s",
+        "--sheets",
+        nargs="+",
+        help="Specific sheet names to convert (default: all sheets)",
+    )
+    parser.add_argument(
+        "--indent", type=int, default=2, help="Number of spaces for indentation"
+    )
+    parser.add_argument(
+        "--university",
+        default="Universität der Künste Berlin",
+        help="University/institution name",
+    )
     parser.add_argument("--debug", action="store_true", help="Enable debug logging")
 
     args = parser.parse_args()
@@ -411,20 +431,19 @@ def main():
 
     try:
         excel_to_nested_json(
-            args.excel_file,
-            args.output,
-            args.sheets,
-            args.indent,
-            args.university
+            args.excel_file, args.output, args.sheets, args.indent, args.university
         )
         logging.info("Conversion completed successfully!")
     except Exception as e:
         logging.error(f"Error: {e}")
         import traceback
+
         logging.error(traceback.format_exc())
         return 1
 
     return 0
 
+
 if __name__ == "__main__":
     exit(main())
+

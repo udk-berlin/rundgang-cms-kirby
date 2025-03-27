@@ -5,8 +5,13 @@
 // docs: https://getkirby.com/docs/reference/panel/blueprints/page
 
 // Load your JSON file
-$json = file_get_contents(kirby()->root('assets') . '/exportedNested.json');
-$data = json_decode($json, true);
+// by importing the fi;e this way we can name the json file anything we want
+// it will simply load the first json file in the assets/json directory
+$files = glob(kirby()->root('assets') . '/json/*.json');
+if (!empty($files)) {
+    $json = file_get_contents($files[0]);
+    $data = json_decode($json, true);
+}
 $options = [];
 
 // Flatten the nested structure

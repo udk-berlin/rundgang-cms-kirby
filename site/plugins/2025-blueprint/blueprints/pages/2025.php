@@ -80,6 +80,7 @@ return [
     # guide: https://getkirby.com/docs/guide/blueprints/layout
     #
     'tabs' => [
+
         # guide: https://getkirby.com/docs/guide/blueprints/layout
         #
         'metadata_tab' => [
@@ -92,17 +93,22 @@ return [
             # docs: https://getkirby.com/docs/reference/panel/blueprints/page
             #
             'columns' => [
+
+                # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+                #
                 'metadata_column_main' => [
                     'width' => '1/1',
 
                     # docs: https://getkirby.com/docs/reference/panel/sections
                     #
                     'sections' => [
+
                         # docs: https://getkirby.com/docs/reference/panel/sections/fields
                         #
                         'metadata_section_info' => [
                             'type' => 'fields',
                             'fields' => [
+
                                 # docs: https://getkirby.com/docs/reference/panel/fields/info
                                 #
                                 'metadata_field_single_language' => [
@@ -117,11 +123,13 @@ return [
                                 ],
                             ],
                         ],
+
                         # docs: https://getkirby.com/docs/reference/panel/sections/fields
                         #
                         'metadata_section_authorship' => [
                             'type' => 'fields',
                             'fields' => [
+
                                 # docs: https://getkirby.com/docs/reference/panel/fields/users
                                 #
                                 'author' => [
@@ -136,6 +144,7 @@ return [
                                     'required' => true,
                                     'translate' => false,
                                 ],
+
                                 # docs: https://getkirby.com/docs/reference/panel/fields/users
                                 #
                                 'coauthor' => [
@@ -155,6 +164,7 @@ return [
                                     'search' => true,
                                     'translate' => false,
                                 ],
+
                                 # docs: https://getkirby.com/docs/reference/panel/fields/users
                                 #
                                 'coauthor_removal_notice' => [
@@ -169,9 +179,13 @@ return [
                                 ],
                             ],
                         ],
+
+                        # docs: https://getkirby.com/docs/reference/panel/sections/fields
+                        #
                         'metadata_section_category' => [
                             'type' => 'fields',
                             'fields' => [
+
                                 # docs: https://getkirby.com/docs/reference/panel/fields/multiselect
                                 #
                                 'categories' => [
@@ -191,13 +205,15 @@ return [
                                 ],
                             ],
                         ],
+
                         # docs: https://getkirby.com/docs/reference/panel/sections/fields
                         #
                         'metadata_section_terms' => [
                             'type' => 'fields',
                             'fields' => [
-                                # docs: https://getkirby.com/docs/reference/panel/fields/toggle
 
+                                # docs: https://getkirby.com/docs/reference/panel/fields/toggle
+                                #
                                 'metadata_field_terms' => [
                                     'type' => 'toggle',
                                     'label' => [
@@ -235,17 +251,22 @@ return [
             # docs: https://getkirby.com/docs/reference/panel/blueprints/page
             #
             'columns' => [
+
+                # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+                #
                 'event_column_main' => [
                     'width' => '1/1',
 
                     # docs: https://getkirby.com/docs/reference/panel/sections
                     #
                     'sections' => [
+
                         # docs: https://getkirby.com/docs/reference/panel/sections/fields
                         #
                         'event_section' => [
                             'type' => 'fields',
                             'fields' => [
+
                                 # docs: https://getkirby.com/docs/reference/panel/fields/info
                                 #
                                 'event_field_info' => [
@@ -258,6 +279,7 @@ return [
                                     ],
                                     'theme' => 'notice',
                                 ],
+
                                 # docs: https://getkirby.com/docs/reference/panel/fields/structure
                                 #
                                 'event_field_date_time' => [
@@ -282,6 +304,7 @@ return [
                                         ],
                                     ],
                                     'fields' => [
+
                                         # docs: https://getkirby.com/docs/reference/panel/fields/date
                                         #
                                         'event_structure_field_date' => [
@@ -300,6 +323,7 @@ return [
                                             'required' => true,
                                             'translate' => false,
                                         ],
+
                                         # docs: https://getkirby.com/docs/reference/panel/fields/time
                                         #
                                         'event_structure_field_from' => [
@@ -318,6 +342,7 @@ return [
                                             'required' => true,
                                             'translate' => false,
                                         ],
+
                                         # docs: https://getkirby.com/docs/reference/panel/fields/time
                                         #
                                         'event_structure_field_to' => [
@@ -357,17 +382,22 @@ return [
             # docs: https://getkirby.com/docs/reference/panel/blueprints/page
             #
             'columns' => [
+
+                # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+                #
                 'intro_column_banner' => [
                     'width' => '1/1',
 
                     # docs: https://getkirby.com/docs/reference/panel/sections
                     #
                     'sections' => [
+
                         # docs: https://getkirby.com/docs/reference/panel/sections/fields
                         #
                         'intro_section_info' => [
                             'type' => 'fields',
                             'fields' => [
+
                                 # docs: https://getkirby.com/docs/reference/panel/fields/info
                                 #
                                 'intro_field_multi_language' => [
@@ -384,17 +414,22 @@ return [
                         ],
                     ],
                 ],
+
+                # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+                #
                 'intro_column_main' => [
                     'width' => '1/1',
 
                     # docs: https://getkirby.com/docs/reference/panel/sections
                     #
                     'sections' => [
+
                         # docs: https://getkirby.com/docs/reference/panel/sections/fields
                         #
                         'intro_section_intro' => [
                             'type' => 'fields',
                             'fields' => [
+
                                 # docs: https://getkirby.com/docs/reference/panel/fields/textarea
                                 #
                                 'intro_field_intro' => [
@@ -429,11 +464,13 @@ return [
             # docs: https://getkirby.com/docs/reference/panel/sections
             #
             'sections' => [
+
                 # docs: https://getkirby.com/docs/reference/panel/sections/fields
                 #
                 'content_section_info' => [
                     'type' => 'fields',
                     'fields' => [
+
                         # docs: https://getkirby.com/docs/reference/panel/fields/info
                         #
                         'content_field_multi_language' => [
@@ -448,11 +485,13 @@ return [
                         ],
                     ],
                 ],
+
                 # docs: https://getkirby.com/docs/reference/panel/sections/fields
                 #
                 'content_section_blocks' => [
                     'type' => 'fields',
                     'fields' => [
+
                         # docs: https://getkirby.com/docs/reference/panel/fields/blocks
                         #
                         'content_field' => [
@@ -558,3 +597,4 @@ return [
     ],
     */
 ];
+

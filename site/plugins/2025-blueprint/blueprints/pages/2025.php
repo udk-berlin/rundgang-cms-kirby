@@ -191,15 +191,15 @@ return [
                                 'categories' => [
                                     'type' => 'multiselect',
                                     'label' => [
-                                        'en' => 'Categories',
-                                        'de' => 'Kategorien',
+                                        'en' => 'Context',
+                                        'de' => 'Kontext',
                                     ],
                                     'max' => 1,
                                     'options' => $options,
                                     'required' => true,
                                     'help' => [
-                                        'en' => 'Select the class or course in which your project was created.',
-                                        'de' => 'Wähle die Klasse oder den Kurs aus, in dem dein Projekt entstanden ist.',
+                                        'en' => 'The context is, for example, the class or course in which the project was created.',
+                                        'de' => 'Der Kontext ist beispielsweise die Klasse oder der Kurs, in dem das Projekt entstanden ist.',
                                     ],
                                     'translate' => false,
                                 ],

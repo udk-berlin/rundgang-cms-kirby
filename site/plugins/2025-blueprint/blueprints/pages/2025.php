@@ -1,20 +1,21 @@
 <?php
 
-// info: https://getkirby.com/releases/5/view-buttons
+// load the JSON file
 //
-// docs: https://getkirby.com/docs/reference/panel/blueprints/page
-
-// Load your JSON file
-// by importing the fi;e this way we can name the json file anything we want
-// it will simply load the first json file in the assets/json directory
+// by importing the JSON file this way, we can name the file anything we want;
+// this way, the script will load the first JSON file found in `assets/json/`
+//
 $files = glob(kirby()->root('assets') . '/json/*.json');
+
 if (!empty($files)) {
     $json = file_get_contents($files[0]);
     $data = json_decode($json, true);
 }
+
 $options = [];
 
-// Flatten the nested structure
+// flatten the nested structure
+//
 foreach ($data['faculties'] as $faculty) {
     if (!isset($faculty['institutes'])) {
         continue;
@@ -46,6 +47,7 @@ foreach ($data['faculties'] as $faculty) {
 }
 
 // sort options by text key
+//
 usort($options, function ($a, $b) {
     return strcasecmp($a['text'], $b['text']);
 });

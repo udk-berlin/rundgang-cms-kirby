@@ -12,7 +12,7 @@ if (!empty($files)) {
     $data = json_decode($json, true);
 }
 
-$options = [];
+$context_options = [];
 
 // flatten the nested structure
 //
@@ -36,7 +36,7 @@ foreach ($data['faculties'] as $faculty) {
                 $text = $class['name'];
                 $info = $id;
 
-                $options[] = [
+                $context_options[] = [
                     'value' => $id,
                     'text' => $text,
                     'info' => $info,
@@ -46,9 +46,9 @@ foreach ($data['faculties'] as $faculty) {
     }
 }
 
-// sort options by text key
+// sort context_options by text key
 //
-usort($options, function ($a, $b) {
+usort($context_options, function ($a, $b) {
     return strcasecmp($a['text'], $b['text']);
 });
 
@@ -195,7 +195,7 @@ return [
                                         'de' => 'Kontext',
                                     ],
                                     'max' => 1,
-                                    'options' => $options,
+                                    'context_options' => $context_options,
                                     'required' => true,
                                     'help' => [
                                         'en' => 'The context is, for example, the class or course in which the project was created.',

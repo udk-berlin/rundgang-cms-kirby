@@ -6,7 +6,6 @@
 $context_json = asset('assets/2025/contexts.json')->read();
 $context_data = json_decode($context_json, true);
 
-
 $context_options = [];
 
 // flatten the nested structure
@@ -54,14 +53,12 @@ $format_data = json_decode($format_json, true);
 
 $format_options = [];
 
-
 foreach ($format_data as $format) {
     $format_options[] = [
         'text' => ucfirst($format[kirby()->user()->language()]),
         'value' => $format['key'],
     ];
 }
-
 
 return [
     'title' => 'Rundgang 2025',

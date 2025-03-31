@@ -215,13 +215,107 @@ return [
                                 # docs: https://getkirby.com/docs/reference/panel/fields/multiselect
                                 #
                                 'format' => [
-                                    'type' => 'multiselect',
+                                    'type' => 'select',
                                     'label' => [
                                         'en' => 'Format',
                                         'de' => 'Format',
                                     ],
                                     'max' => 1,
                                     // 'format_options' => $format_options,
+                                    'options' => [
+                                      'exhibition' => [
+                                        'en' => 'exhibition',
+                                        'de' => 'Ausstellung',
+                                      ],
+                                      'consulting_offer' => [
+                                        'en' => 'consulting offer',
+                                        'de' => 'Beratungsangebot',
+                                      ],
+                                      'dj_set' => [
+                                        'en' => 'DJ set',
+                                        'de' => 'DJ-Set',
+                                      ],
+                                      'film_screening' => [
+                                        'en' => 'film screening',
+                                        'de' => 'Filmvorführung/Screening',
+                                      ],
+                                      'guided_tour' => [
+                                        'en' => 'guided tour',
+                                        'de' => 'Führung',
+                                      ],
+                                      'installation' => [
+                                        'en' => 'installation',
+                                        'de' => 'Installation',
+                                      ],
+                                      'sound_installation' => [
+                                        'en' => 'sound installation',
+                                        'de' => 'Klanginstallation',
+                                      ],
+                                      'concert' => [
+                                        'en' => 'concert',
+                                        'de' => 'Konzert',
+                                      ],
+                                      'conversation' => [
+                                        'en' => 'conversation',
+                                        'de' => 'Gespräch',
+                                      ],
+                                      'reading' => [
+                                        'en' => 'reading',
+                                        'de' => 'Lesung',
+                                      ],
+                                      'fashion_show' => [
+                                        'en' => 'fashion show',
+                                        'de' => 'Modenschau',
+                                      ],
+                                      'musical' => [
+                                        'en' => 'musical',
+                                        'de' => 'Musical',
+                                      ],
+                                      'open_rehearsal' => [
+                                        'en' => 'open rehearsal',
+                                        'de' => 'offene Probe',
+                                      ],
+                                      'open_space' => [
+                                        'en' => 'open space',
+                                        'de' => 'Open Space',
+                                      ],
+                                      'opera' => [
+                                        'en' => 'opera',
+                                        'de' => 'Oper',
+                                      ],
+                                      'performance' => [
+                                        'en' => 'performance',
+                                        'de' => 'Performance',
+                                      ],
+                                      'panel_discussion' => [
+                                        'en' => 'panel discussion',
+                                        'de' => 'Podiumsgespräch',
+                                      ],
+                                      'project_presentation' => [
+                                        'en' => 'project presentation',
+                                        'de' => 'Projektpräsentation',
+                                      ],
+                                      'dance' => [
+                                        'en' => 'dance',
+                                        'de' => 'Tanz',
+                                      ],
+                                      'theater' => [
+                                        'en' => 'theater',
+                                        'de' => 'Theater',
+                                      ],
+                                      'lecture' => [
+                                        'en' => 'lecture',
+                                        'de' => 'Vortrag',
+                                      ],
+                                      'workshop' => [
+                                        'en' => 'workshop',
+                                        'de' => 'Workshop',
+                                      ],
+                                      'more' => [
+                                        'en' => 'more',
+                                        'de' => 'weitere',
+                                      ],
+                                    ],
                                     'required' => true,
                                     'help' => [
                                         'en' => 'The format is the type of the content, for example a concert, a live performance, an installation, et cetera.',

@@ -56,9 +56,8 @@ $format_options = [];
 
 
 foreach ($format_data as $format) {
-    // u
     $format_options[] = [
-        'text' => $format[kirby()->user()->language()],
+        'text' => ucfirst($format[kirby()->user()->language()]),
         'value' => $format['key'],
     ];
 }

@@ -260,7 +260,6 @@ return [
                                         'de' => 'An welchem Standort der Universität der Künste Berlin wird dieser Inhalt ausgestellt/präsentiert?',
                                     ],
                                     'translate' => false,
-
                                 ],
                             ],
                         ],
@@ -656,4 +655,3 @@ return [
     ],
     */
 ];
-

@@ -121,8 +121,8 @@ tabs:
           en: Pages for Rundgang 2025
           de: Seiten für Rundgang 2025
         create:
-          - default
-        template: default
+          - 2025_static
+        template: 2025_static
 
       # docs: https://getkirby.com/docs/reference/panel/sections/pages
       #
@@ -132,5 +132,5 @@ tabs:
       #    en: Pages for Rundgang 2026
       #    de: Seiten für Rundgang 2026
       #  create:
-      #    - default
-      #  template: default
+      #    - 2026_static
+      #  template: 2026_static

@@ -221,7 +221,6 @@ return [
                                         'de' => 'Format',
                                     ],
                                     'max' => 1,
-                                    // 'format_options' => $format_options,
                                     'options' => [
                                       'exhibition' => [
                                         'en' => 'exhibition',

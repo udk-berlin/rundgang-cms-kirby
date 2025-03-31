@@ -195,7 +195,7 @@ return [
                                         'de' => 'Kontext',
                                     ],
                                     'max' => 1,
-                                    'context_options' => $context_options,
+                                    'options' => $context_options,
                                     'required' => true,
                                     'help' => [
                                         'en' => 'The context is, for example, the class or course in which the project was created.',

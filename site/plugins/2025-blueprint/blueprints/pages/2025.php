@@ -47,6 +47,23 @@ usort($context_options, function ($a, $b) {
     return strcasecmp($a['text'], $b['text']);
 });
 
+// create format object with translations
+
+$format_json = asset('assets/2025/formats.json')->read();
+$format_data = json_decode($format_json, true);
+
+$format_options = [];
+
+
+foreach ($format_data as $format) {
+    // u
+    $format_options[] = [
+        'text' => $format[kirby()->user()->language()],
+        'value' => $format[kirby()->user()->language()],
+    ];
+}
+
+
 return [
     'title' => 'Rundgang 2025',
 
@@ -216,100 +233,7 @@ return [
                                         'de' => 'Format',
                                     ],
                                     'max' => 1,
-                                    'options' => [
-                                      'exhibition' => [
-                                        'en' => 'exhibition',
-                                        'de' => 'Ausstellung',
-                                      ],
-                                      'consulting_offer' => [
-                                        'en' => 'consulting offer',
-                                        'de' => 'Beratungsangebot',
-                                      ],
-                                      'dj_set' => [
-                                        'en' => 'DJ set',
-                                        'de' => 'DJ-Set',
-                                      ],
-                                      'film_screening' => [
-                                        'en' => 'film screening',
-                                        'de' => 'Filmvorführung/Screening',
-                                      ],
-                                      'guided_tour' => [
-                                        'en' => 'guided tour',
-                                        'de' => 'Führung',
-                                      ],
-                                      'installation' => [
-                                        'en' => 'installation',
-                                        'de' => 'Installation',
-                                      ],
-                                      'sound_installation' => [
-                                        'en' => 'sound installation',
-                                        'de' => 'Klanginstallation',
-                                      ],
-                                      'concert' => [
-                                        'en' => 'concert',
-                                        'de' => 'Konzert',
-                                      ],
-                                      'conversation' => [
-                                        'en' => 'conversation',
-                                        'de' => 'Gespräch',
-                                      ],
-                                      'reading' => [
-                                        'en' => 'reading',
-                                        'de' => 'Lesung',
-                                      ],
-                                      'fashion_show' => [
-                                        'en' => 'fashion show',
-                                        'de' => 'Modenschau',
-                                      ],
-                                      'musical' => [
-                                        'en' => 'musical',
-                                        'de' => 'Musical',
-                                      ],
-                                      'open_rehearsal' => [
-                                        'en' => 'open rehearsal',
-                                        'de' => 'offene Probe',
-                                      ],
-                                      'open_space' => [
-                                        'en' => 'open space',
-                                        'de' => 'Open Space',
-                                      ],
-                                      'opera' => [
-                                        'en' => 'opera',
-                                        'de' => 'Oper',
-                                      ],
-                                      'performance' => [
-                                        'en' => 'performance',
-                                        'de' => 'Performance',
-                                      ],
-                                      'panel_discussion' => [
-                                        'en' => 'panel discussion',
-                                        'de' => 'Podiumsgespräch',
-                                      ],
-                                      'project_presentation' => [
-                                        'en' => 'project presentation',
-                                        'de' => 'Projektpräsentation',
-                                      ],
-                                      'dance' => [
-                                        'en' => 'dance',
-                                        'de' => 'Tanz',
-                                      ],
-                                      'theater' => [
-                                        'en' => 'theater',
-                                        'de' => 'Theater',
-                                      ],
-                                      'lecture' => [
-                                        'en' => 'lecture',
-                                        'de' => 'Vortrag',
-                                      ],
-                                      'workshop' => [
-                                        'en' => 'workshop',
-                                        'de' => 'Workshop',
-                                      ],
-                                      'more' => [
-                                        'en' => 'more',
-                                        'de' => 'weitere',
-                                      ],
-                                    ],
+                                    'options' => $format_options,
                                     'required' => true,
                                     'help' => [
                                         'en' => 'The format is the type of the content, for example a concert, a live performance, an installation, et cetera.',

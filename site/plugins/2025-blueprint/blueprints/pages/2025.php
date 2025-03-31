@@ -59,7 +59,7 @@ foreach ($format_data as $format) {
     // u
     $format_options[] = [
         'text' => $format[kirby()->user()->language()],
-        'value' => $format[kirby()->user()->language()],
+        'value' => $format['key'],
     ];
 }
 

@@ -208,6 +208,32 @@ return [
 
                         # docs: https://getkirby.com/docs/reference/panel/sections/fields
                         #
+                        'metadata_section_format' => [
+                            'type' => 'fields',
+                            'fields' => [
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/multiselect
+                                #
+                                'format' => [
+                                    'type' => 'multiselect',
+                                    'label' => [
+                                        'en' => 'Format',
+                                        'de' => 'Format',
+                                    ],
+                                    'max' => 1,
+                                    // 'format_options' => $format_options,
+                                    'required' => true,
+                                    'help' => [
+                                        'en' => 'The format is the type of the content, for example a concert, a live performance, an installation, et cetera.',
+                                        'de' => 'Das Format ist die Art des Inhalts, beispielsweise ein Konzert, eine Live-Performance, eine Installation, et cetera.',
+                                    ],
+                                    'translate' => false,
+                                ],
+                            ],
+                        ],
+
+                        # docs: https://getkirby.com/docs/reference/panel/sections/fields
+                        #
                         'metadata_section_terms' => [
                             'type' => 'fields',
                             'fields' => [

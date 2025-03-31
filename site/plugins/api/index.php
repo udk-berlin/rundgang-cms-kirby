@@ -1,6 +1,6 @@
 <?php
 
-Kirby::plugin('mdeienhaus/api', [
+Kirby::plugin('medienhaus/api', [
     'api' => [
         'routes' => [
             [
@@ -12,3 +12,4 @@ Kirby::plugin('mdeienhaus/api', [
         ],
     ],
 ]);
+

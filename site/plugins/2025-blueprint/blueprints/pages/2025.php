@@ -1,11 +1,8 @@
 <?php
 
-// load the JSON file
+// load the contexts JSON file
 //
-// by importing the JSON file this way, we can name the file anything we want;
-// this way, the script will load the first JSON file found in `assets/json/`
-//
-$files = glob(kirby()->root('assets') . '/json/*.json');
+$files = glob(kirby()->root('assets') . '/json/udk_structure_2025.json');
 
 if (!empty($files)) {
     $json = file_get_contents($files[0]);

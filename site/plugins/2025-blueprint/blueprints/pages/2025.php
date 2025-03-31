@@ -234,6 +234,32 @@ return [
 
                         # docs: https://getkirby.com/docs/reference/panel/sections/fields
                         #
+                        'metadata_section_location' => [
+                            'type' => 'fields',
+                            'fields' => [
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/multiselect
+                                #
+                                'location' => [
+                                    'type' => 'multiselect',
+                                    'label' => [
+                                        'en' => 'Location',
+                                        'de' => 'Standort',
+                                    ],
+                                    'max' => 1,
+                                    // 'location_options' => $location_options,
+                                    'required' => true,
+                                    'help' => [
+                                        'en' => 'At which location of Berlin University of the Arts is this content exhibited/presented?',
+                                        'de' => 'An welchem Standort der Universität der Künste Berlin wird dieser Inhalt ausgestellt/präsentiert?',
+                                    ],
+                                    'translate' => false,
+                                ],
+                            ],
+                        ],
+
+                        # docs: https://getkirby.com/docs/reference/panel/sections/fields
+                        #
                         'metadata_section_terms' => [
                             'type' => 'fields',
                             'fields' => [

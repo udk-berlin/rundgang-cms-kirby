@@ -83,31 +83,46 @@ permissions:
 # docs: https://getkirby.com/docs/reference/panel/sections
 #
 sections:
-  #ldap_dn:
-  #  type: info
-  #  label:
-  #    en: LDAP DN
-  #    de: LDAP DN
-  #  text: "{{ user.dn }}"
-  #  theme: code
-  #ldap_uid:
-  #  type: info
-  #  label:
-  #    en: LDAP UID
-  #    de: LDAP UID
-  #  text: "{{ user.uid }}"
-  #  theme: code
-  ldap_mail:
-    type: info
-    label:
-      en: Mail Address
-      de: Mail-Adresse
-    text: "{{ user.email }}"
-    theme: code
-  ldap_name:
-    type: info
-    label:
-      en: Name
-      de: Name
-    text: "{{ user.name }}"
-    theme: code
+
+  # docs: https://getkirby.com/docs/reference/panel/sections/fields
+  #
+  user_section_info:
+    type: fields
+    fields:
+
+      # docs: https://getkirby.com/docs/reference/panel/fields/info
+      #
+      info_notice:
+        type: info
+        label: false
+        icon: account
+        text:
+          en: You can change your <strong>name</strong> and the <strong>interface language</strong> via the settings/gear icon button above.
+          de: Du kannst deinen <strong>Namen</strong> und die <strong>Interface-Sprache</strong> via des obigen Einstellungen-/Zahnrad-Buttons ändern.
+        theme: info
+
+  # docs: https://getkirby.com/docs/reference/panel/sections/fields
+  #
+  #user_section_ldap:
+  #  type: fields
+  #  fields:
+
+  #    # docs: https://getkirby.com/docs/reference/panel/fields/info
+  #    #
+  #    ldap_mail:
+  #      type: info
+  #      label:
+  #        en: Mail Address
+  #        de: Mail-Adresse
+  #      text: "{{ user.email }}"
+  #      theme: code
+
+  #        # docs: https://getkirby.com/docs/reference/panel/fields/info
+  #        #
+  #    ldap_name:
+  #      type: info
+  #      label:
+  #        en: Name
+  #        de: Name
+  #      text: "{{ user.name }}"
+  #      theme: code

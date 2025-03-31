@@ -1,0 +1,136 @@
+---
+# docs: https://getkirby.com/docs/reference/panel/blueprints/site
+#
+title:
+  en: Rundgang CMS
+  de: Rundgang CMS
+
+# info: https://getkirby.com/releases/5/view-buttons
+#
+buttons: false
+
+# guide: https://getkirby.com/docs/guide/blueprints/layout
+#
+tabs:
+
+  # guide: https://getkirby.com/docs/guide/blueprints/layout
+  #
+  content_tab:
+    label:
+      en: Content
+      de: Inhalte
+    icon: folder
+
+    # docs: https://getkirby.com/docs/reference/panel/blueprints/page
+    #
+    columns:
+
+      # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+      #
+      main:
+        width: 1/2
+
+        # docs: https://getkirby.com/docs/reference/panel/sections
+        #
+        sections:
+
+          # docs: https://getkirby.com/docs/reference/panel/sections/fields
+          #
+          welcome:
+            type: fields
+            fields:
+
+              # docs: https://getkirby.com/docs/reference/panel/fields/info
+              #
+              intro:
+                type: info
+                label:
+                  en: Rundgang CMS
+                  de: Rundgang CMS
+                text:
+                  en: |
+                    Welcome <strong>{{ user.name }}</strong>,
+
+                    With kind regards.
+                  de: |
+                    Willkommen <strong>{{ user.name }}</strong>,
+
+                    Mit freundlichen Grüßen.
+                theme: text
+
+              # docs: https://getkirby.com/docs/reference/panel/fields/info
+              #
+              info:
+                type: info
+                label: false
+                icon: translate
+                text: |
+                  <strong>(en)</strong> You can configure the <strong>interface language</strong> via the <a href="/panel/account">account</a> page.
+
+                  <strong>(de)</strong> Du kannst die <strong>Interface-Sprache</strong> via der <a href="/panel/account">Account</a>-Seite konfigurieren.
+                theme: passive
+
+      # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+      #
+      sidebar:
+        width: 1/2
+
+        # docs: https://getkirby.com/docs/reference/panel/sections
+        #
+        sections:
+
+          # docs: https://getkirby.com/docs/reference/panel/sections/pages
+          #
+          content_2025:
+            type: pages
+            label:
+              en: Content for Rundgang 2025
+              de: Inhalte für Rundgang 2025
+            create:
+              - 2025
+            template: 2025
+
+          # docs: https://getkirby.com/docs/reference/panel/sections/pages
+          #
+          #content_2026:
+          #  type: pages
+          #  label:
+          #    en: Content for Rundgang 2026
+          #    de: Inhalte für Rundgang 2026
+          #  create:
+          #    - 2026
+          #  template: 2026
+
+  # guide: https://getkirby.com/docs/guide/blueprints/layout
+  #
+  static_tab:
+    label:
+      en: Pages
+      de: Seiten
+    icon: page
+
+    # docs: https://getkirby.com/docs/reference/panel/sections
+    #
+    sections:
+
+      # docs: https://getkirby.com/docs/reference/panel/sections/pages
+      #
+      pages_2025:
+        type: pages
+        label:
+          en: Pages for Rundgang 2025
+          de: Seiten für Rundgang 2025
+        create:
+          - default
+        template: default
+
+      # docs: https://getkirby.com/docs/reference/panel/sections/pages
+      #
+      #pages_2026:
+      #  type: pages
+      #  label:
+      #    en: Pages for Rundgang 2026
+      #    de: Seiten für Rundgang 2026
+      #  create:
+      #    - default
+      #  template: default

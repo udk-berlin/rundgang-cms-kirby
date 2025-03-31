@@ -12,6 +12,9 @@ buttons: false
 # docs: https://getkirby.com/docs/reference/panel/blueprints/page
 #
 columns:
+
+  # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+  #
   main:
     width: 1/2
 
@@ -55,15 +58,18 @@ columns:
               <strong>(de)</strong> Du kannst die <strong>Interface-Sprache</strong> via der <a href="/panel/account">Account</a>-Seite konfigurieren.
             theme: passive
 
+  # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+  #
   sidebar:
     width: 1/2
+
     # docs: https://getkirby.com/docs/reference/panel/sections
     #
     sections:
 
       # docs: https://getkirby.com/docs/reference/panel/sections/pages
       #
-      pages_2025:
+      content_2025:
         type: pages
         label:
           en: Content for Rundgang 2025
@@ -74,7 +80,7 @@ columns:
 
       # docs: https://getkirby.com/docs/reference/panel/sections/pages
       #
-      #pages_2026:
+      #content_2026:
       #  type: pages
       #  label:
       #    en: Content for Rundgang 2026

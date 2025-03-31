@@ -50,9 +50,9 @@ columns:
             label: false
             icon: translate
             text: |
-              <strong>(en)</strong> You can configure the interface language via the <a href="/panel/account">account</a> page.
+              <strong>(en)</strong> You can configure the <strong>interface language</strong> via the <a href="/panel/account">account</a> page.
 
-              <strong>(de)</strong> Du kannst die Interface-Sprache via der <a href="/panel/account">Account</a>-Seite konfigurieren.
+              <strong>(de)</strong> Du kannst die <strong>Interface-Sprache</strong> via der <a href="/panel/account">Account</a>-Seite konfigurieren.
             theme: passive
 
   sidebar:

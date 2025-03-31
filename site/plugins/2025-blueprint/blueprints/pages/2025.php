@@ -241,13 +241,19 @@ return [
                                 # docs: https://getkirby.com/docs/reference/panel/fields/multiselect
                                 #
                                 'location' => [
-                                    'type' => 'multiselect',
+                                    'type' => 'select',
                                     'label' => [
                                         'en' => 'Location',
                                         'de' => 'Standort',
                                     ],
                                     'max' => 1,
-                                    // 'location_options' => $location_options,
+                                    'options' => [
+                                        'type' => 'api',
+                                        'url' => 'assets/udk_locations_2025.json',
+                                        'query' => 'sortBy("name", "asc")',
+                                        'text' => '{{ item.name }}',
+                                        'value' => '{{ item.name.slug }}',
+                                    ],
                                     'required' => true,
                                     'help' => [
                                         'en' => 'At which location of Berlin University of the Arts is this content exhibited/presented?',
@@ -649,4 +655,3 @@ return [
     ],
     */
 ];
-

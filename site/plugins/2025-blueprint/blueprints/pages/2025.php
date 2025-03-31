@@ -2,18 +2,16 @@
 
 // load the contexts JSON file
 //
-$files = glob(kirby()->root('assets') . '/json/udk_structure_2025.json');
 
-if (!empty($files)) {
-    $json = file_get_contents($files[0]);
-    $data = json_decode($json, true);
-}
+$context_json = asset('assets/2025/contexts.json')->read();
+$context_data = json_decode($context_json, true);
+
 
 $context_options = [];
 
 // flatten the nested structure
 //
-foreach ($data['faculties'] as $faculty) {
+foreach ($context_data['faculties'] as $faculty) {
     if (!isset($faculty['institutes'])) {
         continue;
     }

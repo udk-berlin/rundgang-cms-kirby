@@ -261,7 +261,7 @@ return [
                                     'max' => 1,
                                     'options' => [
                                         'type' => 'api',
-                                        'url' => 'assets/udk_locations_2025.json',
+                                        'url' => 'assets/2025/locations.json',
                                         'query' => 'sortBy("name", "asc")',
                                         'text' => '{{ item.name }}',
                                         'value' => '{{ item.name.slug }}',

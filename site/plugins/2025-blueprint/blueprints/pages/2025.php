@@ -343,7 +343,7 @@ return [
                                         'en' => 'Add <strong>Date(s) & Time</strong> for your event; this should only be filled for concerts, performances, et cetera which are <strong>happening at only specific times</strong>.',
                                         'de' => 'Füge <strong>Datum & Uhrzeit</strong> für dein Event hinzu; dies sollte ausschließlich für Konzerte, Performances, et cetera gemacht werden, welche <strong>nur zu bestimmten Zeitpunkten stattfinden</strong>.',
                                     ],
-                                    'theme' => 'notice',
+                                    'theme' => 'warning',
                                 ],
 
                                 # docs: https://getkirby.com/docs/reference/panel/fields/structure

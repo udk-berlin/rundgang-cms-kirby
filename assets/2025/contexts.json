@@ -1,0 +1,786 @@
+{
+  "name": "Universität der Künste Berlin",
+  "type": "institution",
+  "faculties": [
+    {
+      "name": "Fakultät Bildende Kunst",
+      "type": "faculty",
+      "institutes": [
+        {
+          "name": "Institut für Kunst",
+          "type": "institute",
+          "courses": [
+            {
+              "name": "Bildhauerei",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Fachklasse Bonvicini",
+                  "type": "class"
+                },
+                {
+                  "name": "Fachklasse Pernice",
+                  "type": "class"
+                },
+                {
+                  "name": "Fachklasse Weber",
+                  "type": "class"
+                }
+              ]
+            },
+            {
+              "name": "Lehramt Bildende Kunst",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Fachklasse Cumins",
+                  "type": "class"
+                },
+                {
+                  "name": "Fachklasse Neugebauer",
+                  "type": "class"
+                }
+              ]
+            },
+            {
+              "name": "Malerei/Zeichnen",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Fachklasse Favre",
+                  "type": "class"
+                },
+                {
+                  "name": "Fachklasse Föll",
+                  "type": "class"
+                },
+                {
+                  "name": "Fachklasse Heinzmann",
+                  "type": "class"
+                },
+                {
+                  "name": "Fachklasse Lammert",
+                  "type": "class"
+                },
+                {
+                  "name": "Fachklasse Lucander",
+                  "type": "class"
+                },
+                {
+                  "name": "Fachklasse Streuli",
+                  "type": "class"
+                }
+              ]
+            },
+            {
+              "name": "erweiterte Malerei",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Fachklasse Amadyar",
+                  "type": "class"
+                }
+              ]
+            },
+            {
+              "name": "Bildhauerei/Multimedia",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Fachklasse Konrad",
+                  "type": "class"
+                }
+              ]
+            },
+            {
+              "name": "Fotografie",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Fachklasse Pryde",
+                  "type": "class"
+                }
+              ]
+            },
+            {
+              "name": "Bildhauerei/Performance",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Fachklasse Robert",
+                  "type": "class"
+                }
+              ]
+            },
+            {
+              "name": "Multimedia",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Fachklasse Steyerl",
+                  "type": "class"
+                }
+              ]
+            },
+            {
+              "name": "Zeitbezogene Medien und Performance",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Fachklasse ter Heijne",
+                  "type": "class"
+                }
+              ]
+            },
+            {
+              "name": "Malerei/Multimedia",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Fachklasse Zipp",
+                  "type": "class"
+                }
+              ]
+            },
+            {
+              "name": "Unspecified Course",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Fachklasse Schutter",
+                  "type": "class"
+                },
+                {
+                  "name": "Grundlehre",
+                  "type": "class"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Institut für Kunstdidaktik und Ästhetische Bildung",
+          "type": "institute",
+          "courses": []
+        },
+        {
+          "name": "Institut Kunstwissenschaft und Ästhetik IKAE",
+          "type": "institute",
+          "courses": []
+        },
+        {
+          "name": "IfKiK",
+          "type": "institute",
+          "courses": []
+        }
+      ]
+    },
+    {
+      "name": "Fakultät Gestaltung",
+      "type": "faculty",
+      "institutes": [
+        {
+          "name": "Institut für zeitbasierte Medien",
+          "type": "institute",
+          "courses": [
+            {
+              "name": "Kunst und Medien",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Narrativer Film",
+                  "type": "class"
+                },
+                {
+                  "name": "Generative Kunst",
+                  "type": "class"
+                },
+                {
+                  "name": "Experimenteller Film / Medienkunst",
+                  "type": "class"
+                },
+                {
+                  "name": "Entwerfen von interaktiven Systemen",
+                  "type": "class"
+                },
+                {
+                  "name": "Digitale Bildung",
+                  "type": "class"
+                }
+              ]
+            },
+            {
+              "name": "Unspecified Course",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Kunst und Medien",
+                  "type": "class"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Institut für transmediale Gestaltung",
+          "type": "institute",
+          "courses": [
+            {
+              "name": "Visuelle Kommunikation",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Raumbezogenes Entwerfen und Ausstellungsgestaltung",
+                  "type": "class"
+                },
+                {
+                  "name": "New Media",
+                  "type": "class"
+                },
+                {
+                  "name": "Labor für Zeichnen",
+                  "type": "class"
+                },
+                {
+                  "name": "Labor für Typografie",
+                  "type": "class"
+                },
+                {
+                  "name": "Labor für Fotografie",
+                  "type": "class"
+                },
+                {
+                  "name": "Kampagnen",
+                  "type": "class"
+                },
+                {
+                  "name": "Illustration",
+                  "type": "class"
+                },
+                {
+                  "name": "Grundlagen des Entwerfens",
+                  "type": "class"
+                },
+                {
+                  "name": "Grafikdesign",
+                  "type": "class"
+                },
+                {
+                  "name": "Gestaltung des bewegten Bildes",
+                  "type": "class"
+                },
+                {
+                  "name": "Entwerfen Visuelle Systeme",
+                  "type": "class"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Institut für Theorie und Praxis der Kommunikation",
+          "type": "institute",
+          "courses": [
+            {
+              "name": "Gesellschafts- und Wirtschaftskommunikation",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Verbale Kommunikation",
+                  "type": "class"
+                },
+                {
+                  "name": "Strategische Kommunikationsplanung",
+                  "type": "class"
+                },
+                {
+                  "name": "Kommunikations- und Medienforschung",
+                  "type": "class"
+                },
+                {
+                  "name": "Audiovisuelle Kommunikation",
+                  "type": "class"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Institut für Produkt- und Prozeßgestaltung",
+          "type": "institute",
+          "courses": [
+            {
+              "name": "Produktdesign",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Industrial Design – Technologie und Konstruktion",
+                  "type": "class"
+                },
+                {
+                  "name": "Gestalten auf den Grundlagen der Bildenden Kunst",
+                  "type": "class"
+                },
+                {
+                  "name": "Design & Digital Interactions",
+                  "type": "class"
+                },
+                {
+                  "name": "Design & Development",
+                  "type": "class"
+                },
+                {
+                  "name": "Designtheorie",
+                  "type": "class"
+                },
+                {
+                  "name": "Design-Grundlagen",
+                  "type": "class"
+                },
+                {
+                  "name": "Designforschung",
+                  "type": "class"
+                },
+                {
+                  "name": "Design & Social Context",
+                  "type": "class"
+                },
+                {
+                  "name": "Darstellungstechniken",
+                  "type": "class"
+                },
+                {
+                  "name": "Projektgruppe Robert Scheipner",
+                  "type": "class"
+                },
+                {
+                  "name": "Projektgruppe Ineke Hans",
+                  "type": "class"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Institut für Geschichte und Theorie der Gestaltung",
+          "type": "institute",
+          "courses": [
+            {
+              "name": "Unspecified Course",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Theorie der Gestaltung/Gender Studies",
+                  "type": "class"
+                },
+                {
+                  "name": "Kunst- und Kulturgeschichte",
+                  "type": "class"
+                },
+                {
+                  "name": "Geschichte und Theorie der visuellen Kultur",
+                  "type": "class"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Institut für experimentelles Bekleidungs- und Textildesign",
+          "type": "institute",
+          "courses": [
+            {
+              "name": "Modedesign",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Wearable Computing",
+                  "type": "class"
+                },
+                {
+                  "name": "Schnittgestaltung",
+                  "type": "class"
+                },
+                {
+                  "name": "Modetheorie und Kulturwissenschaften",
+                  "type": "class"
+                },
+                {
+                  "name": "Modetheorie",
+                  "type": "class"
+                },
+                {
+                  "name": "Modegeschichte",
+                  "type": "class"
+                },
+                {
+                  "name": "Modedesign und Entwurf",
+                  "type": "class"
+                },
+                {
+                  "name": "Darstellungstechniken der Mode/Modezeichnen",
+                  "type": "class"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Institut für Architektur und Städtebau",
+          "type": "institute",
+          "courses": [
+            {
+              "name": "Architektur",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Versorgungsplanung und Versorgungstechnik",
+                  "type": "class"
+                },
+                {
+                  "name": "Städtebau",
+                  "type": "class"
+                },
+                {
+                  "name": "Plastische und Räumliche Darstellung",
+                  "type": "class"
+                },
+                {
+                  "name": "Kunst- und Kulturgeschichte",
+                  "type": "class"
+                },
+                {
+                  "name": "Konstruktives Entwerfen und Tragwerksplanung",
+                  "type": "class"
+                },
+                {
+                  "name": "Gebäudeplanung und Entwerfen",
+                  "type": "class"
+                },
+                {
+                  "name": "Gartenkultur und Freiraumentwicklung",
+                  "type": "class"
+                },
+                {
+                  "name": "Experimentelles Gestalten und Grundlagen des Entwerfens",
+                  "type": "class"
+                },
+                {
+                  "name": "Entwerfen und Baukonstruktion III",
+                  "type": "class"
+                },
+                {
+                  "name": "Entwerfen und Baukonstruktion I",
+                  "type": "class"
+                },
+                {
+                  "name": "Entwerfen und Baukonstruktion",
+                  "type": "class"
+                },
+                {
+                  "name": "Digitales und Experimentelles Entwerfen",
+                  "type": "class"
+                },
+                {
+                  "name": "Architekturgeschichte und Architekturtheorie",
+                  "type": "class"
+                },
+                {
+                  "name": "Entwerfen und Stadterneuerung",
+                  "type": "class"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Unspecified Institute",
+          "type": "institute",
+          "courses": [
+            {
+              "name": "Unspecified Course",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Designtransfer",
+                  "type": "class"
+                },
+                {
+                  "name": "Design Produkt- und Modedesign",
+                  "type": "class"
+                },
+                {
+                  "name": "Design and Computation",
+                  "type": "class"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fakultät Musik",
+      "type": "faculty",
+      "institutes": [
+        {
+          "name": "Institut für Künstlerische Ausbildung/Orchesterinstrumente und Dirigieren    ",
+          "type": "institute",
+          "courses": []
+        },
+        {
+          "name": "Institut für Künstlerische Ausbildung/Klavier",
+          "type": "institute",
+          "courses": []
+        },
+        {
+          "name": "Institut für Künstlerische Ausbildung/Alte Musik",
+          "type": "institute",
+          "courses": []
+        },
+        {
+          "name": "Institut für Musikpädagogik",
+          "type": "institute",
+          "courses": []
+        },
+        {
+          "name": "Institut für Kirchenmusik",
+          "type": "institute",
+          "courses": []
+        },
+        {
+          "name": "Institut für Neue Musik",
+          "type": "institute",
+          "courses": []
+        },
+        {
+          "name": "Institut für Musikwissenschaft, Musiktheorie, Komposition und Musikübertragung    ",
+          "type": "institute",
+          "courses": []
+        },
+        {
+          "name": "Julius-Stern-Institut für Nachwuchsförderung",
+          "type": "institute",
+          "courses": []
+        },
+        {
+          "name": "Kurt-Singer-Institut für Musikgesundheit",
+          "type": "institute",
+          "courses": []
+        },
+        {
+          "name": "Staats- und Domchor ",
+          "type": "institute",
+          "courses": []
+        },
+        {
+          "name": "Unspecified Institute",
+          "type": "institute",
+          "courses": [
+            {
+              "name": "Dirigieren",
+              "type": "course",
+              "classes": []
+            },
+            {
+              "name": "Tonmeister",
+              "type": "course",
+              "classes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fakultät Darstellende Kunst",
+      "type": "faculty",
+      "institutes": [
+        {
+          "name": "Unspecified Institute",
+          "type": "institute",
+          "courses": [
+            {
+              "name": "Gesang/Musiktheater",
+              "type": "course",
+              "classes": []
+            },
+            {
+              "name": "Schauspiel",
+              "type": "course",
+              "classes": []
+            },
+            {
+              "name": "Musical/Show",
+              "type": "course",
+              "classes": []
+            },
+            {
+              "name": "Bühnenbild",
+              "type": "course",
+              "classes": []
+            },
+            {
+              "name": "Kostümbild",
+              "type": "course",
+              "classes": []
+            },
+            {
+              "name": "Szenisches Schreiben",
+              "type": "course",
+              "classes": []
+            },
+            {
+              "name": "Theaterpädagogik/Lehramt Theater",
+              "type": "course",
+              "classes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Zentren",
+      "type": "faculty",
+      "institutes": []
+    },
+    {
+      "name": "Berlin Career College",
+      "type": "faculty",
+      "institutes": [
+        {
+          "name": "Unspecified Institute",
+          "type": "institute",
+          "courses": [
+            {
+              "name": "Leadership in digitaler Innovation",
+              "type": "course",
+              "classes": []
+            },
+            {
+              "name": "Sound Studies and Sonic Arts",
+              "type": "course",
+              "classes": []
+            },
+            {
+              "name": "Kulturjournalismus",
+              "type": "course",
+              "classes": []
+            },
+            {
+              "name": "Musiktherapie",
+              "type": "course",
+              "classes": []
+            },
+            {
+              "name": "Unspecified Course",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Alumni-Netzwerk",
+                  "type": "class"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hochschulübergreifendes Zentrum für Tanz HZT",
+      "type": "faculty",
+      "institutes": [
+        {
+          "name": "Unspecified Institute",
+          "type": "institute",
+          "courses": [
+            {
+              "name": "Tanz, Kontext, Choreographie",
+              "type": "course",
+              "classes": []
+            },
+            {
+              "name": "Solo/Dance/Authorship",
+              "type": "course",
+              "classes": []
+            },
+            {
+              "name": "Choreographie",
+              "type": "course",
+              "classes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Jazz-Institut Berlin JIB",
+      "type": "faculty",
+      "institutes": []
+    },
+    {
+      "name": "Studienberatung und Psychologische Beratung",
+      "type": "faculty",
+      "institutes": []
+    },
+    {
+      "name": "Studium Generale",
+      "type": "faculty",
+      "institutes": []
+    },
+    {
+      "name": "Frauenbeauftragte",
+      "type": "faculty",
+      "institutes": []
+    },
+    {
+      "name": "Diversitätsbeauftragte",
+      "type": "faculty",
+      "institutes": []
+    },
+    {
+      "name": "International Office",
+      "type": "faculty",
+      "institutes": []
+    },
+    {
+      "name": "Universitätsbibliothek",
+      "type": "faculty",
+      "institutes": []
+    },
+    {
+      "name": "Zentrum für künstlerische Lehrkräftebildung",
+      "type": "faculty",
+      "institutes": []
+    },
+    {
+      "name": "AStA",
+      "type": "faculty",
+      "institutes": []
+    },
+    {
+      "name": "Fachschaftsrat",
+      "type": "faculty",
+      "institutes": []
+    },
+    {
+      "name": "Stabsstelle Überfakultäre Veranstaltungen",
+      "type": "faculty",
+      "institutes": []
+    },
+    {
+      "name": "Stabsstelle Presse/Kommunikation",
+      "type": "faculty",
+      "institutes": []
+    },
+    {
+      "name": "Stabsstelle Strategisches Marketing",
+      "type": "faculty",
+      "institutes": []
+    },
+    {
+      "name": "Initiative",
+      "type": "faculty",
+      "institutes": []
+    }
+  ]
+}

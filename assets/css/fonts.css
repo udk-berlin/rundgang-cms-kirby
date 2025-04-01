@@ -1,0 +1,51 @@
+@font-face {
+  font-display: block;
+  font-family: "Inter";
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Inter-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Inter";
+  font-stretch: normal;
+  font-style: italic;
+  font-weight: 500;
+  src: url("../fonts/Inter-MediumItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Inter";
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/Inter-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Inter";
+  font-stretch: normal;
+  font-style: italic;
+  font-weight: bold;
+  src: url("../fonts/Inter-BoldItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/RobotoMono-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Roboto Mono";
+  font-style: italic;
+  font-weight: normal;
+  src: url("../fonts/RobotoMono-RegularItalic.woff2") format("woff2");
+}

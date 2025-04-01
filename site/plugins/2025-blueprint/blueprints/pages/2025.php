@@ -2,10 +2,8 @@
 
 // load the contexts JSON file
 //
-
 $context_json = asset('assets/2025/contexts.json')->read();
 $context_data = json_decode($context_json, true);
-
 $context_options = [];
 
 // flatten the nested structure
@@ -47,10 +45,9 @@ usort($context_options, function ($a, $b) {
 });
 
 // create format object with translations
-
+//
 $format_json = asset('assets/2025/formats.json')->read();
 $format_data = json_decode($format_json, true);
-
 $format_options = [];
 
 foreach ($format_data as $format) {

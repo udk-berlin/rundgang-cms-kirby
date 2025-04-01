@@ -243,35 +243,36 @@ return [
 
                         # docs: https://getkirby.com/docs/reference/panel/sections/fields
                         #
-                        'metadata_section_location' => [
-                            'type' => 'fields',
-                            'fields' => [
+                        #'metadata_section_location' => [
+                        #    'type' => 'fields',
+                        #    'fields' => [
 
-                                # docs: https://getkirby.com/docs/reference/panel/fields/multiselect
-                                #
-                                'location' => [
-                                    'type' => 'select',
-                                    'label' => [
-                                        'en' => 'Location',
-                                        'de' => 'Standort',
-                                    ],
-                                    'max' => 1,
-                                    'options' => [
-                                        'type' => 'api',
-                                        'url' => 'assets/2025/locations.json',
-                                        'query' => 'sortBy("name", "asc")',
-                                        'text' => '{{ item.name }}',
-                                        'value' => '{{ item.name.slug }}',
-                                    ],
-                                    'required' => true,
-                                    'help' => [
-                                        'en' => 'At which location of Berlin University of the Arts is this content exhibited/presented?',
-                                        'de' => 'An welchem Standort der Universität der Künste Berlin wird dieser Inhalt ausgestellt/präsentiert?',
-                                    ],
-                                    'translate' => false,
-                                ],
-                            ],
-                        ],
+                        #        # docs: https://getkirby.com/docs/reference/panel/fields/multiselect
+                        #        #
+                        #        'location' => [
+                        #            'type' => 'select',
+                        #            'label' => [
+                        #                'en' => 'Location',
+                        #                'de' => 'Standort',
+                        #            ],
+                        #            'icon' => 'pin',
+                        #            'max' => 1,
+                        #            'options' => [
+                        #                'type' => 'api',
+                        #                'url' => 'assets/2025/locations.json',
+                        #                'query' => 'sortBy("name", "asc")',
+                        #                'text' => '{{ item.name }}',
+                        #                'value' => '{{ item.name.slug }}',
+                        #            ],
+                        #            'required' => true,
+                        #            'help' => [
+                        #                'en' => 'At which location of Berlin University of the Arts is this content exhibited/presented?',
+                        #                'de' => 'An welchem Standort der Universität der Künste Berlin wird dieser Inhalt ausgestellt/präsentiert?',
+                        #            ],
+                        #            'translate' => false,
+                        #        ],
+                        #    ],
+                        #],
 
                         # docs: https://getkirby.com/docs/reference/panel/sections/fields
                         #
@@ -366,7 +367,7 @@ return [
                             'type' => 'fields',
                             'fields' => [
 
-                                # docs: https://getkirby.com/docs/reference/panel/fields/multiselect
+                                # docs: https://getkirby.com/docs/reference/panel/fields/select
                                 #
                                 'format_field_select' => [
                                     'type' => 'select',
@@ -382,6 +383,115 @@ return [
                                         'en' => 'The format is the type of the content, for example a concert, a live performance, an installation, et cetera.',
                                         'de' => 'Das Format ist die Art des Inhalts, beispielsweise ein Konzert, eine Live-Performance, eine Installation, et cetera.',
                                     ],
+                                    'translate' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+
+        # guide: https://getkirby.com/docs/guide/blueprints/layout
+        #
+        'location_tab' => [
+            'label' => [
+                'en' => 'Location',
+                'de' => 'Standort',
+            ],
+            'icon' => 'pin',
+
+            # docs: https://getkirby.com/docs/reference/panel/blueprints/page
+            #
+            'columns' => [
+
+                # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+                #
+                'location_column_banner' => [
+                    'width' => '1/1',
+
+                    # docs: https://getkirby.com/docs/reference/panel/sections
+                    #
+                    'sections' => [
+
+                        # docs: https://getkirby.com/docs/reference/panel/sections/fields
+                        #
+                        'location_section_info' => [
+                            'type' => 'fields',
+                            'fields' => [
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/info
+                                #
+                                'location_field_info' => [
+                                    'type' => 'info',
+                                    'label' => false,
+                                    'icon' => 'translate',
+                                    'text' => [
+                                        'en' => 'The <strong>Location</strong> field can only be filled for the default language, i.e. <strong>DE</strong> in the dropdown menu above, next to the page title.',
+                                        'de' => 'Der <strong>Standort</strong> kann nur für die Standard-Sprache eingetragen werden, d.h. <strong>DE</strong> im Dropdown-Menü neben/unter dem Seiten-Titel.',
+                                    ],
+                                    'theme' => 'notice',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+
+                # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+                #
+                'location_column_main' => [
+                    'width' => '1/1',
+
+                    # docs: https://getkirby.com/docs/reference/panel/sections
+                    #
+                    'sections' => [
+
+                        # docs: https://getkirby.com/docs/reference/panel/sections/fields
+                        #
+                        'location_section_location' => [
+                            'type' => 'fields',
+                            'fields' => [
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/select
+                                #
+                                'location_field_select' => [
+                                    'type' => 'select',
+                                    'label' => [
+                                        'en' => 'Location',
+                                        'de' => 'Standort',
+                                    ],
+                                    'help' => [
+                                        'en' => 'At which location of Berlin University of the Arts is this content exhibited/presented?',
+                                        'de' => 'An welchem Standort der Universität der Künste Berlin wird dieser Inhalt ausgestellt/präsentiert?',
+                                    ],
+                                    #'icon' => 'pin',
+                                    'max' => 1,
+                                    'options' => [
+                                        'type' => 'api',
+                                        'url' => 'assets/2025/locations.json',
+                                        'query' => 'sortBy("name", "asc")',
+                                        'text' => '{{ item.name }}',
+                                        'value' => '{{ item.name.slug }}',
+                                    ],
+                                    'required' => true,
+                                    'translate' => false,
+                                ],
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/text
+                                #
+                                'location_field_text' => [
+                                    'type' => 'text',
+                                    'label' => [
+                                        'en' => 'Additional Information (optional)',
+                                        'de' => 'Weitere Informationen (optional)',
+                                    ],
+                                    'help' => [
+                                        'en' => 'For example: floor, room number, et cetera.',
+                                        'de' => 'Zum Beispiel: Etage, Raumnummer, et cetera.',
+                                    ],
+                                    'icon' => 'info',
+                                    'maxlength' => 50,
+                                    'required' => false,
                                     'translate' => false,
                                 ],
                             ],

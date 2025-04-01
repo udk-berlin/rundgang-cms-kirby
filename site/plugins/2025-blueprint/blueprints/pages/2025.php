@@ -216,29 +216,30 @@ return [
 
                         # docs: https://getkirby.com/docs/reference/panel/sections/fields
                         #
-                        'metadata_section_format' => [
-                            'type' => 'fields',
-                            'fields' => [
+                        #'metadata_section_format' => [
+                        #    'type' => 'fields',
+                        #    'fields' => [
 
-                                # docs: https://getkirby.com/docs/reference/panel/fields/multiselect
-                                #
-                                'format' => [
-                                    'type' => 'select',
-                                    'label' => [
-                                        'en' => 'Format',
-                                        'de' => 'Format',
-                                    ],
-                                    'max' => 1,
-                                    'options' => $format_options,
-                                    'required' => true,
-                                    'help' => [
-                                        'en' => 'The format is the type of the content, for example a concert, a live performance, an installation, et cetera.',
-                                        'de' => 'Das Format ist die Art des Inhalts, beispielsweise ein Konzert, eine Live-Performance, eine Installation, et cetera.',
-                                    ],
-                                    'translate' => false,
-                                ],
-                            ],
-                        ],
+                        #        # docs: https://getkirby.com/docs/reference/panel/fields/multiselect
+                        #        #
+                        #        'format' => [
+                        #            'type' => 'select',
+                        #            'label' => [
+                        #                'en' => 'Format',
+                        #                'de' => 'Format',
+                        #            ],
+                        #            'icon' => 'palette',
+                        #            'max' => 1,
+                        #            'options' => $format_options,
+                        #            'required' => true,
+                        #            'help' => [
+                        #                'en' => 'The format is the type of the content, for example a concert, a live performance, an installation, et cetera.',
+                        #                'de' => 'Das Format ist die Art des Inhalts, beispielsweise ein Konzert, eine Live-Performance, eine Installation, et cetera.',
+                        #            ],
+                        #            'translate' => false,
+                        #        ],
+                        #    ],
+                        #],
 
                         # docs: https://getkirby.com/docs/reference/panel/sections/fields
                         #
@@ -295,6 +296,91 @@ return [
                                     'text' => [
                                         'en' => 'I hereby accept the <a href="https://udk-berlin.de/impressum" target="_blank">Terms & Conditions</a>.',
                                         'de' => 'Ich akzeptiere die <a href="https://udk-berlin.de/impressum" target="_blank">Nutzungsbedingungen</a>.',
+                                    ],
+                                    'translate' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+
+        # guide: https://getkirby.com/docs/guide/blueprints/layout
+        #
+        'format_tab' => [
+            'label' => [
+                'en' => 'Format',
+                'de' => 'Format',
+            ],
+            'icon' => 'palette',
+
+            # docs: https://getkirby.com/docs/reference/panel/blueprints/page
+            #
+            'columns' => [
+
+                # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+                #
+                'format_column_banner' => [
+                    'width' => '1/1',
+
+                    # docs: https://getkirby.com/docs/reference/panel/sections
+                    #
+                    'sections' => [
+
+                        # docs: https://getkirby.com/docs/reference/panel/sections/fields
+                        #
+                        'format_section_info' => [
+                            'type' => 'fields',
+                            'fields' => [
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/info
+                                #
+                                'format_field_info' => [
+                                    'type' => 'info',
+                                    'label' => false,
+                                    'icon' => 'translate',
+                                    'text' => [
+                                        'en' => 'The <strong>Format</strong> field can only be filled for the default language, i.e. <strong>DE</strong> in the dropdown menu above, next to the page title.',
+                                        'de' => 'Das <strong>Format</strong> kann nur für die Standard-Sprache eingetragen werden, d.h. <strong>DE</strong> im Dropdown-Menü neben/unter dem Seiten-Titel.',
+                                    ],
+                                    'theme' => 'notice',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+
+                # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+                #
+                'format_column_main' => [
+                    'width' => '1/1',
+
+                    # docs: https://getkirby.com/docs/reference/panel/sections
+                    #
+                    'sections' => [
+
+                        # docs: https://getkirby.com/docs/reference/panel/sections/fields
+                        #
+                        'format_section_format' => [
+                            'type' => 'fields',
+                            'fields' => [
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/multiselect
+                                #
+                                'format_field_select' => [
+                                    'type' => 'select',
+                                    'label' => [
+                                        'en' => 'Format',
+                                        'de' => 'Format',
+                                    ],
+                                    #'icon' => 'palette',
+                                    'max' => 1,
+                                    'options' => $format_options,
+                                    'required' => true,
+                                    'help' => [
+                                        'en' => 'The format is the type of the content, for example a concert, a live performance, an installation, et cetera.',
+                                        'de' => 'Das Format ist die Art des Inhalts, beispielsweise ein Konzert, eine Live-Performance, eine Installation, et cetera.',
                                     ],
                                     'translate' => false,
                                 ],

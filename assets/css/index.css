@@ -42,7 +42,7 @@ body > * {
 }
 
 body > * + *,
-body > * > * + * {
+body > *:not(nav) > * + * {
   margin-top: var(--margin);
 }
 
@@ -119,6 +119,16 @@ a[rel~="external"]::after {
   font-weight: bold;
   margin-right: -0.15rem;
   vertical-align: super;
+}
+
+nav {
+  display: flex;
+  gap: var(--margin);
+}
+
+nav .active {
+  text-decoration: underline;
+  text-decoration-style: wavy;
 }
 
 @media (prefers-color-scheme: dark) {

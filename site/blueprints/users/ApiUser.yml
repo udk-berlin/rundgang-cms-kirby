@@ -1,0 +1,81 @@
+---
+# docs: https://getkirby.com/docs/reference/panel/blueprints/user
+#
+title: API User
+description: Account for basic auth against Kirby’s REST API
+
+# info: https://getkirby.com/releases/5/view-buttons
+#
+buttons:
+  settings: true
+  theme: true
+
+# docs: https://getkirby.com/docs/reference/panel/blueprints/user#home-option
+#
+#home: /panel/home
+
+# docs: https://getkirby.com/docs/reference/panel/blueprints/user#permissions
+#
+permissions:
+  access:
+    "*": false
+    #account: true
+    #panel: true
+    #site: true
+    #languages: true
+    #system: true
+    #users: true
+  files:
+    #"*": false # if set to false, files are not visible to the user, even with all permissions set to true
+    create: false
+    changeName: false
+    changeTemplate: false
+    delete: false
+    read: true
+    replace: false
+    sort: false
+    update: false
+  languages:
+    "*": false
+    #create: true
+    #delete: true
+  pages:
+    "*": false
+    access: true
+    #changeSlug: true
+    #changeStatus: true
+    #changeTemplate: true
+    #changeTitle: true
+    #create: true
+    #delete: true
+    list: true
+    #move: true
+    #duplicate: true
+    #preview: false
+    read: true
+    #sort: true
+    #update: true
+  site:
+    "*": false
+    #changeTitle: true
+    #preview: true
+    #update: true
+  user:
+    "*": false
+    #changeEmail: true
+    #changeLanguage: true
+    #changeName: true
+    #changePassword: true
+    #changeRole: true
+    #delete: true
+    #update: true
+  users:
+    "*": false
+    #changeEmail: true
+    #changeLanguage: true
+    #changeName: true
+    #changePassword: true
+    #changeRole: true
+    #create: true
+    #delete: true
+    #update: true

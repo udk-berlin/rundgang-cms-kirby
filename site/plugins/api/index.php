@@ -31,7 +31,7 @@ Kirby::plugin('medienhaus/api', [
             ],
             [
                 // APi endpoint to filter pages by a specific field
-                // e.g. /api/2025/filterBy?filter=format&value=project_presentation
+                // e.g. /api/2025/filterPagesBy/?filter=format&value=project_presentation
                 // more information on filterBy: https://getkirby.com/docs/reference/objects/cms/pages/filter-by
                 'pattern' => '2025/filterPagesBy',
                 'action' => function () {

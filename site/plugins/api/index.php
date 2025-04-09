@@ -2,6 +2,14 @@
 
 Kirby::plugin('medienhaus/api', [
     'api' => [
+        'data' => [
+            'filterPagesBy' => function ($filter, $value) {
+                return kirby()->site()->pages()->filterBy(
+                    $filter,
+                    $value,
+                );
+            },
+        ],
         'routes' => [
             [
                 'pattern' => '2025/contexts',
@@ -21,6 +29,21 @@ Kirby::plugin('medienhaus/api', [
                     return asset('assets/2025/locations.json')->read();
                 },
             ],
+            [
+                // APi endpoint to filter pages by a specific field
+                // e.g. /api/2025/filterBy?filter=format&value=project_presentation
+                // more information on filterBy: https://getkirby.com/docs/reference/objects/cms/pages/filter-by
+                'pattern' => '2025/filterPagesBy',
+                'action' => function () {
+                    $api = kirby()->api();
+                    $filter = $api->requestQuery('filter', '');
+                    $value = $api->requestQuery('value', '');
+                    return [
+                        $this->filterPagesBy($filter, $value),
+                    ];
+                },
+            ],
+
             /*
             [
                 'pattern' => '2026/contexts',

@@ -760,29 +760,10 @@ return [
                                 'de' => 'Inhalt',
                             ],
                             'fieldsets' => [
-                                'text' => [
-                                    'label' => 'Text',
-                                    'type' => 'group',
-                                    'fieldsets' => [
-                                        'heading',
-                                        'text',
-                                        'list',
-                                    ],
-                                ],
-                                'media' => [
-                                    'label' => 'Media',
-                                    'type' => 'group',
-                                    'fieldsets' => [
-                                        'image',
-                                    ],
-                                ],
-                                'code' => [
-                                    'label' => 'Code',
-                                    'type' => 'group',
-                                    'fieldsets' => [
-                                        'code',
-                                    ],
-                                ],
+                                'heading',
+                                'text',
+                                'list',
+                                'image',
                             ],
                         ],
                     ],

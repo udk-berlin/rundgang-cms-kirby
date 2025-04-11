@@ -18,12 +18,6 @@
     "city": "Berlin"
   },
   {
-    "name": "Rooftop-Gebäude",
-    "street": "Einsteinufer 43-53",
-    "postcode": 10587,
-    "city": "Berlin"
-  },
-  {
     "name": "Jazz Institut Berlin",
     "street": "Einsteinufer 43-53, hinterer Hof",
     "postcode": 10587,
@@ -81,18 +75,6 @@
     "name": "Mierendorffstraße 30",
     "street": "Mierendorffstraße 30",
     "postcode": 10589,
-    "city": "Berlin"
-  },
-  {
-    "name": "Karlsruher Straße 7a",
-    "street": "Karlsruher Straße 7a",
-    "postcode": 10711,
-    "city": "Berlin"
-  },
-  {
-    "name": "Grainauer Straße 12",
-    "street": "Grainauer Straße 12",
-    "postcode": 10777,
     "city": "Berlin"
   }
 ]

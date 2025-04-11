@@ -397,7 +397,7 @@ return [
                                 # docs: https://getkirby.com/docs/reference/panel/fields/select
                                 #
                                 'format_field_select' => [
-                                    'type' => 'select',
+                                    'type' => 'multiselect',
                                     'label' => [
                                         'en' => 'Format',
                                         'de' => 'Format',
@@ -407,7 +407,7 @@ return [
                                         'de' => 'Das Format ist die Art des Inhalts, beispielsweise ein Konzert, eine Live-Performance, eine Installation, et cetera.',
                                     ],
                                     #'icon' => 'palette',
-                                    'max' => 1,
+                                    #'max' => 1,
                                     'options' => $format_options,
                                     'required' => true,
                                     'translate' => false,

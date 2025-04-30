@@ -9,17 +9,47 @@ $context_options = [];
 // flatten the nested structure
 //
 foreach ($context_data['faculties'] as $faculty) {
-    if (!isset($faculty['institutes'])) {
+    $faculty_id = $faculty['name'];
+    $faculty_text = $faculty['name'];
+    $faculty_info = $faculty['name'];
+
+    // Add faculty if it has no institutes
+    if (!isset($faculty['institutes']) || empty($faculty['institutes'])) {
+        $context_options[] = [
+            'value' => $faculty_id,
+            'text' => $faculty_text,
+            'info' => $faculty_info,
+        ];
         continue;
     }
 
     foreach ($faculty['institutes'] as $institute) {
-        if (!isset($institute['courses'])) {
+        $institute_id = $institute['name'] . ' - ' . $faculty['name'];
+        $institute_text = $institute['name'];
+        $institute_info = $institute_id;
+
+        // Add institute if it has no courses
+        if (!isset($institute['courses']) || empty($institute['courses'])) {
+            $context_options[] = [
+                'value' => $institute_id,
+                'text' => $institute_text,
+                'info' => $institute_info,
+            ];
             continue;
         }
 
         foreach ($institute['courses'] as $course) {
-            if (!isset($course['classes'])) {
+            $course_id = $course['name'] . ' - ' . $institute['name'] . ' - ' . $faculty['name'];
+            $course_text = $course['name'];
+            $course_info = $course_id;
+
+            // Add course if it has no classes
+            if (!isset($course['classes']) || empty($course['classes'])) {
+                $context_options[] = [
+                    'value' => $course_id,
+                    'text' => $course_text,
+                    'info' => $course_info,
+                ];
                 continue;
             }
 
@@ -76,7 +106,7 @@ return [
             'en' => 'Draft',
             'de' => 'Entwurf',
         ],
-        'listed' => [
+        'unlisted' => [
             'en' => 'Published',
             'de' => 'Veröffentlicht',
         ],
@@ -377,9 +407,9 @@ return [
                                         'de' => 'Das Format ist die Art des Inhalts, beispielsweise ein Konzert, eine Live-Performance, eine Installation, et cetera.',
                                     ],
                                     #'icon' => 'palette',
-                                    'max' => 1,
+                                    #'max' => 1,
                                     'options' => $format_options,
-                                    'required' => true,
+                                    #'required' => true,
                                     'translate' => false,
                                 ],
                             ],
@@ -470,7 +500,7 @@ return [
                                         'text' => '{{ item.name }}',
                                         'value' => '{{ item.name.slug }}',
                                     ],
-                                    'required' => true,
+                                    #'required' => true,
                                     'translate' => false,
                                 ],
 
@@ -758,6 +788,11 @@ return [
                             'label' => [
                                 'en' => 'Content',
                                 'de' => 'Inhalt',
+                            ],
+                            'default' => [
+                                [
+                                    'type' => 'text',
+                                ],
                             ],
                             'fieldsets' => [
                                 'heading',

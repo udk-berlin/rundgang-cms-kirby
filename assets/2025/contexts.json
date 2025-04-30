@@ -16,17 +16,21 @@
               "classes": [
                 {
                   "name": "Fachklasse Bonvicini",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklasseBonvicini"
                 },
                 {
                   "name": "Fachklasse Pernice",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklassePernice"
                 },
                 {
                   "name": "Fachklasse Weber",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklasseWeber"
                 }
-              ]
+              ],
+              "id": "bildhauerei"
             },
             {
               "name": "Lehramt Bildende Kunst",
@@ -34,13 +38,16 @@
               "classes": [
                 {
                   "name": "Fachklasse Cumins",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklasseCumins"
                 },
                 {
                   "name": "Fachklasse Neugebauer",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklasseNeugebauer"
                 }
-              ]
+              ],
+              "id": "lehramtBildendeKunst"
             },
             {
               "name": "Malerei/Zeichnen",
@@ -48,29 +55,36 @@
               "classes": [
                 {
                   "name": "Fachklasse Favre",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklasseFavre"
                 },
                 {
                   "name": "Fachklasse Föll",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklasseFoell"
                 },
                 {
                   "name": "Fachklasse Heinzmann",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklasseHeinzmann"
                 },
                 {
                   "name": "Fachklasse Lammert",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklasseLammert"
                 },
                 {
                   "name": "Fachklasse Lucander",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklasseLucander"
                 },
                 {
                   "name": "Fachklasse Streuli",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklasseStreuli"
                 }
-              ]
+              ],
+              "id": "malereizeichnen"
             },
             {
               "name": "erweiterte Malerei",
@@ -78,9 +92,11 @@
               "classes": [
                 {
                   "name": "Fachklasse Amadyar",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklasseAmadyar"
                 }
-              ]
+              ],
+              "id": "erweiterteMalerei"
             },
             {
               "name": "Bildhauerei/Multimedia",
@@ -88,9 +104,11 @@
               "classes": [
                 {
                   "name": "Fachklasse Konrad",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklasseKonrad"
                 }
-              ]
+              ],
+              "id": "bildhauereimultimedia"
             },
             {
               "name": "Fotografie",
@@ -98,9 +116,11 @@
               "classes": [
                 {
                   "name": "Fachklasse Pryde",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklassePryde"
                 }
-              ]
+              ],
+              "id": "fotografie"
             },
             {
               "name": "Bildhauerei/Performance",
@@ -108,9 +128,11 @@
               "classes": [
                 {
                   "name": "Fachklasse Robert",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklasseRobert"
                 }
-              ]
+              ],
+              "id": "bildhauereiperformance"
             },
             {
               "name": "Multimedia",
@@ -118,9 +140,11 @@
               "classes": [
                 {
                   "name": "Fachklasse Steyerl",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklasseSteyerl"
                 }
-              ]
+              ],
+              "id": "multimedia"
             },
             {
               "name": "Zeitbezogene Medien und Performance",
@@ -128,9 +152,11 @@
               "classes": [
                 {
                   "name": "Fachklasse ter Heijne",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklasseTerHeijne"
                 }
-              ]
+              ],
+              "id": "zeitbezogeneMedienUndPerformance"
             },
             {
               "name": "Malerei/Multimedia",
@@ -138,9 +164,11 @@
               "classes": [
                 {
                   "name": "Fachklasse Zipp",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklasseZipp"
                 }
-              ]
+              ],
+              "id": "malereimultimedia"
             },
             {
               "name": "Unspecified Course",
@@ -148,32 +176,40 @@
               "classes": [
                 {
                   "name": "Fachklasse Schutter",
-                  "type": "class"
+                  "type": "class",
+                  "id": "fachklasseSchutter"
                 },
                 {
                   "name": "Grundlehre",
-                  "type": "class"
+                  "type": "class",
+                  "id": "grundlehre"
                 }
-              ]
+              ],
+              "id": "unspecifiedCourse"
             }
-          ]
+          ],
+          "id": "institutFuerKunst"
         },
         {
           "name": "Institut für Kunstdidaktik und Ästhetische Bildung",
           "type": "institute",
-          "courses": []
+          "courses": [],
+          "id": "institutFuerKunstdidaktikUndAesthetischeBildung"
         },
         {
           "name": "Institut Kunstwissenschaft und Ästhetik IKAE",
           "type": "institute",
-          "courses": []
+          "courses": [],
+          "id": "institutKunstwissenschaftUndAesthetikIkae"
         },
         {
           "name": "IfKiK",
           "type": "institute",
-          "courses": []
+          "courses": [],
+          "id": "ifkik"
         }
-      ]
+      ],
+      "id": "fakultaetBildendeKunst"
     },
     {
       "name": "Fakultät Gestaltung",
@@ -189,25 +225,31 @@
               "classes": [
                 {
                   "name": "Narrativer Film",
-                  "type": "class"
+                  "type": "class",
+                  "id": "narrativerFilm"
                 },
                 {
                   "name": "Generative Kunst",
-                  "type": "class"
+                  "type": "class",
+                  "id": "generativeKunst"
                 },
                 {
                   "name": "Experimenteller Film / Medienkunst",
-                  "type": "class"
+                  "type": "class",
+                  "id": "experimentellerFilmMedienkunst"
                 },
                 {
                   "name": "Entwerfen von interaktiven Systemen",
-                  "type": "class"
+                  "type": "class",
+                  "id": "entwerfenVonInteraktivenSystemen"
                 },
                 {
                   "name": "Digitale Bildung",
-                  "type": "class"
+                  "type": "class",
+                  "id": "digitaleBildung"
                 }
-              ]
+              ],
+              "id": "kunstUndMedien"
             },
             {
               "name": "Unspecified Course",
@@ -215,11 +257,14 @@
               "classes": [
                 {
                   "name": "Kunst und Medien",
-                  "type": "class"
+                  "type": "class",
+                  "id": "kunstUndMedien"
                 }
-              ]
+              ],
+              "id": "unspecifiedCourse"
             }
-          ]
+          ],
+          "id": "institutFuerZeitbasierteMedien"
         },
         {
           "name": "Institut für transmediale Gestaltung",
@@ -231,51 +276,64 @@
               "classes": [
                 {
                   "name": "Raumbezogenes Entwerfen und Ausstellungsgestaltung",
-                  "type": "class"
+                  "type": "class",
+                  "id": "raumbezogenesEntwerfenUndAusstellungsgestaltung"
                 },
                 {
                   "name": "New Media",
-                  "type": "class"
+                  "type": "class",
+                  "id": "newMedia"
                 },
                 {
                   "name": "Labor für Zeichnen",
-                  "type": "class"
+                  "type": "class",
+                  "id": "laborFuerZeichnen"
                 },
                 {
                   "name": "Labor für Typografie",
-                  "type": "class"
+                  "type": "class",
+                  "id": "laborFuerTypografie"
                 },
                 {
                   "name": "Labor für Fotografie",
-                  "type": "class"
+                  "type": "class",
+                  "id": "laborFuerFotografie"
                 },
                 {
                   "name": "Kampagnen",
-                  "type": "class"
+                  "type": "class",
+                  "id": "kampagnen"
                 },
                 {
                   "name": "Illustration",
-                  "type": "class"
+                  "type": "class",
+                  "id": "illustration"
                 },
                 {
                   "name": "Grundlagen des Entwerfens",
-                  "type": "class"
+                  "type": "class",
+                  "id": "grundlagenDesEntwerfens"
                 },
                 {
                   "name": "Grafikdesign",
-                  "type": "class"
+                  "type": "class",
+                  "id": "grafikdesign"
                 },
                 {
                   "name": "Gestaltung des bewegten Bildes",
-                  "type": "class"
+                  "type": "class",
+                  "id": "gestaltungDesBewegtenBildes"
                 },
                 {
                   "name": "Entwerfen Visuelle Systeme",
-                  "type": "class"
+                  "type": "class",
+                  "id": "entwerfenVisuelleSysteme"
                 }
-              ]
+              ],
+              "id": "visuelleKommunikation"
             }
-          ]
+          ],
+          "id": "institutFuerTransmedialeGestaltung"
         },
         {
           "name": "Institut für Theorie und Praxis der Kommunikation",
@@ -287,23 +345,29 @@
               "classes": [
                 {
                   "name": "Verbale Kommunikation",
-                  "type": "class"
+                  "type": "class",
+                  "id": "verbaleKommunikation"
                 },
                 {
                   "name": "Strategische Kommunikationsplanung",
-                  "type": "class"
+                  "type": "class",
+                  "id": "strategischeKommunikationsplanung"
                 },
                 {
                   "name": "Kommunikations- und Medienforschung",
-                  "type": "class"
+                  "type": "class",
+                  "id": "kommunikationsUndMedienforschung"
                 },
                 {
                   "name": "Audiovisuelle Kommunikation",
-                  "type": "class"
+                  "type": "class",
+                  "id": "audiovisuelleKommunikation"
                 }
-              ]
+              ],
+              "id": "gesellschaftsUndWirtschaftskommunikation"
             }
-          ]
+          ],
+          "id": "institutFuerTheorieUndPraxisDerKommunikation"
         },
         {
           "name": "Institut für Produkt- und Prozeßgestaltung",
@@ -315,51 +379,64 @@
               "classes": [
                 {
                   "name": "Industrial Design – Technologie und Konstruktion",
-                  "type": "class"
+                  "type": "class",
+                  "id": "industrialDesignTechnologieUndKonstruktion"
                 },
                 {
                   "name": "Gestalten auf den Grundlagen der Bildenden Kunst",
-                  "type": "class"
+                  "type": "class",
+                  "id": "gestaltenAufDenGrundlagenDerBildendenKunst"
                 },
                 {
                   "name": "Design & Digital Interactions",
-                  "type": "class"
+                  "type": "class",
+                  "id": "designDigitalInteractions"
                 },
                 {
                   "name": "Design & Development",
-                  "type": "class"
+                  "type": "class",
+                  "id": "designDevelopment"
                 },
                 {
                   "name": "Designtheorie",
-                  "type": "class"
+                  "type": "class",
+                  "id": "designtheorie"
                 },
                 {
                   "name": "Design-Grundlagen",
-                  "type": "class"
+                  "type": "class",
+                  "id": "designgrundlagen"
                 },
                 {
                   "name": "Designforschung",
-                  "type": "class"
+                  "type": "class",
+                  "id": "designforschung"
                 },
                 {
                   "name": "Design & Social Context",
-                  "type": "class"
+                  "type": "class",
+                  "id": "designSocialContext"
                 },
                 {
                   "name": "Darstellungstechniken",
-                  "type": "class"
+                  "type": "class",
+                  "id": "darstellungstechniken"
                 },
                 {
                   "name": "Projektgruppe Robert Scheipner",
-                  "type": "class"
+                  "type": "class",
+                  "id": "projektgruppeRobertScheipner"
                 },
                 {
                   "name": "Projektgruppe Ineke Hans",
-                  "type": "class"
+                  "type": "class",
+                  "id": "projektgruppeInekeHans"
                 }
-              ]
+              ],
+              "id": "produktdesign"
             }
-          ]
+          ],
+          "id": "institutFuerProduktUndProzessgestaltung"
         },
         {
           "name": "Institut für Geschichte und Theorie der Gestaltung",
@@ -371,19 +448,24 @@
               "classes": [
                 {
                   "name": "Theorie der Gestaltung/Gender Studies",
-                  "type": "class"
+                  "type": "class",
+                  "id": "theorieDerGestaltunggenderStudies"
                 },
                 {
                   "name": "Kunst- und Kulturgeschichte",
-                  "type": "class"
+                  "type": "class",
+                  "id": "kunstUndKulturgeschichte"
                 },
                 {
                   "name": "Geschichte und Theorie der visuellen Kultur",
-                  "type": "class"
+                  "type": "class",
+                  "id": "geschichteUndTheorieDerVisuellenKultur"
                 }
-              ]
+              ],
+              "id": "unspecifiedCourse"
             }
-          ]
+          ],
+          "id": "institutFuerGeschichteUndTheorieDerGestaltung"
         },
         {
           "name": "Institut für experimentelles Bekleidungs- und Textildesign",
@@ -395,35 +477,44 @@
               "classes": [
                 {
                   "name": "Wearable Computing",
-                  "type": "class"
+                  "type": "class",
+                  "id": "wearableComputing"
                 },
                 {
                   "name": "Schnittgestaltung",
-                  "type": "class"
+                  "type": "class",
+                  "id": "schnittgestaltung"
                 },
                 {
                   "name": "Modetheorie und Kulturwissenschaften",
-                  "type": "class"
+                  "type": "class",
+                  "id": "modetheorieUndKulturwissenschaften"
                 },
                 {
                   "name": "Modetheorie",
-                  "type": "class"
+                  "type": "class",
+                  "id": "modetheorie"
                 },
                 {
                   "name": "Modegeschichte",
-                  "type": "class"
+                  "type": "class",
+                  "id": "modegeschichte"
                 },
                 {
                   "name": "Modedesign und Entwurf",
-                  "type": "class"
+                  "type": "class",
+                  "id": "modedesignUndEntwurf"
                 },
                 {
                   "name": "Darstellungstechniken der Mode/Modezeichnen",
-                  "type": "class"
+                  "type": "class",
+                  "id": "darstellungstechnikenDerModemodezeichnen"
                 }
-              ]
+              ],
+              "id": "modedesign"
             }
-          ]
+          ],
+          "id": "institutFuerExperimentellesBekleidungsUndTextildesign"
         },
         {
           "name": "Institut für Architektur und Städtebau",
@@ -435,63 +526,79 @@
               "classes": [
                 {
                   "name": "Versorgungsplanung und Versorgungstechnik",
-                  "type": "class"
+                  "type": "class",
+                  "id": "versorgungsplanungUndVersorgungstechnik"
                 },
                 {
                   "name": "Städtebau",
-                  "type": "class"
+                  "type": "class",
+                  "id": "staedtebau"
                 },
                 {
                   "name": "Plastische und Räumliche Darstellung",
-                  "type": "class"
+                  "type": "class",
+                  "id": "plastischeUndRaeumlicheDarstellung"
                 },
                 {
                   "name": "Kunst- und Kulturgeschichte",
-                  "type": "class"
+                  "type": "class",
+                  "id": "kunstUndKulturgeschichte"
                 },
                 {
                   "name": "Konstruktives Entwerfen und Tragwerksplanung",
-                  "type": "class"
+                  "type": "class",
+                  "id": "konstruktivesEntwerfenUndTragwerksplanung"
                 },
                 {
                   "name": "Gebäudeplanung und Entwerfen",
-                  "type": "class"
+                  "type": "class",
+                  "id": "gebaeudeplanungUndEntwerfen"
                 },
                 {
                   "name": "Gartenkultur und Freiraumentwicklung",
-                  "type": "class"
+                  "type": "class",
+                  "id": "gartenkulturUndFreiraumentwicklung"
                 },
                 {
                   "name": "Experimentelles Gestalten und Grundlagen des Entwerfens",
-                  "type": "class"
+                  "type": "class",
+                  "id": "experimentellesGestaltenUndGrundlagenDesEntwerfens"
                 },
                 {
                   "name": "Entwerfen und Baukonstruktion III",
-                  "type": "class"
+                  "type": "class",
+                  "id": "entwerfenUndBaukonstruktionIii"
                 },
                 {
                   "name": "Entwerfen und Baukonstruktion I",
-                  "type": "class"
+                  "type": "class",
+                  "id": "entwerfenUndBaukonstruktionI"
                 },
                 {
                   "name": "Entwerfen und Baukonstruktion",
-                  "type": "class"
+                  "type": "class",
+                  "id": "entwerfenUndBaukonstruktion"
                 },
                 {
                   "name": "Digitales und Experimentelles Entwerfen",
-                  "type": "class"
+                  "type": "class",
+                  "id": "digitalesUndExperimentellesEntwerfen"
                 },
                 {
                   "name": "Architekturgeschichte und Architekturtheorie",
-                  "type": "class"
+                  "type": "class",
+                  "id": "architekturgeschichteUndArchitekturtheorie"
                 },
                 {
                   "name": "Entwerfen und Stadterneuerung",
-                  "type": "class"
+                  "type": "class",
+                  "id": "entwerfenUndStadterneuerung"
                 }
-              ]
+              ],
+              "id": "architektur"
             }
-          ]
+          ],
+          "id": "institutFuerArchitekturUndStaedtebau"
         },
         {
           "name": "Unspecified Institute",
@@ -503,21 +610,27 @@
               "classes": [
                 {
                   "name": "Designtransfer",
-                  "type": "class"
+                  "type": "class",
+                  "id": "designtransfer"
                 },
                 {
                   "name": "Design Produkt- und Modedesign",
-                  "type": "class"
+                  "type": "class",
+                  "id": "designProduktUndModedesign"
                 },
                 {
                   "name": "Design and Computation",
-                  "type": "class"
+                  "type": "class",
+                  "id": "designAndComputation"
                 }
-              ]
+              ],
+              "id": "unspecifiedCourse"
             }
-          ]
+          ],
+          "id": "unspecifiedInstitute"
         }
-      ]
+      ],
+      "id": "fakultaetGestaltung"
     },
     {
       "name": "Fakultät Musik",
@@ -526,52 +639,62 @@
         {
           "name": "Institut für Künstlerische Ausbildung/Orchesterinstrumente und Dirigieren    ",
           "type": "institute",
-          "courses": []
+          "courses": [],
+          "id": "institutFuerKuenstlerischeAusbildungorchesterinstrumenteUndDirigieren"
         },
         {
           "name": "Institut für Künstlerische Ausbildung/Klavier",
           "type": "institute",
-          "courses": []
+          "courses": [],
+          "id": "institutFuerKuenstlerischeAusbildungklavier"
         },
         {
           "name": "Institut für Künstlerische Ausbildung/Alte Musik",
           "type": "institute",
-          "courses": []
+          "courses": [],
+          "id": "institutFuerKuenstlerischeAusbildungalteMusik"
         },
         {
           "name": "Institut für Musikpädagogik",
           "type": "institute",
-          "courses": []
+          "courses": [],
+          "id": "institutFuerMusikpaedagogik"
         },
         {
           "name": "Institut für Kirchenmusik",
           "type": "institute",
-          "courses": []
+          "courses": [],
+          "id": "institutFuerKirchenmusik"
         },
         {
           "name": "Institut für Neue Musik",
           "type": "institute",
-          "courses": []
+          "courses": [],
+          "id": "institutFuerNeueMusik"
         },
         {
           "name": "Institut für Musikwissenschaft, Musiktheorie, Komposition und Musikübertragung    ",
           "type": "institute",
-          "courses": []
+          "courses": [],
+          "id": "institutFuerMusikwissenschaftMusiktheorieKompositionUndMusikuebertragung"
         },
         {
           "name": "Julius-Stern-Institut für Nachwuchsförderung",
           "type": "institute",
-          "courses": []
+          "courses": [],
+          "id": "juliussterninstitutFuerNachwuchsfoerderung"
         },
         {
           "name": "Kurt-Singer-Institut für Musikgesundheit",
           "type": "institute",
-          "courses": []
+          "courses": [],
+          "id": "kurtsingerinstitutFuerMusikgesundheit"
         },
         {
           "name": "Staats- und Domchor ",
           "type": "institute",
-          "courses": []
+          "courses": [],
+          "id": "staatsUndDomchor"
         },
         {
           "name": "Unspecified Institute",
@@ -580,16 +703,20 @@
             {
               "name": "Dirigieren",
               "type": "course",
-              "classes": []
+              "classes": [],
+              "id": "dirigieren"
             },
             {
               "name": "Tonmeister",
               "type": "course",
-              "classes": []
+              "classes": [],
+              "id": "tonmeister"
             }
-          ]
+          ],
+          "id": "unspecifiedInstitute"
         }
-      ]
+      ],
+      "id": "fakultaetMusik"
     },
     {
       "name": "Fakultät Darstellende Kunst",
@@ -602,46 +729,56 @@
             {
               "name": "Gesang/Musiktheater",
               "type": "course",
-              "classes": []
+              "classes": [],
+              "id": "gesangmusiktheater"
             },
             {
               "name": "Schauspiel",
               "type": "course",
-              "classes": []
+              "classes": [],
+              "id": "schauspiel"
             },
             {
               "name": "Musical/Show",
               "type": "course",
-              "classes": []
+              "classes": [],
+              "id": "musicalshow"
             },
             {
               "name": "Bühnenbild",
               "type": "course",
-              "classes": []
+              "classes": [],
+              "id": "buehnenbild"
             },
             {
               "name": "Kostümbild",
               "type": "course",
-              "classes": []
+              "classes": [],
+              "id": "kostuembild"
             },
             {
               "name": "Szenisches Schreiben",
               "type": "course",
-              "classes": []
+              "classes": [],
+              "id": "szenischesSchreiben"
             },
             {
               "name": "Theaterpädagogik/Lehramt Theater",
               "type": "course",
-              "classes": []
+              "classes": [],
+              "id": "theaterpaedagogiklehramtTheater"
             }
-          ]
+          ],
+          "id": "unspecifiedInstitute"
         }
-      ]
+      ],
+      "id": "fakultaetDarstellendeKunst"
     },
     {
       "name": "Zentren",
       "type": "faculty",
-      "institutes": []
+      "institutes": [],
+      "id": "zentren"
     },
     {
       "name": "Berlin Career College",
@@ -654,22 +791,26 @@
             {
               "name": "Leadership in digitaler Innovation",
               "type": "course",
-              "classes": []
+              "classes": [],
+              "id": "leadershipInDigitalerInnovation"
             },
             {
               "name": "Sound Studies and Sonic Arts",
               "type": "course",
-              "classes": []
+              "classes": [],
+              "id": "soundStudiesAndSonicArts"
             },
             {
               "name": "Kulturjournalismus",
               "type": "course",
-              "classes": []
+              "classes": [],
+              "id": "kulturjournalismus"
             },
             {
               "name": "Musiktherapie",
               "type": "course",
-              "classes": []
+              "classes": [],
+              "id": "musiktherapie"
             },
             {
               "name": "Unspecified Course",
@@ -677,13 +818,17 @@
               "classes": [
                 {
                   "name": "Alumni-Netzwerk",
-                  "type": "class"
+                  "type": "class",
+                  "id": "alumninetzwerk"
                 }
-              ]
+              ],
+              "id": "unspecifiedCourse"
             }
-          ]
+          ],
+          "id": "unspecifiedInstitute"
         }
-      ]
+      ],
+      "id": "berlinCareerCollege"
     },
     {
       "name": "Hochschulübergreifendes Zentrum für Tanz HZT",
@@ -696,91 +841,111 @@
             {
               "name": "Tanz, Kontext, Choreographie",
               "type": "course",
-              "classes": []
+              "classes": [],
+              "id": "tanzKontextChoreographie"
             },
             {
               "name": "Solo/Dance/Authorship",
               "type": "course",
-              "classes": []
+              "classes": [],
+              "id": "solodanceauthorship"
             },
             {
               "name": "Choreographie",
               "type": "course",
-              "classes": []
+              "classes": [],
+              "id": "choreographie"
             }
-          ]
+          ],
+          "id": "unspecifiedInstitute"
         }
-      ]
+      ],
+      "id": "hochschuluebergreifendesZentrumFuerTanzHzt"
     },
     {
       "name": "Jazz-Institut Berlin JIB",
       "type": "faculty",
-      "institutes": []
+      "institutes": [],
+      "id": "jazzinstitutBerlinJib"
     },
     {
       "name": "Studienberatung und Psychologische Beratung",
       "type": "faculty",
-      "institutes": []
+      "institutes": [],
+      "id": "studienberatungUndPsychologischeBeratung"
     },
     {
       "name": "Studium Generale",
       "type": "faculty",
-      "institutes": []
+      "institutes": [],
+      "id": "studiumGenerale"
     },
     {
       "name": "Frauenbeauftragte",
       "type": "faculty",
-      "institutes": []
+      "institutes": [],
+      "id": "frauenbeauftragte"
     },
     {
       "name": "Diversitätsbeauftragte",
       "type": "faculty",
-      "institutes": []
+      "institutes": [],
+      "id": "diversitaetsbeauftragte"
     },
     {
       "name": "International Office",
       "type": "faculty",
-      "institutes": []
+      "institutes": [],
+      "id": "internationalOffice"
     },
     {
       "name": "Universitätsbibliothek",
       "type": "faculty",
-      "institutes": []
+      "institutes": [],
+      "id": "universitaetsbibliothek"
     },
     {
       "name": "Zentrum für künstlerische Lehrkräftebildung",
       "type": "faculty",
-      "institutes": []
+      "institutes": [],
+      "id": "zentrumFuerKuenstlerischeLehrkraeftebildung"
     },
     {
       "name": "AStA",
       "type": "faculty",
-      "institutes": []
+      "institutes": [],
+      "id": "asta"
     },
     {
       "name": "Fachschaftsrat",
       "type": "faculty",
-      "institutes": []
+      "institutes": [],
+      "id": "fachschaftsrat"
     },
     {
       "name": "Stabsstelle Überfakultäre Veranstaltungen",
       "type": "faculty",
-      "institutes": []
+      "institutes": [],
+      "id": "stabsstelleUeberfakultaereVeranstaltungen"
     },
     {
       "name": "Stabsstelle Presse/Kommunikation",
       "type": "faculty",
-      "institutes": []
+      "institutes": [],
+      "id": "stabsstellePressekommunikation"
     },
     {
       "name": "Stabsstelle Strategisches Marketing",
       "type": "faculty",
-      "institutes": []
+      "institutes": [],
+      "id": "stabsstelleStrategischesMarketing"
     },
     {
       "name": "Initiative",
       "type": "faculty",
-      "institutes": []
+      "institutes": [],
+      "id": "initiative"
     }
-  ]
+  ],
+  "id": "universitaetDerKuensteBerlin"
 }

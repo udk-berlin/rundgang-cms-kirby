@@ -404,7 +404,7 @@ return [
                                 # docs: https://getkirby.com/docs/reference/panel/fields/select
                                 #
                                 'format_field_select' => [
-                                    'type' => 'multiselect',
+                                    'type' => 'select',
                                     'label' => [
                                         'en' => 'Format',
                                         'de' => 'Format',

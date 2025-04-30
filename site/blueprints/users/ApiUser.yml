@@ -20,7 +20,7 @@ permissions:
   access:
     "*": false
     #account: true
-    #panel: true
+    panel: true
     #site: true
     #languages: true
     #system: true

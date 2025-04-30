@@ -7,6 +7,7 @@ Kirby::plugin('medienhaus/api', [
                 return kirby()->site()->pages()->filterBy(
                     $filter,
                     $value,
+                    ',',
                 );
             },
         ],

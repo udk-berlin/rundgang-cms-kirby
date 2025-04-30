@@ -43,14 +43,14 @@ The following custom API endpoints are provided to extend the functionality of t
 
 ### **GET** `/api/2025/contexts`
 
-**Description:**  
+**Description:**
 Returns a nested JSON object with all available contexts of 2025.
 
 ---
 
 ### **GET** `/api/2025/formats`
 
-**Description:**  
+**Description:**
 Returns a JSON object with all available formats of 2025.
 
 **Response Example:**
@@ -75,7 +75,7 @@ Returns a JSON object with all available formats of 2025.
 
 ### **GET** `/api/2025/locations`
 
-**Description:**  
+**Description:**
 Returns a JSON object with all available locations of 2025.
 
 **Response Example:**
@@ -106,7 +106,7 @@ Returns a JSON object with all available locations of 2025.
 
 ### **GET** `/api/2025/filterPagesBy`
 
-**Description:**  
+**Description:**
 Returns a JSON object with all available locations.
 
 **Query Parameters:**

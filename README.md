@@ -83,20 +83,20 @@ Returns a JSON object with all available locations of 2025.
 ```json
 [
     {
-        "name": "UNI.T - Theater der UdK Berlin",
-        "street": "Fasanenstraße 1b",
+        "name": "Hardenbergstraße 33",
+        "street": "Hardenbergstraße 33",
         "postcode": "10623",
         "city": "Berlin",
-        "latitude": "52.5093475",
-        "longitude": "13.3276388"
+        "latitude": "52.509653",
+        "longitude": "13.3271929"
     },
     {
-        "name": "Konzertsaal",
-        "street": "Hardenbergstraße, Fasanenstraße 33 (Ecke)",
-        "postcode": "10623",
+        "name": "Medienhaus",
+        "street": "Grunewaldstraße 2-5",
+        "postcode": "10823",
         "city": "Berlin",
-        "latitude": "52.5092561",
-        "longitude": "13.3275879"
+        "latitude": "52.4908577",
+        "longitude": "13.357244"
     },
     ...
 ]

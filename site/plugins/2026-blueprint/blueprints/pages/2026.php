@@ -6,10 +6,16 @@ $context_json = asset('assets/2026/contexts.json')->read();
 $context_data = json_decode($context_json, true);
 $context_options = [];
 
+// Sanitize method to remove all spaces from the string
+function sanitizeId(string $id): string
+{
+    return str_replace(' ', '', $id);
+}
+
 // flatten the nested structure
 //
 foreach ($context_data['faculties'] as $faculty) {
-    $faculty_id = $faculty['name'];
+    $faculty_id = Str::slug(Str::camel($faculty['name']));
     $faculty_text = $faculty['name'];
     $faculty_info = $faculty['name'];
 
@@ -24,9 +30,9 @@ foreach ($context_data['faculties'] as $faculty) {
     }
 
     foreach ($faculty['institutes'] as $institute) {
-        $institute_id = $institute['name'] . ' - ' . $faculty['name'];
+        $institute_id = Str::slug(Str::camel($institute['name']));
         $institute_text = $institute['name'];
-        $institute_info = $institute_id;
+        $institute_info = $institute['name'] . ' - ' . $faculty['name'];
 
         // Add institute if it has no courses
         if (!isset($institute['courses']) || empty($institute['courses'])) {
@@ -39,9 +45,9 @@ foreach ($context_data['faculties'] as $faculty) {
         }
 
         foreach ($institute['courses'] as $course) {
-            $course_id = $course['name'] . ' - ' . $institute['name'] . ' - ' . $faculty['name'];
+            $course_id = Str::slug(Str::camel($course['name']));
             $course_text = $course['name'];
-            $course_info = $course_id;
+            $course_info = $course['name'] . ' - ' . $institute['name'] . ' - ' . $faculty['name'];
 
             // Add course if it has no classes
             if (!isset($course['classes']) || empty($course['classes'])) {
@@ -54,9 +60,9 @@ foreach ($context_data['faculties'] as $faculty) {
             }
 
             foreach ($course['classes'] as $class) {
-                $id = $class['name'] . ' - ' . $course['name'] . ' - ' . $institute['name'] . ' - ' . $faculty['name'];
+                $id = Str::slug(Str::camel($class['name']));
                 $text = $class['name'];
-                $info = $id;
+                $info = $class['name'] . ' - ' . $course['name'] . ' - ' . $institute['name'] . ' - ' . $faculty['name'];
 
                 $context_options[] = [
                     'value' => $id,

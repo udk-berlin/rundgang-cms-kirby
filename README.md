@@ -35,6 +35,12 @@ If you are familiar with Git, you can clone Kirby's Plainkit repository from Git
 © 2009 Bastian Allgeier
 [getkirby.com](https://getkirby.com) · [License agreement](https://getkirby.com/license)
 
+## Kirby Query Language (KQL)
+
+This project utilises the Kirby Query Language (KQL) plugin which works similar to GraphQL.
+
+For more information about KQL and how to use it, visit the official [KQL repository](https://github.com/getkirby/kql).
+
 ## Custom API Endpoints
 
 The following custom API endpoints are provided to extend the functionality of the Kirby CMS for the annual Rundgang frontend. These endpoints are located in the `site/plugins/api` folder.
@@ -43,14 +49,14 @@ The following custom API endpoints are provided to extend the functionality of t
 
 ### **GET** `/api/2025/contexts`
 
-**Description:**  
+**Description:**
 Returns a nested JSON object with all available contexts of 2025.
 
 ---
 
 ### **GET** `/api/2025/formats`
 
-**Description:**  
+**Description:**
 Returns a JSON object with all available formats of 2025.
 
 **Response Example:**
@@ -75,7 +81,7 @@ Returns a JSON object with all available formats of 2025.
 
 ### **GET** `/api/2025/locations`
 
-**Description:**  
+**Description:**
 Returns a JSON object with all available locations of 2025.
 
 **Response Example:**
@@ -83,68 +89,21 @@ Returns a JSON object with all available locations of 2025.
 ```json
 [
     {
-        "name": "UNI.T - Theater der UdK Berlin",
-        "street": "Fasanenstraße 1b",
+        "name": "Hardenbergstraße 33",
+        "street": "Hardenbergstraße 33",
         "postcode": "10623",
         "city": "Berlin",
-        "latitude": "52.5093475",
-        "longitude": "13.3276388"
+        "latitude": "52.509653",
+        "longitude": "13.3271929"
     },
     {
-        "name": "Konzertsaal",
-        "street": "Hardenbergstraße, Fasanenstraße 33 (Ecke)",
-        "postcode": "10623",
+        "name": "Medienhaus",
+        "street": "Grunewaldstraße 2-5",
+        "postcode": "10823",
         "city": "Berlin",
-        "latitude": "52.5092561",
-        "longitude": "13.3275879"
+        "latitude": "52.4908577",
+        "longitude": "13.357244"
     },
     ...
-]
-```
-
----
-
-### **GET** `/api/2025/filterPagesBy`
-
-**Description:**  
-Returns a JSON object with all available locations.
-
-**Query Parameters:**
-
-- filter (string): The field to filter by (e.g., format).
-- value (string): The value to filter for (e.g., project_presentation).
-
-**Request Example:**
-
-```javascript
-const options = {
-    method: 'GET',
-    headers: {
-        'X-Language': 'en',
-        Authorization: 'Basic bUB......jc4'
-    }
-};
-
-fetch('https://yourdomain.com/api/2025/filterPagesBy/?filter=format&value=project_presentation', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
-```
-
-**Response Example:**
-
-```json
-[
-    {
-        "data": {
-            "demo-project": {
-                "blueprints": null,
-                "children": null,
-                "drafts": null,
-                "childrenAndDrafts": null
-            },
-            ...
-        }
-    }
 ]
 ```

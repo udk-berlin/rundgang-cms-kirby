@@ -37,8 +37,7 @@ If you are familiar with Git, you can clone Kirby's Plainkit repository from Git
 
 ## Custom API Endpoints
 
-The following custom API endpoints are provided to extend the functionality of the Kirby CMS for the annual Rundgang
-Frontend. These endpoints are located in the `site/plugins/api` folder.
+The following custom API endpoints are provided to extend the functionality of the Kirby CMS for the annual Rundgang frontend. These endpoints are located in the `site/plugins/api` folder.
 
 ---
 
@@ -59,20 +58,20 @@ Returns a JSON object with all available formats of 2025.
 ```json
 [
     {
-        "name": "Hardenbergstraße 33",
-        "street": "Hardenbergstraße 33",
-        "postcode": 10623,
+        "name": "UNI.T - Theater der UdK Berlin",
+        "street": "Fasanenstraße 1b",
+        "postcode": "10623",
         "city": "Berlin",
-        "lat": 52.505,
-        "long": 13.337
+        "latitude": "52.5093475",
+        "longitude": "13.3276388"
     },
     {
-        "name": "Bundesallee 1-12",
-        "street": "Bundesallee 1-12",
-        "postcode": 10719,
+        "name": "Konzertsaal",
+        "street": "Hardenbergstraße, Fasanenstraße 33 (Ecke)",
+        "postcode": "10623",
         "city": "Berlin",
-        "lat": 52.505,
-        "long": 13.337
+        "latitude": "52.5092561",
+        "longitude": "13.3275879"
     },
     ...
 ]

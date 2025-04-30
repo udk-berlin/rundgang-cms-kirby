@@ -15,7 +15,7 @@ function sanitizeId(string $id): string
 // flatten the nested structure
 //
 foreach ($context_data['faculties'] as $faculty) {
-    $faculty_id = Str::slug(Str::camel($faculty['name']));
+    $faculty_id = $faculty['id'];
     $faculty_text = $faculty['name'];
     $faculty_info = $faculty['name'];
 
@@ -30,7 +30,7 @@ foreach ($context_data['faculties'] as $faculty) {
     }
 
     foreach ($faculty['institutes'] as $institute) {
-        $institute_id = Str::slug(Str::camel($institute['name']));
+        $institute_id = $institute['id'];
         $institute_text = $institute['name'];
         $institute_info = $institute['name'] . ' - ' . $faculty['name'];
 
@@ -45,7 +45,7 @@ foreach ($context_data['faculties'] as $faculty) {
         }
 
         foreach ($institute['courses'] as $course) {
-            $course_id = Str::slug(Str::camel($course['name']));
+            $course_id = $course['id'];
             $course_text = $course['name'];
             $course_info = $course['name'] . ' - ' . $institute['name'] . ' - ' . $faculty['name'];
 
@@ -60,7 +60,7 @@ foreach ($context_data['faculties'] as $faculty) {
             }
 
             foreach ($course['classes'] as $class) {
-                $id = Str::slug(Str::camel($class['name']));
+                $id = $class['id'];
                 $text = $class['name'];
                 $info = $class['name'] . ' - ' . $course['name'] . ' - ' . $institute['name'] . ' - ' . $faculty['name'];
 

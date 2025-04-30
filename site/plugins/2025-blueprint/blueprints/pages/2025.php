@@ -109,12 +109,16 @@ return [
     #
     'status' => [
         'draft' => [
-            'en' => 'Draft',
-            'de' => 'Entwurf',
+            'label' => [
+                'en' => 'Draft',
+                'de' => 'Entwurf',
+            ],
         ],
         'unlisted' => [
-            'en' => 'Published',
-            'de' => 'Veröffentlicht',
+            'label' => [
+                'en' => 'Published',
+                'de' => 'Veröffentlicht',
+            ],
         ],
     ],
 

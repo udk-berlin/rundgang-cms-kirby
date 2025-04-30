@@ -789,6 +789,11 @@ return [
                                 'en' => 'Content',
                                 'de' => 'Inhalt',
                             ],
+                            'default' => [
+                                [
+                                    'type' => 'text',
+                                ],
+                            ],
                             'fieldsets' => [
                                 'heading',
                                 'text',

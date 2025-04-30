@@ -1,22 +1,14 @@
 <?php
 
-// load the JSON file
+// load the contexts JSON file
 //
-// by importing the JSON file this way, we can name the file anything we want;
-// this way, the script will load the first JSON file found in `assets/json/`
-//
-$files = glob(kirby()->root('assets') . '/json/*.json');
-
-if (!empty($files)) {
-    $json = file_get_contents($files[0]);
-    $data = json_decode($json, true);
-}
-
-$options = [];
+$context_json = asset('assets/2026/contexts.json')->read();
+$context_data = json_decode($context_json, true);
+$context_options = [];
 
 // flatten the nested structure
 //
-foreach ($data['faculties'] as $faculty) {
+foreach ($context_data['faculties'] as $faculty) {
     if (!isset($faculty['institutes'])) {
         continue;
     }
@@ -36,7 +28,7 @@ foreach ($data['faculties'] as $faculty) {
                 $text = $class['name'];
                 $info = $id;
 
-                $options[] = [
+                $context_options[] = [
                     'value' => $id,
                     'text' => $text,
                     'info' => $info,
@@ -46,11 +38,24 @@ foreach ($data['faculties'] as $faculty) {
     }
 }
 
-// sort options by text key
+// sort context_options by text key
 //
-usort($options, function ($a, $b) {
+usort($context_options, function ($a, $b) {
     return strcasecmp($a['text'], $b['text']);
 });
+
+// create format object with translations
+//
+$format_json = asset('assets/2026/formats.json')->read();
+$format_data = json_decode($format_json, true);
+$format_options = [];
+
+foreach ($format_data as $format) {
+    $format_options[] = [
+        'text' => ucfirst($format[kirby()->user()->language()]),
+        'value' => $format['key'],
+    ];
+}
 
 return [
     'title' => 'Rundgang 2026',
@@ -194,17 +199,77 @@ return [
                                         'en' => 'Context',
                                         'de' => 'Kontext',
                                     ],
-                                    'max' => 1,
-                                    'options' => $options,
-                                    'required' => true,
                                     'help' => [
                                         'en' => 'The context is, for example, the class or course in which the project was created.',
                                         'de' => 'Der Kontext ist beispielsweise die Klasse oder der Kurs, in dem das Projekt entstanden ist.',
                                     ],
+                                    #'max' => 1,
+                                    'options' => $context_options,
+                                    'required' => true,
                                     'translate' => false,
                                 ],
                             ],
                         ],
+
+                        # docs: https://getkirby.com/docs/reference/panel/sections/fields
+                        #
+                        #'metadata_section_format' => [
+                        #    'type' => 'fields',
+                        #    'fields' => [
+
+                        #        # docs: https://getkirby.com/docs/reference/panel/fields/multiselect
+                        #        #
+                        #        'format' => [
+                        #            'type' => 'select',
+                        #            'label' => [
+                        #                'en' => 'Format',
+                        #                'de' => 'Format',
+                        #            ],
+                        #            'help' => [
+                        #                'en' => 'The format is the type of the content, for example a concert, a live performance, an installation, et cetera.',
+                        #                'de' => 'Das Format ist die Art des Inhalts, beispielsweise ein Konzert, eine Live-Performance, eine Installation, et cetera.',
+                        #            ],
+                        #            'icon' => 'palette',
+                        #            'max' => 1,
+                        #            'options' => $format_options,
+                        #            'required' => true,
+                        #            'translate' => false,
+                        #        ],
+                        #    ],
+                        #],
+
+                        # docs: https://getkirby.com/docs/reference/panel/sections/fields
+                        #
+                        #'metadata_section_location' => [
+                        #    'type' => 'fields',
+                        #    'fields' => [
+
+                        #        # docs: https://getkirby.com/docs/reference/panel/fields/multiselect
+                        #        #
+                        #        'location' => [
+                        #            'type' => 'select',
+                        #            'label' => [
+                        #                'en' => 'Location',
+                        #                'de' => 'Standort',
+                        #            ],
+                        #            'help' => [
+                        #                'en' => 'At which location of Berlin University of the Arts is this content exhibited/presented?',
+                        #                'de' => 'An welchem Standort der Universität der Künste Berlin wird dieser Inhalt ausgestellt/präsentiert?',
+                        #            ],
+                        #            'icon' => 'pin',
+                        #            'max' => 1,
+                        #            'options' => [
+                        #                'type' => 'api',
+                        #                'url' => 'assets/2026/locations.json',
+                        #                'query' => 'sortBy("name", "asc")',
+                        #                'text' => '{{ item.name }}',
+                        #                'value' => '{{ item.name.slug }}',
+                        #            ],
+                        #            'required' => true,
+                        #            'translate' => false,
+                        #        ],
+                        #    ],
+                        #],
 
                         # docs: https://getkirby.com/docs/reference/panel/sections/fields
                         #
@@ -220,16 +285,210 @@ return [
                                         'en' => 'Terms & Conditions',
                                         'de' => 'Nutzungsbedingungen',
                                     ],
-                                    'icon' => 'page',
                                     'help' => [
                                         'en' => 'See: <a href="https://udk-berlin.de/impressum" target="_blank">Terms & Conditions</a>',
                                         'de' => 'Siehe: <a href="https://udk-berlin.de/impressum" target="_blank">Nutzungsbedingungen</a>',
                                     ],
+                                    'icon' => 'page',
                                     'required' => true,
                                     'text' => [
                                         'en' => 'I hereby accept the <a href="https://udk-berlin.de/impressum" target="_blank">Terms & Conditions</a>.',
                                         'de' => 'Ich akzeptiere die <a href="https://udk-berlin.de/impressum" target="_blank">Nutzungsbedingungen</a>.',
                                     ],
+                                    'translate' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+
+        # guide: https://getkirby.com/docs/guide/blueprints/layout
+        #
+        'format_tab' => [
+            'label' => [
+                'en' => 'Format',
+                'de' => 'Format',
+            ],
+            'icon' => 'palette',
+
+            # docs: https://getkirby.com/docs/reference/panel/blueprints/page
+            #
+            'columns' => [
+
+                # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+                #
+                'format_column_banner' => [
+                    'width' => '1/1',
+
+                    # docs: https://getkirby.com/docs/reference/panel/sections
+                    #
+                    'sections' => [
+
+                        # docs: https://getkirby.com/docs/reference/panel/sections/fields
+                        #
+                        'format_section_info' => [
+                            'type' => 'fields',
+                            'fields' => [
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/info
+                                #
+                                'format_field_info' => [
+                                    'type' => 'info',
+                                    'label' => false,
+                                    'icon' => 'translate',
+                                    'text' => [
+                                        'en' => 'The <strong>Format</strong> field can only be filled for the default language, i.e. <strong>DE</strong> in the dropdown menu above, next to the page title.',
+                                        'de' => 'Das <strong>Format</strong> kann nur für die Standard-Sprache eingetragen werden, d.h. <strong>DE</strong> im Dropdown-Menü neben/unter dem Seiten-Titel.',
+                                    ],
+                                    'theme' => 'notice',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+
+                # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+                #
+                'format_column_main' => [
+                    'width' => '1/1',
+
+                    # docs: https://getkirby.com/docs/reference/panel/sections
+                    #
+                    'sections' => [
+
+                        # docs: https://getkirby.com/docs/reference/panel/sections/fields
+                        #
+                        'format_section_format' => [
+                            'type' => 'fields',
+                            'fields' => [
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/select
+                                #
+                                'format_field_select' => [
+                                    'type' => 'select',
+                                    'label' => [
+                                        'en' => 'Format',
+                                        'de' => 'Format',
+                                    ],
+                                    'help' => [
+                                        'en' => 'The format is the type of the content, for example a concert, a live performance, an installation, et cetera.',
+                                        'de' => 'Das Format ist die Art des Inhalts, beispielsweise ein Konzert, eine Live-Performance, eine Installation, et cetera.',
+                                    ],
+                                    #'icon' => 'palette',
+                                    'max' => 1,
+                                    'options' => $format_options,
+                                    'required' => true,
+                                    'translate' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+
+        # guide: https://getkirby.com/docs/guide/blueprints/layout
+        #
+        'location_tab' => [
+            'label' => [
+                'en' => 'Location',
+                'de' => 'Standort',
+            ],
+            'icon' => 'pin',
+
+            # docs: https://getkirby.com/docs/reference/panel/blueprints/page
+            #
+            'columns' => [
+
+                # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+                #
+                'location_column_banner' => [
+                    'width' => '1/1',
+
+                    # docs: https://getkirby.com/docs/reference/panel/sections
+                    #
+                    'sections' => [
+
+                        # docs: https://getkirby.com/docs/reference/panel/sections/fields
+                        #
+                        'location_section_info' => [
+                            'type' => 'fields',
+                            'fields' => [
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/info
+                                #
+                                'location_field_info' => [
+                                    'type' => 'info',
+                                    'label' => false,
+                                    'icon' => 'translate',
+                                    'text' => [
+                                        'en' => 'The <strong>Location</strong> field can only be filled for the default language, i.e. <strong>DE</strong> in the dropdown menu above, next to the page title.',
+                                        'de' => 'Der <strong>Standort</strong> kann nur für die Standard-Sprache eingetragen werden, d.h. <strong>DE</strong> im Dropdown-Menü neben/unter dem Seiten-Titel.',
+                                    ],
+                                    'theme' => 'notice',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+
+                # guide: https://getkirby.com/docs/guide/blueprints/layout#columns
+                #
+                'location_column_main' => [
+                    'width' => '1/1',
+
+                    # docs: https://getkirby.com/docs/reference/panel/sections
+                    #
+                    'sections' => [
+
+                        # docs: https://getkirby.com/docs/reference/panel/sections/fields
+                        #
+                        'location_section_location' => [
+                            'type' => 'fields',
+                            'fields' => [
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/select
+                                #
+                                'location_field_select' => [
+                                    'type' => 'select',
+                                    'label' => [
+                                        'en' => 'Location',
+                                        'de' => 'Standort',
+                                    ],
+                                    'help' => [
+                                        'en' => 'At which location of Berlin University of the Arts is this content exhibited/presented?',
+                                        'de' => 'An welchem Standort der Universität der Künste Berlin wird dieser Inhalt ausgestellt/präsentiert?',
+                                    ],
+                                    #'icon' => 'pin',
+                                    'max' => 1,
+                                    'options' => [
+                                        'type' => 'api',
+                                        'url' => 'assets/2026/locations.json',
+                                        'query' => 'sortBy("name", "asc")',
+                                        'text' => '{{ item.name }}',
+                                        'value' => '{{ item.name.slug }}',
+                                    ],
+                                    'required' => true,
+                                    'translate' => false,
+                                ],
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/text
+                                #
+                                'location_field_text' => [
+                                    'type' => 'text',
+                                    'label' => [
+                                        'en' => 'Additional Information (optional)',
+                                        'de' => 'Weitere Informationen (optional)',
+                                    ],
+                                    'help' => [
+                                        'en' => 'For example: floor, room number, et cetera.',
+                                        'de' => 'Zum Beispiel: Etage, Raumnummer, et cetera.',
+                                    ],
+                                    'icon' => 'info',
+                                    'maxlength' => 50,
+                                    'required' => false,
                                     'translate' => false,
                                 ],
                             ],
@@ -277,7 +536,7 @@ return [
                                         'en' => 'Add <strong>Date(s) & Time</strong> for your event; this should only be filled for concerts, performances, et cetera which are <strong>happening at only specific times</strong>.',
                                         'de' => 'Füge <strong>Datum & Uhrzeit</strong> für dein Event hinzu; dies sollte ausschließlich für Konzerte, Performances, et cetera gemacht werden, welche <strong>nur zu bestimmten Zeitpunkten stattfinden</strong>.',
                                     ],
-                                    'theme' => 'notice',
+                                    'theme' => 'warning',
                                 ],
 
                                 # docs: https://getkirby.com/docs/reference/panel/fields/structure
@@ -501,29 +760,10 @@ return [
                                 'de' => 'Inhalt',
                             ],
                             'fieldsets' => [
-                                'text' => [
-                                    'label' => 'Text',
-                                    'type' => 'group',
-                                    'fieldsets' => [
-                                        'heading',
-                                        'text',
-                                        'list',
-                                    ],
-                                ],
-                                'media' => [
-                                    'label' => 'Media',
-                                    'type' => 'group',
-                                    'fieldsets' => [
-                                        'image',
-                                    ],
-                                ],
-                                'code' => [
-                                    'label' => 'Code',
-                                    'type' => 'group',
-                                    'fieldsets' => [
-                                        'code',
-                                    ],
-                                ],
+                                'heading',
+                                'text',
+                                'list',
+                                'image',
                             ],
                         ],
                     ],
@@ -597,4 +837,3 @@ return [
     ],
     */
 ];
-

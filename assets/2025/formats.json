@@ -1,0 +1,117 @@
+[
+  {
+    "key": "exhibition",
+    "en": "exhibition",
+    "de": "Ausstellung"
+  },
+  {
+    "key": "consulting_offer",
+    "en": "consulting offer",
+    "de": "Beratungsangebot"
+  },
+  {
+    "key": "dj_set",
+    "en": "DJ set",
+    "de": "DJ-Set"
+  },
+  {
+    "key": "film_screening",
+    "en": "film screening",
+    "de": "Filmvorführung/Screening"
+  },
+  {
+    "key": "guided_tour",
+    "en": "guided tour",
+    "de": "Führung"
+  },
+  {
+    "key": "installation",
+    "en": "installation",
+    "de": "Installation"
+  },
+  {
+    "key": "sound_installation",
+    "en": "sound installation",
+    "de": "Klanginstallation"
+  },
+  {
+    "key": "concert",
+    "en": "concert",
+    "de": "Konzert"
+  },
+  {
+    "key": "conversation",
+    "en": "conversation",
+    "de": "Gespräch"
+  },
+  {
+    "key": "reading",
+    "en": "reading",
+    "de": "Lesung"
+  },
+  {
+    "key": "fashion_show",
+    "en": "fashion show",
+    "de": "Modenschau"
+  },
+  {
+    "key": "musical",
+    "en": "musical",
+    "de": "Musical"
+  },
+  {
+    "key": "open_rehearsal",
+    "en": "open rehearsal",
+    "de": "offene Probe"
+  },
+  {
+    "key": "open_space",
+    "en": "open space",
+    "de": "Open Space"
+  },
+  {
+    "key": "opera",
+    "en": "opera",
+    "de": "Oper"
+  },
+  {
+    "key": "performance",
+    "en": "performance",
+    "de": "Performance"
+  },
+  {
+    "key": "panel_discussion",
+    "en": "panel discussion",
+    "de": "Podiumsgespräch"
+  },
+  {
+    "key": "project_presentation",
+    "en": "project presentation",
+    "de": "Projektpräsentation"
+  },
+  {
+    "key": "dance",
+    "en": "dance",
+    "de": "Tanz"
+  },
+  {
+    "key": "theater",
+    "en": "theater",
+    "de": "Theater"
+  },
+  {
+    "key": "lecture",
+    "en": "lecture",
+    "de": "Vortrag"
+  },
+  {
+    "key": "workshop",
+    "en": "workshop",
+    "de": "Workshop"
+  },
+  {
+    "key": "other",
+    "en": "other",
+    "de": "sonstige"
+  }
+]

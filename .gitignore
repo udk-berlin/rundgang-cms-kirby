@@ -47,10 +47,6 @@ Icon
 # ---------------
 /site/config/config.php
 
-# Assets
-# ---------------
-/assets/*
-
 # Content
 # ---------------
 /content/*

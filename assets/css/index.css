@@ -1,0 +1,141 @@
+/* medienhaus.css */
+
+@import url("./normalize.css");
+@import url("./fonts.css");
+
+:root {
+  --color-background: 0 0% 100%;
+  --color-foreground: 0 0% 0%;
+  --color-accent: 216 100% 50%;
+  --color-highlight: 264 100% 50%;
+  --margin: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: unset;
+  padding: unset;
+}
+
+html {
+  background-color: hsl(var(--color-background) / 100%);
+  color: hsl(var(--color-foreground) / 100%);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  height: 100%;
+  line-height: 1.4;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1rem;
+  min-height: 100%;
+  padding: calc(var(--margin) * 0.8) calc(var(--margin) * 1) calc(var(--margin) * 1.6);
+}
+
+body > * {
+  max-width: 56ch;
+}
+
+body > * + *,
+body > *:not(nav) > * + * {
+  margin-top: var(--margin);
+}
+
+a:link {
+  color: hsl(var(--color-accent) / 100%);
+}
+
+a:visited {
+  color: hsl(var(--color-accent) / 100%);
+}
+
+a:hover {
+  color: hsl(var(--color-highlight) / 100%);
+}
+
+a:focus {
+  color: hsl(var(--color-highlight) / 100%);
+}
+
+a:active {
+  color: hsl(var(--color-highlight) / 100%);
+}
+
+code {
+  background-color: hsl(var(--color-foreground) / 5%);
+  font-family: "Roboto Mono", monospace;
+  font-weight: normal;
+  padding: 0 calc(var(--margin) * 0.2);
+  word-wrap: break-word;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: bold;
+  line-height: inherit;
+  margin: unset;
+}
+
+hr {
+  border-color: hsl(var(--color-foreground) / 20%);
+  border-radius: unset;
+  border-style: solid;
+  border-width: calc(var(--margin) * 0.05);
+  margin: var(--margin) 0;
+}
+
+ul {
+  font-feature-settings: "case";
+  list-style-position: inside;
+  /* list-style-type: square; */
+  list-style-type: "\2013\0020";
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+a[rel~="external"]::after {
+  content: "\2197";
+  display: inline-block;
+  font-size: 0.55rem;
+  font-style: normal;
+  font-weight: bold;
+  margin-right: -0.15rem;
+  vertical-align: super;
+}
+
+nav {
+  display: flex;
+  gap: var(--margin);
+}
+
+nav .active {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: 0 0% 8%;
+    --color-foreground: 0 0% 100%;
+    --color-accent: 205 100% 50%;
+    --color-highlight: 244 100% 70%;
+  }
+}

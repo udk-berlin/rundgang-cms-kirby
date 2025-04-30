@@ -1,0 +1,106 @@
+[
+  {
+    "name": "Hardenbergstraße 33",
+    "street": "Hardenbergstraße 33",
+    "postcode": "10623",
+    "city": "Berlin",
+    "latitude": "52.509653",
+    "longitude": "13.3271929"
+  },
+  {
+    "name": "Bundesallee 1-12",
+    "street": "Bundesallee 1-12",
+    "postcode": "10719",
+    "city": "Berlin",
+    "latitude": "52.4981932",
+    "longitude": "13.3274551"
+  },
+  {
+    "name": "Einsteinufer 43-53",
+    "street": "Einsteinufer 43-53",
+    "postcode": "10587",
+    "city": "Berlin",
+    "latitude": "52.5165548",
+    "longitude": "13.3202177"
+  },
+  {
+    "name": "Jazz-Institut Berlin",
+    "street": "Einsteinufer 43-53",
+    "postcode": "10587",
+    "city": "Berlin",
+    "latitude": "52.5169628",
+    "longitude": "13.3181485"
+  },
+  {
+    "name": "Fasanenstraße 1b",
+    "street": "Fasanenstraße 1b",
+    "postcode": "10623",
+    "city": "Berlin",
+    "latitude": "52.5093475",
+    "longitude": "13.3276388"
+  },
+  {
+    "name": "UNI.T - Theater der UdK Berlin",
+    "street": "Fasanenstraße 1b",
+    "postcode": "10623",
+    "city": "Berlin",
+    "latitude": "52.5093475",
+    "longitude": "13.3276388"
+  },
+  {
+    "name": "Hochschulübergreifendes Zentrum Tanz (HZT)",
+    "street": "Uferstraße 23",
+    "postcode": "13357",
+    "city": "Berlin",
+    "latitude": "52.5517727",
+    "longitude": "13.3700503"
+  },
+  {
+    "name": "Konzertsaal",
+    "street": "Hardenbergstraße, Fasanenstraße 33 (Ecke)",
+    "postcode": "10623",
+    "city": "Berlin",
+    "latitude": "52.5092561",
+    "longitude": "13.3275879"
+  },
+  {
+    "name": "Lietzenburger Straße 45",
+    "street": "Lietzenburger Straße 45",
+    "postcode": "10777",
+    "city": "Berlin",
+    "latitude": "52.4997893",
+    "longitude": "13.3314795"
+  },
+  {
+    "name": "Medienhaus",
+    "street": "Grunewaldstraße 2-5",
+    "postcode": "10823",
+    "city": "Berlin",
+    "latitude": "52.4908577",
+    "longitude": "13.357244"
+  },
+  {
+    "name": "Straße des 17. Juni",
+    "street": "Straße des 17. Juni 118",
+    "postcode": "10623",
+    "city": "Berlin",
+    "latitude": "52.5138075",
+    "longitude": "13.3241008"
+  },
+  {
+    "name": "Universitätsbibliothek im Volkswagen-Haus",
+    "street": "Fasanenstraße 88",
+    "postcode": "10623",
+    "city": "Berlin",
+    "latitude": "52.5101646",
+    "longitude": "13.3278948"
+  },
+  {
+    "name": "Mierendorffstraße 30",
+    "street": "Mierendorffstraße 30",
+    "postcode": "10589",
+    "city": "Berlin",
+    "latitude": "52.524442",
+    "longitude": "13.3027563"
+  }
+]

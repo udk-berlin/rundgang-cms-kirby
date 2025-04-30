@@ -56,10 +56,10 @@ permissions:
     #sort: true
     update: true
   site:
+    "*": false
     #changeTitle: true
     #preview: true
     #update: true
-    "*": false
   user:
     "*": false
     #changeEmail: true

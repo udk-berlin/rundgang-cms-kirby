@@ -113,7 +113,7 @@ return [
             'en' => 'Draft',
             'de' => 'Entwurf',
         ],
-        'listed' => [
+        'unlisted' => [
             'en' => 'Published',
             'de' => 'Veröffentlicht',
         ],

@@ -58,20 +58,14 @@ Returns a JSON object with all available formats of 2025.
 ```json
 [
     {
-        "name": "UNI.T - Theater der UdK Berlin",
-        "street": "Fasanenstraße 1b",
-        "postcode": "10623",
-        "city": "Berlin",
-        "latitude": "52.5093475",
-        "longitude": "13.3276388"
+        "key": "demo-project",
+        "en": "Demo Project",
+        "de": "Demo Projekt"
     },
     {
-        "name": "Konzertsaal",
-        "street": "Hardenbergstraße, Fasanenstraße 33 (Ecke)",
-        "postcode": "10623",
-        "city": "Berlin",
-        "latitude": "52.5092561",
-        "longitude": "13.3275879"
+        "key": "demo-project-2",
+        "en": "Demo Project 2",
+        "de": "Demo Projekt 2"
     },
     ...
 ]
@@ -89,14 +83,20 @@ Returns a JSON object with all available locations of 2025.
 ```json
 [
     {
-        "key": "demo-project",
-        "en": "Demo Project",
-        "de": "Demo Projekt"
+        "name": "UNI.T - Theater der UdK Berlin",
+        "street": "Fasanenstraße 1b",
+        "postcode": "10623",
+        "city": "Berlin",
+        "latitude": "52.5093475",
+        "longitude": "13.3276388"
     },
     {
-        "key": "demo-project-2",
-        "en": "Demo Project 2",
-        "de": "Demo Projekt 2"
+        "name": "Konzertsaal",
+        "street": "Hardenbergstraße, Fasanenstraße 33 (Ecke)",
+        "postcode": "10623",
+        "city": "Berlin",
+        "latitude": "52.5092561",
+        "longitude": "13.3275879"
     },
     ...
 ]

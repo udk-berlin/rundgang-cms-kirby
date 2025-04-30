@@ -89,7 +89,7 @@ class Form
 				);
 			}
 
-			if ($field->isSaveable() === true) {
+			if ($field->hasValue() === true) {
 				$this->values[$name] = $field->value();
 			}
 
@@ -126,7 +126,7 @@ class Form
 		$data = $this->values;
 
 		foreach ($this->fields as $field) {
-			if ($field->isSaveable() === false || $field->unset() === true) {
+			if ($field->hasValue() === false || $field->unset() === true) {
 				if ($includeNulls === true) {
 					$data[$field->name()] = null;
 				} else {
@@ -285,6 +285,7 @@ class Form
 
 	/**
 	 * Returns an array with the form value of each field
+	 * (e.g. used as data for Panel Vue components)
 	 */
 	public function toFormValues(bool $defaults = false): array
 	{
@@ -293,10 +294,21 @@ class Form
 
 	/**
 	 * Returns an array with the stored value of each field
+	 * (e.g. used for saving to content storage)
 	 */
 	public function toStoredValues(bool $defaults = false): array
 	{
 		return $this->fields->toStoredValues($defaults);
+	}
+
+	/**
+	 * Validates the form and throws an exception if there are any errors
+	 *
+	 * @throws \Kirby\Exception\InvalidArgumentException
+	 */
+	public function validate(): void
+	{
+		$this->fields->validate();
 	}
 
 	/**

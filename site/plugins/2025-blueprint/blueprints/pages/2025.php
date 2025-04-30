@@ -409,7 +409,7 @@ return [
                                     #'icon' => 'palette',
                                     #'max' => 1,
                                     'options' => $format_options,
-                                    'required' => true,
+                                    #'required' => true,
                                     'translate' => false,
                                 ],
                             ],
@@ -500,7 +500,7 @@ return [
                                         'text' => '{{ item.name }}',
                                         'value' => '{{ item.name.slug }}',
                                     ],
-                                    'required' => true,
+                                    #'required' => true,
                                     'translate' => false,
                                 ],
 

@@ -87,6 +87,12 @@ foreach ($format_data as $format) {
     ];
 }
 
+// sort format_options by text key
+//
+usort($format_options, function ($a, $b) {
+    return strcasecmp($a['text'], $b['text']);
+});
+
 return [
     'title' => 'Rundgang 2026',
 

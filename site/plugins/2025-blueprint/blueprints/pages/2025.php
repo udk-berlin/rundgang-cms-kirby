@@ -93,7 +93,6 @@ usort($format_options, function ($a, $b) {
     return strcasecmp($a['text'], $b['text']);
 });
 
-
 return [
     'title' => 'Rundgang 2025',
 

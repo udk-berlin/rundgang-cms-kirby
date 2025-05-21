@@ -14,6 +14,7 @@ use Kirby\Content\Version;
 use Kirby\Content\VersionId;
 use Kirby\Content\Versions;
 use Kirby\Exception\InvalidArgumentException;
+use Kirby\Form\Fields;
 use Kirby\Form\Form;
 use Kirby\Panel\Model;
 use Kirby\Toolkit\Str;
@@ -169,7 +170,7 @@ abstract class ModelWithContent implements Identifiable, Stringable
 	{
 		// get the targeted language
 		$language  = Language::ensure($languageCode ?? 'current');
-		$versionId = VersionId::$render ?? VersionId::latest();
+		$versionId = VersionId::$render ?? 'latest';
 		$version   = $this->version($versionId);
 
 		if ($version->exists($language) === true) {
@@ -237,14 +238,14 @@ abstract class ModelWithContent implements Identifiable, Stringable
 				// Convert the content to the new blueprint
 				$content = $oldVersion->content($language)->convertTo($blueprint);
 
-				// Save to re-create the new version
-				// with the converted/updated content
-				$new->version($oldVersion->id())->save($content, $language);
-
 				// Delete the old versions. This will also remove the
 				// content files from the storage if this is a plain text
 				// storage instance.
 				$oldVersion->delete($language);
+
+				// Save to re-create the new version
+				// with the converted/updated content
+				$new->version($oldVersion->id())->save($content, $language);
 			}
 		}
 
@@ -260,12 +261,8 @@ abstract class ModelWithContent implements Identifiable, Stringable
 	 */
 	public function createDefaultContent(): array
 	{
-		// create the form to get the generate the defaults
-		$form = Form::for($this, [
-			'language' => Language::ensure('default')->code(),
-		]);
-
-		return $form->strings(true);
+		$fields = Fields::for($this, 'default');
+		return $fields->fill($fields->defaults())->toStoredValues();
 	}
 
 	/**
@@ -355,7 +352,7 @@ abstract class ModelWithContent implements Identifiable, Stringable
 	 */
 	public function isValid(): bool
 	{
-		return Form::for($this)->isValid() === true;
+		return $this->version('latest')->isValid('current');
 	}
 
 	/**
@@ -371,7 +368,7 @@ abstract class ModelWithContent implements Identifiable, Stringable
 	 */
 	public function lock(): Lock
 	{
-		return $this->version(VersionId::changes())->lock('*');
+		return $this->version('changes')->lock('*');
 	}
 
 	/**
@@ -664,11 +661,12 @@ abstract class ModelWithContent implements Identifiable, Stringable
 		string|null $languageCode = null,
 		bool $validate = false
 	): static {
-		$form = Form::for($this, [
-			'ignoreDisabled' => $validate === false,
-			'input'          => $input,
-			'language'       => $languageCode,
-		]);
+		$form = Form::for(
+			model: $this,
+			language: $languageCode,
+		);
+
+		$form->submit($input ?? []);
 
 		if ($validate === true) {
 			$form->validate();
@@ -678,8 +676,8 @@ abstract class ModelWithContent implements Identifiable, Stringable
 			'update',
 			[
 				static::CLASS_ALIAS => $this,
-				'values'            => $form->data(),
-				'strings'           => $form->strings(),
+				'values'            => $form->toFormValues(),
+				'strings'           => $form->toStoredValues(),
 				'languageCode'      => $languageCode
 			],
 			fn ($model, $values, $strings, $languageCode) =>
@@ -704,7 +702,7 @@ abstract class ModelWithContent implements Identifiable, Stringable
 	{
 		return new Version(
 			model: $this,
-			id: VersionId::from($versionId ?? VersionId::latest())
+			id: VersionId::from($versionId ?? 'latest')
 		);
 	}
 

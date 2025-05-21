@@ -31,6 +31,7 @@ class Site extends Model
 	public function buttons(): array
 	{
 		return ViewButtons::view($this)->defaults(
+			'open',
 			'preview',
 			'languages'
 		)->render();
@@ -82,7 +83,6 @@ class Site extends Model
 		// Additional model information
 		// @deprecated Use the top-level props instead
 		$model = [
-			'content'    => $props['content'],
 			'link'       => $props['link'],
 			'previewUrl' => $this->model->previewUrl(),
 			'title'      => $this->model->title()->toString(),

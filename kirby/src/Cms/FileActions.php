@@ -3,6 +3,7 @@
 namespace Kirby\Cms;
 
 use Closure;
+use Kirby\Content\ImmutableMemoryStorage;
 use Kirby\Content\MemoryStorage;
 use Kirby\Content\VersionCache;
 use Kirby\Exception\InvalidArgumentException;
@@ -210,26 +211,24 @@ trait FileActions
 			...$props['content'],
 		];
 
+		// reuse the existing content if the uploaded file
+		// is identical to an existing file
+		if ($file->exists() === true) {
+			$existing = $file->parent()->file($file->filename());
+
+			if (
+				$file->sha1() === $upload->sha1() &&
+				$file->template() === $existing->template()
+			) {
+				// read the content of the existing file and use it
+				$props['content'] = $existing->content()->toArray();
+			}
+		}
+
 		// make sure that a UUID gets generated
 		// and added to content right away
-		if (
-			Uuids::enabled() === true &&
-			empty($props['content']['uuid']) === true
-		) {
-			// sets the current uuid if it is the exact same file
-			if ($file->exists() === true) {
-				$existing = $file->parent()->file($file->filename());
-
-				if (
-					$file->sha1() === $upload->sha1() &&
-					$file->template() === $existing->template()
-				) {
-					// use existing content data if it is the exact same file
-					$content = $existing->content()->toArray();
-				}
-			}
-
-			$props['content']['uuid'] = Uuid::generate();
+		if (Uuids::enabled() === true) {
+			$props['content']['uuid'] ??= Uuid::generate();
 		}
 
 		// keep the initial storage class
@@ -285,14 +284,23 @@ trait FileActions
 	public function delete(): bool
 	{
 		return $this->commit('delete', ['file' => $this], function ($file) {
+			$old = $file->clone();
+
+			// keep the content in iummtable memory storage
+			// to still have access to it in after hooks
+			$file->changeStorage(ImmutableMemoryStorage::class);
+
+			// clear UUID cache
+			$file->uuid()?->clear();
+
 			// remove all public versions and clear the UUID cache
-			$file->unpublish();
+			$old->unpublish();
 
 			// delete all versions
-			$file->versions()->delete();
+			$old->versions()->delete();
 
 			// delete the file from disk
-			F::remove($file->root());
+			F::remove($old->root());
 
 			return true;
 		});

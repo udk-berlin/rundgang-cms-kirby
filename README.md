@@ -96,14 +96,14 @@ Returns a JSON object with all available formats of 2025.
 ```json
 [
     {
-        "key": "demo-project",
-        "en": "Demo Project",
-        "de": "Demo Projekt"
+        "key": "my-demo-project",
+        "en": "My Demo Project",
+        "de": "Mein Demo-Projekt"
     },
     {
-        "key": "demo-project-2",
-        "en": "Demo Project 2",
-        "de": "Demo Projekt 2"
+        "key": "some-other-project",
+        "en": "Some Other Project",
+        "de": "Irgendein anderes Projekt"
     },
     ...
 ]

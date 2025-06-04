@@ -691,8 +691,8 @@ return [
                                             'de' => 'Ganztägig',
                                         ],
                                         'datetime' => [
-                                            'en' => 'Time(s)',
-                                            'de' => 'Uhrzeit(en)',
+                                            'en' => 'Specific Hours(s)',
+                                            'de' => 'Bestimmte Uhrzeit(en)',
                                         ],
                                     ],
                                     'default' => 'allday',
@@ -705,8 +705,8 @@ return [
                                 'event_field_date_time_friday_times' => [
                                     'type' => 'structure',
                                     'label' => [
-                                        'en' => 'Time(s) for Friday, July 17',
-                                        'de' => 'Uhrzeit(en) für Freitag, 17. Juli',
+                                        'en' => 'Timetable for Friday, July 17',
+                                        'de' => 'Zeitplan für Freitag, 17. Juli',
                                     ],
                                     'required' => true,
                                     'translate' => false,
@@ -810,8 +810,8 @@ return [
                                             'de' => 'Ganztägig',
                                         ],
                                         'datetime' => [
-                                            'en' => 'Time(s)',
-                                            'de' => 'Uhrzeit(en)',
+                                            'en' => 'Specific Hours(s)',
+                                            'de' => 'Bestimmte Uhrzeit(en)',
                                         ],
                                     ],
                                     'default' => 'allday',
@@ -824,8 +824,8 @@ return [
                                 'event_field_date_time_saturday_times' => [
                                     'type' => 'structure',
                                     'label' => [
-                                        'en' => 'Time(s) for Saturday, July 18',
-                                        'de' => 'Uhrzeit(en) für Samstag, 18. Juli',
+                                        'en' => 'Timetable for Saturday, July 18',
+                                        'de' => 'Zeitplan für Samstag, 18. Juli',
                                     ],
                                     'required' => true,
                                     'translate' => false,
@@ -929,8 +929,8 @@ return [
                                             'de' => 'Ganztägig',
                                         ],
                                         'datetime' => [
-                                            'en' => 'Time(s)',
-                                            'de' => 'Uhrzeit(en)',
+                                            'en' => 'Specific Hours(s)',
+                                            'de' => 'Bestimmte Uhrzeit(en)',
                                         ],
                                     ],
                                     'default' => 'allday',
@@ -943,8 +943,8 @@ return [
                                 'event_field_date_time_sunday_times' => [
                                     'type' => 'structure',
                                     'label' => [
-                                        'en' => 'Time(s) for Sunday, July 19',
-                                        'de' => 'Uhrzeit(en) für Sonntag, 19. Juli',
+                                        'en' => 'Timetable for Sunday, July 19',
+                                        'de' => 'Zeitplan für Sonntag, 19. Juli',
                                     ],
                                     'required' => true,
                                     'translate' => false,

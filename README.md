@@ -45,7 +45,7 @@ For more information about KQL and how to use it, visit the official [KQL reposi
 
 # Custom API Endpoints
 
-The following custom API endpoints are provided to extend the functionality of the Kirby CMS for the annual Rundgang frontend. These endpoints are located in the `site/plugins/api` folder.
+The following custom API endpoints are provided to extend the functionality of the Kirby CMS and the Kirby Query Language (KQL). These endpoints are located in the `site/plugins/api/` folder.
 
 ## **GET** `/api/2025/contexts`
 
@@ -76,11 +76,8 @@ Returns a nested JSON object with all available contexts of 2025.
                                 "id": "narrativer_film",
                                 "type": "class"
                             },
-                            ...
                         },
-                        ...
                     },
-                    ...
                 ],
             },
         ],

@@ -744,11 +744,56 @@ return [
                                         'de' => 'Kurzbeschreibung',
                                     ],
                                     'buttons' => false,
+                                    'help' => [
+                                        'en' => 'The short description might be shown in the content overview next to some more metadata.',
+                                        'de' => 'Die Kurzbeschreibung wäre in der Inhaltsübersicht zu sehen, neben weiteren Metadaten.',
+                                    ],
                                     'icon' => 'title',
                                     'maxlength' => 500,
                                     'required' => true,
                                     'size' => 'small',
                                     'uploads' => false,
+                                ],
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/info
+                                #
+                                'intro_field_single_language' => [
+                                    'type' => 'info',
+                                    'label' => false,
+                                    'icon' => 'translate',
+                                    'text' => [
+                                        'en' => 'The <strong>Title Image</strong> field can only be uploaded for the default language, i.e. <strong>DE</strong> in the dropdown menu above, next to the page title.',
+                                        'de' => 'Das <strong>Titelbild</strong> kann nur für die Standard-Sprache hochgeladen werden, d.h. <strong>DE</strong> im Dropdown-Menü neben/unter dem Seiten-Titel.',
+                                    ],
+                                    'theme' => 'notice',
+                                ],
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/blocks
+                                #
+                                'intro_field_title_image' => [
+                                    'type' => 'blocks',
+                                    'label' => [
+                                        'en' => 'Title Image',
+                                        'de' => 'Titelbild',
+                                    ],
+                                    'default' => [
+                                        [
+                                            'type' => 'image',
+                                        ],
+                                    ],
+                                    'empty' => [
+                                        'en' => 'Please upload a title image …',
+                                        'de' => 'Bitte lade ein Titelbild hoch …',
+                                    ],
+                                    'fieldsets' => [
+                                        'image',
+                                    ],
+                                    'help' => [
+                                        'en' => 'The title image might be shown in the content overview next to some more metadata.',
+                                        'de' => 'Das Titelbild wäre in der Inhaltsübersicht zu sehen, neben weiteren Metadaten.',
+                                    ],
+                                    'max' => '1',
+                                    'translate' => false,
                                 ],
                             ],
                         ],

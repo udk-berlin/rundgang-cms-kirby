@@ -35,6 +35,10 @@ If you are familiar with Git, you can clone Kirby's Plainkit repository from Git
 © 2009 Bastian Allgeier
 [getkirby.com](https://getkirby.com) · [License agreement](https://getkirby.com/license)
 
+---
+
+# API Usage
+
 ## Kirby Query Language (KQL)
 
 This project utilises the Kirby Query Language (KQL) plugin which works similar to GraphQL.
@@ -45,16 +49,12 @@ For more information about KQL and how to use it, visit the official [KQL reposi
 
 The following custom API endpoints are provided to extend the functionality of the Kirby CMS for the annual Rundgang frontend. These endpoints are located in the `site/plugins/api` folder.
 
----
-
-### **GET** `/api/2025/contexts`
+## **GET** `/api/2025/contexts`
 
 **Description:**
 Returns a nested JSON object with all available contexts of 2025.
 
----
-
-### **GET** `/api/2025/formats`
+## **GET** `/api/2025/formats`
 
 **Description:**
 Returns a JSON object with all available formats of 2025.
@@ -77,9 +77,7 @@ Returns a JSON object with all available formats of 2025.
 ]
 ```
 
----
-
-### **GET** `/api/2025/locations`
+## **GET** `/api/2025/locations`
 
 **Description:**
 Returns a JSON object with all available locations of 2025.

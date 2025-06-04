@@ -54,6 +54,32 @@ The following custom API endpoints are provided to extend the functionality of t
 **Description:**
 Returns a nested JSON object with all available contexts of 2025.
 
+**Response Example:**
+
+```json
+        {
+    "name": "Fakultät Gestaltung",
+    "id": "fakultaet_gestaltung",
+    "type": "faculty",
+    "institutes": [
+        {
+            "name": "Institut für zeitbasierte Medien",
+            "id": "institut_fuer_zeitbasierte_medien",
+            "type": "institute",
+            "courses": [
+                {
+                    "name": "Kunst und Medien",
+                    "id": "kunst_und_medien",
+                    "type": "course",
+                    "classes": [
+                        {
+                            "name": "Narrativer Film",
+                            "id": "narrativer_film",
+                            "type": "class"
+                        },
+                        ...
+```
+
 ## **GET** `/api/2025/formats`
 
 **Description:**

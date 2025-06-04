@@ -582,8 +582,8 @@ return [
                                     #'text' => [
                                     #    #'en' => 'Add <strong>Date(s) & Time</strong> for your event; this should only be filled for concerts, performances, et cetera which are <strong>happening at only specific times</strong>.',
                                     #    #'de' => 'Füge <strong>Datum & Uhrzeit</strong> für dein Event hinzu; dies sollte ausschließlich für Konzerte, Performances, et cetera gemacht werden, welche <strong>nur zu bestimmten Zeitpunkten stattfinden</strong>.',
-                                    #    'en' => 'Add specific <strong>Time(s)</strong> for your event only for concerts, performances, et cetera which are <strong>happening at only specific times</strong>.',
-                                    #    'de' => 'Füge bestimmte <strong>Uhrzeit(en)</strong> für dein Event nur für Konzerte, Performances, et cetera hinzu, welche <strong>nur zu bestimmten Uhrzeiten stattfinden</strong>.',
+                                    #    'en' => 'Add <strong>specific Hours</strong> for your event only for concerts, performances, et cetera which are <strong>happening at only specific times</strong>.',
+                                    #    'de' => 'Füge <strong>bestimmte Uhrzeit(en)</strong> für dein Event nur für Konzerte, Performances, et cetera hinzu, welche <strong>nur zu bestimmten Uhrzeiten stattfinden</strong>.',
                                     #],
                                     'text' => [
                                         'en' => 'The <strong>Date & Time</strong> fields can only be filled for the default language, i.e. <strong>DE</strong> in the dropdown menu above, next to the page title.',
@@ -691,8 +691,8 @@ return [
                                             'de' => 'Ganztägig',
                                         ],
                                         'datetime' => [
-                                            'en' => 'Specific Hours(s)',
-                                            'de' => 'Bestimmte Uhrzeit(en)',
+                                            'en' => 'Specific Hours',
+                                            'de' => 'Bestimmte Uhrzeiten',
                                         ],
                                     ],
                                     'default' => 'allday',
@@ -810,8 +810,8 @@ return [
                                             'de' => 'Ganztägig',
                                         ],
                                         'datetime' => [
-                                            'en' => 'Specific Hours(s)',
-                                            'de' => 'Bestimmte Uhrzeit(en)',
+                                            'en' => 'Specific Hours',
+                                            'de' => 'Bestimmte Uhrzeiten',
                                         ],
                                     ],
                                     'default' => 'allday',
@@ -929,8 +929,8 @@ return [
                                             'de' => 'Ganztägig',
                                         ],
                                         'datetime' => [
-                                            'en' => 'Specific Hours(s)',
-                                            'de' => 'Bestimmte Uhrzeit(en)',
+                                            'en' => 'Specific Hours',
+                                            'de' => 'Bestimmte Uhrzeiten',
                                         ],
                                     ],
                                     'default' => 'allday',

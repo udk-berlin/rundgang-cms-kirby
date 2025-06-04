@@ -1135,11 +1135,6 @@ return [
                                         'en' => 'Title Image',
                                         'de' => 'Titelbild',
                                     ],
-                                    'default' => [
-                                        [
-                                            'type' => 'image',
-                                        ],
-                                    ],
                                     'empty' => [
                                         'en' => 'Please upload a title image …',
                                         'de' => 'Bitte lade ein Titelbild hoch …',

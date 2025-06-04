@@ -59,3 +59,4 @@ sections:
           #  fieldsets:
           #    - code
           #    #- markdown
+        required: true

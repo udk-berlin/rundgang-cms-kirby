@@ -577,33 +577,152 @@ return [
                                 'event_field_info' => [
                                     'type' => 'info',
                                     'label' => false,
-                                    'icon' => 'clock',
+                                    #'icon' => 'clock',
+                                    'icon' => 'translate',
+                                    #'text' => [
+                                    #    #'en' => 'Add <strong>Date(s) & Time</strong> for your event; this should only be filled for concerts, performances, et cetera which are <strong>happening at only specific times</strong>.',
+                                    #    #'de' => 'Füge <strong>Datum & Uhrzeit</strong> für dein Event hinzu; dies sollte ausschließlich für Konzerte, Performances, et cetera gemacht werden, welche <strong>nur zu bestimmten Zeitpunkten stattfinden</strong>.',
+                                    #    'en' => 'Add <strong>specific Hours</strong> for your event only for concerts, performances, et cetera which are <strong>happening at only specific times</strong>.',
+                                    #    'de' => 'Füge <strong>bestimmte Uhrzeit(en)</strong> für dein Event nur für Konzerte, Performances, et cetera hinzu, welche <strong>nur zu bestimmten Uhrzeiten stattfinden</strong>.',
+                                    #],
                                     'text' => [
-                                        'en' => 'Add <strong>Date(s) & Time</strong> for your event; this should only be filled for concerts, performances, et cetera which are <strong>happening at only specific times</strong>.',
-                                        'de' => 'Füge <strong>Datum & Uhrzeit</strong> für dein Event hinzu; dies sollte ausschließlich für Konzerte, Performances, et cetera gemacht werden, welche <strong>nur zu bestimmten Zeitpunkten stattfinden</strong>.',
+                                        'en' => 'The <strong>Date & Time</strong> fields can only be filled for the default language, i.e. <strong>DE</strong> in the dropdown menu above, next to the page title.',
+                                        'de' => 'Die <strong>Datum & Uhrzeit</strong>-Felder können nur für die Standard-Sprache eingetragen werden werden, d.h. <strong>DE</strong> im Dropdown-Menü neben/unter dem Seiten-Titel.',
                                     ],
-                                    'theme' => 'warning',
+                                    #'theme' => 'warning',
+                                    'theme' => 'notice',
                                 ],
 
                                 # docs: https://getkirby.com/docs/reference/panel/fields/structure
                                 #
-                                'event_field_date_time' => [
+                                #'event_field_date_time' => [
+                                #    'type' => 'structure',
+                                #    'label' => [
+                                #        'en' => 'Date & Time',
+                                #        'de' => 'Datum & Uhrzeit',
+                                #    ],
+                                #    'translate' => false,
+                                #    'columns' => [
+                                #        'event_structure_field_date' => [
+                                #            'mobile' => true,
+                                #            'width' => '1/3',
+                                #        ],
+                                #        'event_structure_field_from' => [
+                                #            'mobile' => true,
+                                #            'width' => '1/3',
+                                #        ],
+                                #        'event_structure_field_to' => [
+                                #            'mobile' => true,
+                                #            'width' => '1/3',
+                                #        ],
+                                #    ],
+                                #    'fields' => [
+                                #
+                                #        # docs: https://getkirby.com/docs/reference/panel/fields/date
+                                #        #
+                                #        'event_structure_field_date' => [
+                                #            'type' => 'date',
+                                #            'label' => [
+                                #                'en' => 'Date',
+                                #                'de' => 'Datum',
+                                #            ],
+                                #            'help' => [
+                                #                'en' => 'The date of the event.',
+                                #                'de' => 'Das Datum des Events.',
+                                #            ],
+                                #            'default' => '2025-07-18',
+                                #            'min' => '2025-07-18',
+                                #            'max' => '2025-07-20',
+                                #            'required' => true,
+                                #            'translate' => false,
+                                #        ],
+                                #
+                                #        # docs: https://getkirby.com/docs/reference/panel/fields/time
+                                #        #
+                                #        'event_structure_field_from' => [
+                                #            'type' => 'time',
+                                #            'label' => [
+                                #                'en' => 'Start',
+                                #                'de' => 'Beginn',
+                                #            ],
+                                #            'help' => [
+                                #                'en' => 'The time the event starts.',
+                                #                'de' => 'Die Uhrzeit, zu der das Event beginnt.',
+                                #            ],
+                                #            'default' => '13:00',
+                                #            'min' => '10:00',
+                                #            'max' => '23:59',
+                                #            'required' => true,
+                                #            'translate' => false,
+                                #        ],
+                                #
+                                #        # docs: https://getkirby.com/docs/reference/panel/fields/time
+                                #        #
+                                #        'event_structure_field_to' => [
+                                #            'type' => 'time',
+                                #            'label' => [
+                                #                'en' => 'End',
+                                #                'de' => 'Ende',
+                                #            ],
+                                #            'help' => [
+                                #                'en' => 'The time the event ends.',
+                                #                'de' => 'Die Uhrzeit, zu der das Event endet.',
+                                #            ],
+                                #            'default' => '15:00',
+                                #            'min' => '10:00',
+                                #            'max' => '23:59',
+                                #            'required' => true,
+                                #            'translate' => false,
+                                #        ],
+                                #    ],
+                                #],
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/radio
+                                #
+                                'event_field_date_time_friday' => [
+                                    'type' => 'radio',
+                                    'label' => [
+                                        'en' => 'Friday, July 18',
+                                        'de' => 'Freitag, 18. Juli',
+                                    ],
+                                    'options' => [
+                                        'allday' => [
+                                            'en' => 'All Day',
+                                            'de' => 'Ganztägig',
+                                        ],
+                                        'datetime' => [
+                                            'en' => 'Specific Hours',
+                                            'de' => 'Bestimmte Uhrzeiten',
+                                        ],
+                                    ],
+                                    'default' => 'allday',
+                                    'required' => true,
+                                    'translate' => false,
+                                ],
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/structure
+                                #
+                                'event_field_date_time_friday_times' => [
                                     'type' => 'structure',
                                     'label' => [
-                                        'en' => 'Date & Time',
-                                        'de' => 'Datum & Uhrzeit',
+                                        'en' => 'Timetable for Friday, July 18',
+                                        'de' => 'Zeitplan für Freitag, 18. Juli',
                                     ],
+                                    'required' => true,
                                     'translate' => false,
+                                    'when' => [
+                                        'event_field_date_time_friday' => 'datetime',
+                                    ],
                                     'columns' => [
-                                        'event_structure_field_date' => [
+                                        'event_structure_field_friday_date' => [
                                             'mobile' => true,
                                             'width' => '1/3',
                                         ],
-                                        'event_structure_field_from' => [
+                                        'event_structure_field_friday_time_from' => [
                                             'mobile' => true,
                                             'width' => '1/3',
                                         ],
-                                        'event_structure_field_to' => [
+                                        'event_structure_field_friday_time_to' => [
                                             'mobile' => true,
                                             'width' => '1/3',
                                         ],
@@ -612,7 +731,7 @@ return [
 
                                         # docs: https://getkirby.com/docs/reference/panel/fields/date
                                         #
-                                        'event_structure_field_date' => [
+                                        'event_structure_field_friday_date' => [
                                             'type' => 'date',
                                             'label' => [
                                                 'en' => 'Date',
@@ -623,15 +742,17 @@ return [
                                                 'de' => 'Das Datum des Events.',
                                             ],
                                             'default' => '2025-07-18',
-                                            'min' => '2025-07-18',
-                                            'max' => '2025-07-20',
-                                            'required' => true,
+                                            'disabled' => true,
+                                            #'min' => '2025-07-18',
+                                            #'max' => '2025-07-18',
+                                            #'required' => true,
+                                            #'time' => true,
                                             'translate' => false,
                                         ],
 
                                         # docs: https://getkirby.com/docs/reference/panel/fields/time
                                         #
-                                        'event_structure_field_from' => [
+                                        'event_structure_field_friday_time_from' => [
                                             'type' => 'time',
                                             'label' => [
                                                 'en' => 'Start',
@@ -641,8 +762,8 @@ return [
                                                 'en' => 'The time the event starts.',
                                                 'de' => 'Die Uhrzeit, zu der das Event beginnt.',
                                             ],
-                                            'default' => '13:00',
-                                            'min' => '10:00',
+                                            'default' => '16:00',
+                                            'min' => '16:00',
                                             'max' => '23:59',
                                             'required' => true,
                                             'translate' => false,
@@ -650,7 +771,7 @@ return [
 
                                         # docs: https://getkirby.com/docs/reference/panel/fields/time
                                         #
-                                        'event_structure_field_to' => [
+                                        'event_structure_field_friday_time_to' => [
                                             'type' => 'time',
                                             'label' => [
                                                 'en' => 'End',
@@ -660,9 +781,247 @@ return [
                                                 'en' => 'The time the event ends.',
                                                 'de' => 'Die Uhrzeit, zu der das Event endet.',
                                             ],
-                                            'default' => '15:00',
-                                            'min' => '10:00',
+                                            'default' => '16:00',
+                                            'min' => '16:00',
                                             'max' => '23:59',
+                                            'required' => true,
+                                            'translate' => false,
+                                        ],
+                                    ],
+                                ],
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/line
+                                #
+                                #'event_structure_field_friday_to_saturday_line' => [
+                                #    'type' => 'line',
+                                #],
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/radio
+                                #
+                                'event_field_date_time_saturday' => [
+                                    'type' => 'radio',
+                                    'label' => [
+                                        'en' => 'Saturday, July 19',
+                                        'de' => 'Samstag, 19. Juli',
+                                    ],
+                                    'options' => [
+                                        'allday' => [
+                                            'en' => 'All Day',
+                                            'de' => 'Ganztägig',
+                                        ],
+                                        'datetime' => [
+                                            'en' => 'Specific Hours',
+                                            'de' => 'Bestimmte Uhrzeiten',
+                                        ],
+                                    ],
+                                    'default' => 'allday',
+                                    'required' => true,
+                                    'translate' => false,
+                                ],
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/structure
+                                #
+                                'event_field_date_time_saturday_times' => [
+                                    'type' => 'structure',
+                                    'label' => [
+                                        'en' => 'Timetable for Saturday, July 19',
+                                        'de' => 'Zeitplan für Samstag, 19. Juli',
+                                    ],
+                                    'required' => true,
+                                    'translate' => false,
+                                    'when' => [
+                                        'event_field_date_time_saturday' => 'datetime',
+                                    ],
+                                    'columns' => [
+                                        'event_structure_field_saturday_date' => [
+                                            'mobile' => true,
+                                            'width' => '1/3',
+                                        ],
+                                        'event_structure_field_saturday_time_from' => [
+                                            'mobile' => true,
+                                            'width' => '1/3',
+                                        ],
+                                        'event_structure_field_saturday_time_to' => [
+                                            'mobile' => true,
+                                            'width' => '1/3',
+                                        ],
+                                    ],
+                                    'fields' => [
+
+                                        # docs: https://getkirby.com/docs/reference/panel/fields/date
+                                        #
+                                        'event_structure_field_saturday_date' => [
+                                            'type' => 'date',
+                                            'label' => [
+                                                'en' => 'Date',
+                                                'de' => 'Datum',
+                                            ],
+                                            'help' => [
+                                                'en' => 'The date of the event.',
+                                                'de' => 'Das Datum des Events.',
+                                            ],
+                                            'default' => '2025-07-19',
+                                            'disabled' => true,
+                                            #'min' => '2025-07-19',
+                                            #'max' => '2025-07-19',
+                                            #'required' => true,
+                                            #'time' => true,
+                                            'translate' => false,
+                                        ],
+
+                                        # docs: https://getkirby.com/docs/reference/panel/fields/time
+                                        #
+                                        'event_structure_field_saturday_time_from' => [
+                                            'type' => 'time',
+                                            'label' => [
+                                                'en' => 'Start',
+                                                'de' => 'Beginn',
+                                            ],
+                                            'help' => [
+                                                'en' => 'The time the event starts.',
+                                                'de' => 'Die Uhrzeit, zu der das Event beginnt.',
+                                            ],
+                                            'default' => '11:00',
+                                            'min' => '11:00',
+                                            'max' => '22:00',
+                                            'required' => true,
+                                            'translate' => false,
+                                        ],
+
+                                        # docs: https://getkirby.com/docs/reference/panel/fields/time
+                                        #
+                                        'event_structure_field_saturday_time_to' => [
+                                            'type' => 'time',
+                                            'label' => [
+                                                'en' => 'End',
+                                                'de' => 'Ende',
+                                            ],
+                                            'help' => [
+                                                'en' => 'The time the event ends.',
+                                                'de' => 'Die Uhrzeit, zu der das Event endet.',
+                                            ],
+                                            'default' => '11:00',
+                                            'min' => '11:00',
+                                            'max' => '22:00',
+                                            'required' => true,
+                                            'translate' => false,
+                                        ],
+                                    ],
+                                ],
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/line
+                                #
+                                #'event_structure_field_saturday_to_sunday_line' => [
+                                #    'type' => 'line',
+                                #],
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/radio
+                                #
+                                'event_field_date_time_sunday' => [
+                                    'type' => 'radio',
+                                    'label' => [
+                                        'en' => 'Sunday, July 20',
+                                        'de' => 'Sonntag, 20. Juli',
+                                    ],
+                                    'options' => [
+                                        'allday' => [
+                                            'en' => 'All Day',
+                                            'de' => 'Ganztägig',
+                                        ],
+                                        'datetime' => [
+                                            'en' => 'Specific Hours',
+                                            'de' => 'Bestimmte Uhrzeiten',
+                                        ],
+                                    ],
+                                    'default' => 'allday',
+                                    'required' => true,
+                                    'translate' => false,
+                                ],
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/structure
+                                #
+                                'event_field_date_time_sunday_times' => [
+                                    'type' => 'structure',
+                                    'label' => [
+                                        'en' => 'Timetable for Sunday, July 20',
+                                        'de' => 'Zeitplan für Sonntag, 20. Juli',
+                                    ],
+                                    'required' => true,
+                                    'translate' => false,
+                                    'when' => [
+                                        'event_field_date_time_sunday' => 'datetime',
+                                    ],
+                                    'columns' => [
+                                        'event_structure_field_sunday_date' => [
+                                            'mobile' => true,
+                                            'width' => '1/3',
+                                        ],
+                                        'event_structure_field_sunday_time_from' => [
+                                            'mobile' => true,
+                                            'width' => '1/3',
+                                        ],
+                                        'event_structure_field_sunday_time_to' => [
+                                            'mobile' => true,
+                                            'width' => '1/3',
+                                        ],
+                                    ],
+                                    'fields' => [
+
+                                        # docs: https://getkirby.com/docs/reference/panel/fields/date
+                                        #
+                                        'event_structure_field_sunday_date' => [
+                                            'type' => 'date',
+                                            'label' => [
+                                                'en' => 'Date',
+                                                'de' => 'Datum',
+                                            ],
+                                            'help' => [
+                                                'en' => 'The date of the event.',
+                                                'de' => 'Das Datum des Events.',
+                                            ],
+                                            'default' => '2025-07-20',
+                                            'disabled' => true,
+                                            #'min' => '2025-07-20',
+                                            #'max' => '2025-07-20',
+                                            #'required' => true,
+                                            #'time' => true,
+                                            'translate' => false,
+                                        ],
+
+                                        # docs: https://getkirby.com/docs/reference/panel/fields/time
+                                        #
+                                        'event_structure_field_sunday_time_from' => [
+                                            'type' => 'time',
+                                            'label' => [
+                                                'en' => 'Start',
+                                                'de' => 'Beginn',
+                                            ],
+                                            'help' => [
+                                                'en' => 'The time the event starts.',
+                                                'de' => 'Die Uhrzeit, zu der das Event beginnt.',
+                                            ],
+                                            'default' => '10:00',
+                                            'min' => '10:00',
+                                            'max' => '21:00',
+                                            'required' => true,
+                                            'translate' => false,
+                                        ],
+
+                                        # docs: https://getkirby.com/docs/reference/panel/fields/time
+                                        #
+                                        'event_structure_field_sunday_time_to' => [
+                                            'type' => 'time',
+                                            'label' => [
+                                                'en' => 'End',
+                                                'de' => 'Ende',
+                                            ],
+                                            'help' => [
+                                                'en' => 'The time the event ends.',
+                                                'de' => 'Die Uhrzeit, zu der das Event endet.',
+                                            ],
+                                            'default' => '10:00',
+                                            'min' => '10:00',
+                                            'max' => '21:00',
                                             'required' => true,
                                             'translate' => false,
                                         ],
@@ -745,8 +1104,8 @@ return [
                                     ],
                                     'buttons' => false,
                                     'help' => [
-                                        'en' => 'The short description might be shown in the content overview next to some more metadata.',
-                                        'de' => 'Die Kurzbeschreibung wäre in der Inhaltsübersicht zu sehen, neben weiteren Metadaten.',
+                                        'en' => 'The short description is a teaser, which offers website visitors a glimpse into your content from the content overview page on the website.',
+                                        'de' => 'Die Kurzbeschreibung dient als Teaser und ermöglicht Website-Besucher:innen einen Einblick in den Inhalt von der Inhaltsübersichtseite der Website.',
                                     ],
                                     'icon' => 'title',
                                     'maxlength' => 500,

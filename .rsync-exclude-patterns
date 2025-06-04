@@ -1,0 +1,10 @@
+/.git
+/.github
+/.gitmodules
+/.rsync-exclude-patterns
+/content
+/media
+/site/accounts
+/site/cache
+/site/config
+/site/sessions

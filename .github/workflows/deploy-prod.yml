@@ -65,6 +65,8 @@ jobs:
             --devices \
             --specials \
             --chown=www-data:www-data \
+            --delete \
+            --exclude-from=/home/deploy/rundgang-cms-kirby/.rsync-exclude-patterns \
             /home/deploy/rundgang-cms-kirby/ \
             /var/www/kirby
 

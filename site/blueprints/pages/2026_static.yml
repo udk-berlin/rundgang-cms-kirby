@@ -1,0 +1,62 @@
+---
+title: Content
+
+# info: https://getkirby.com/releases/5/view-buttons
+#
+buttons:
+  #preview: true
+  settings: true
+  languages: true
+  status: true
+
+# docs: https://getkirby.com/docs/reference/panel/blueprints/page#statuses
+#
+status:
+  draft:
+    label:
+      en: Draft
+      de: Entwurf
+  unlisted:
+    label:
+      en: Published
+      de: Veröffentlicht
+
+# docs: https://getkirby.com/docs/reference/panel/sections
+#
+sections:
+
+  # docs: https://getkirby.com/docs/reference/panel/sections/fields
+  #
+  content_section:
+    type: fields
+    fields:
+
+      # docs: https://getkirby.com/docs/reference/panel/fields/blocks
+      #
+      content_field:
+        type: blocks
+        #label: false
+        label:
+          en: Content
+          de: Inhalt
+        fieldsets:
+          text:
+            label: Text
+            type: group
+            fieldsets:
+              - heading
+              - text
+              - list
+          media:
+            label: Media
+            type: group
+            fieldsets:
+              - image
+              #- video
+          #code:
+          #  label: Code
+          #  type: group
+          #  fieldsets:
+          #    - code
+          #    #- markdown
+        required: true

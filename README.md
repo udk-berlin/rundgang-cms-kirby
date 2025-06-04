@@ -119,6 +119,7 @@ Returns a JSON object with all available locations of 2025.
 ```json
 [
     {
+        "id": "hardenbergstrasse",
         "name": "Hardenbergstraße 33",
         "street": "Hardenbergstraße 33",
         "postcode": "10623",
@@ -127,6 +128,7 @@ Returns a JSON object with all available locations of 2025.
         "longitude": "13.3271929"
     },
     {
+        "id": "medienhaus",
         "name": "Medienhaus",
         "street": "Grunewaldstraße 2-5",
         "postcode": "10823",

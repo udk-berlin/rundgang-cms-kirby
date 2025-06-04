@@ -76,7 +76,7 @@ Returns a nested JSON object with all available contexts of 2025.
                                 "id": "narrativer_film",
                                 "type": "class"
                             },
-                        },
+                        ],
                     },
                 ],
             },

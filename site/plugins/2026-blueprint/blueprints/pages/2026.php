@@ -1146,7 +1146,7 @@ return [
                                         'en' => 'The title image might be shown in the content overview next to some more metadata.',
                                         'de' => 'Das Titelbild wäre in der Inhaltsübersicht zu sehen, neben weiteren Metadaten.',
                                     ],
-                                    'max' => '1',
+                                    'max' => 1,
                                     'translate' => false,
                                 ],
                             ],

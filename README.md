@@ -37,15 +37,13 @@ If you are familiar with Git, you can clone Kirby's Plainkit repository from Git
 
 ---
 
-# API Usage
-
-## Kirby Query Language (KQL)
+# Kirby Query Language (KQL)
 
 This project utilises the Kirby Query Language (KQL) plugin which works similar to GraphQL.
 
 For more information about KQL and how to use it, visit the official [KQL repository](https://github.com/getkirby/kql).
 
-## Custom API Endpoints
+# Custom API Endpoints
 
 The following custom API endpoints are provided to extend the functionality of the Kirby CMS for the annual Rundgang frontend. These endpoints are located in the `site/plugins/api` folder.
 
@@ -57,27 +55,38 @@ Returns a nested JSON object with all available contexts of 2025.
 **Response Example:**
 
 ```json
-        {
-    "name": "Fakultät Gestaltung",
-    "id": "fakultaet_gestaltung",
-    "type": "faculty",
-    "institutes": [
-        {
-            "name": "Institut für zeitbasierte Medien",
-            "id": "institut_fuer_zeitbasierte_medien",
-            "type": "institute",
-            "courses": [
-                {
-                    "name": "Kunst und Medien",
-                    "id": "kunst_und_medien",
-                    "type": "course",
-                    "classes": [
-                        {
-                            "name": "Narrativer Film",
-                            "id": "narrativer_film",
-                            "type": "class"
+[
+    {
+        "name": "Fakultät Gestaltung",
+        "id": "fakultaet_gestaltung",
+        "type": "faculty",
+        "institutes": [
+            {
+                "name": "Institut für zeitbasierte Medien",
+                "id": "institut_fuer_zeitbasierte_medien",
+                "type": "institute",
+                "courses": [
+                    {
+                        "name": "Kunst und Medien",
+                        "id": "kunst_und_medien",
+                        "type": "course",
+                        "classes": [
+                            {
+                                "name": "Narrativer Film",
+                                "id": "narrativer_film",
+                                "type": "class"
+                            },
+                            ...
                         },
                         ...
+                    },
+                    ...
+                ],
+            },
+        ],
+    },
+    ...
+]
 ```
 
 ## **GET** `/api/2025/formats`

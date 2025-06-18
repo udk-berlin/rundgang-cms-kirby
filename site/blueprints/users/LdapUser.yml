@@ -1,7 +1,9 @@
 ---
 # docs: https://getkirby.com/docs/reference/panel/blueprints/user
 #
-title: Editor
+title:
+  en: Editor
+  de: Editor:in
 description: Account is externally managed via LDAP server
 
 # info: https://getkirby.com/releases/5/view-buttons

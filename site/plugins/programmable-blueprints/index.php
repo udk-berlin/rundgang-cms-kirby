@@ -9,6 +9,8 @@ Kirby::plugin('cookbook/programmable-blueprints', [
         'site' => function () {
             if (($user = kirby()->user()) && $user->isAdmin()) {
                 return Data::read(__DIR__ . '/blueprints/site.admin.yml');
+            } else if (($user = kirby()->user()) && $user->role() == 'ModUser') {
+                return Data::read(__DIR__ . '/blueprints/site.moderator.yml');
             } else {
                 return Data::read(__DIR__ . '/blueprints/site.editor.yml');
             }

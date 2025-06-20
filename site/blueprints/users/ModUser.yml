@@ -1,0 +1,130 @@
+---
+# docs: https://getkirby.com/docs/reference/panel/blueprints/user
+#
+title:
+  en: Moderator
+  de: Moderator:in
+description: Account for moderation, i.e. static page content creation
+
+# info: https://getkirby.com/releases/5/view-buttons
+#
+buttons:
+  settings: true
+  theme: true
+
+# docs: https://getkirby.com/docs/reference/panel/blueprints/user#home-option
+#
+#home: /panel/home
+
+# docs: https://getkirby.com/docs/reference/panel/blueprints/user#permissions
+#
+permissions:
+  access:
+    "*": false
+    account: true
+    panel: true
+    site: true
+    #languages: true
+    #system: true
+    #users: true
+  files:
+    #"*": false # if set to false, files are not visible to the user, even with all permissions set to true
+    create: true
+    changeName: false
+    changeTemplate: false
+    delete: true
+    read: true
+    replace: true
+    sort: true
+    update: true
+  languages:
+    "*": false
+    #create: true
+    #delete: true
+  pages:
+    "*": false
+    access: true
+    #changeSlug: true
+    changeStatus: true
+    #changeTemplate: true
+    changeTitle: true
+    create: true
+    delete: true
+    list: true
+    #move: true
+    duplicate: true
+    preview: false
+    read: true
+    #sort: true
+    update: true
+  site:
+    "*": false
+    #changeTitle: true
+    #preview: true
+    #update: true
+  user:
+    "*": false
+    #changeEmail: true
+    changeLanguage: true
+    changeName: true
+    #changePassword: true
+    #changeRole: true
+    #delete: true
+    #update: true
+  users:
+    "*": false
+    #changeEmail: true
+    #changeLanguage: true
+    #changeName: true
+    #changePassword: true
+    #changeRole: true
+    #create: true
+    #delete: true
+    #update: true
+
+# docs: https://getkirby.com/docs/reference/panel/sections
+#
+sections:
+
+  # docs: https://getkirby.com/docs/reference/panel/sections/fields
+  #
+  user_section_info:
+    type: fields
+    fields:
+
+      # docs: https://getkirby.com/docs/reference/panel/fields/info
+      #
+      info_notice:
+        type: info
+        label: false
+        icon: account
+        text:
+          en: You can change your <strong>name</strong> and the <strong>interface language</strong> via the settings/gear icon button above.
+          de: Du kannst deinen <strong>Namen</strong> und die <strong>Interface-Sprache</strong> via des obigen Einstellungen-/Zahnrad-Buttons ändern.
+        theme: info
+
+  # docs: https://getkirby.com/docs/reference/panel/sections/fields
+  #
+  #user_section_ldap:
+  #  type: fields
+  #  fields:
+
+  #    # docs: https://getkirby.com/docs/reference/panel/fields/info
+  #    #
+  #    ldap_mail:
+  #      type: info
+  #      label:
+  #        en: Mail Address
+  #        de: Mail-Adresse
+  #      text: "{{ user.email }}"
+  #      theme: code
+
+  #        # docs: https://getkirby.com/docs/reference/panel/fields/info
+  #        #
+  #    ldap_name:
+  #      type: info
+  #      label:
+  #        en: Name
+  #        de: Name
+  #      text: "{{ user.name }}"
+  #      theme: code

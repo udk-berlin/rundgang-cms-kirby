@@ -110,10 +110,11 @@ return [
         'languages' => true,
         'status' => true,
         'preview' => [
-          'icon' => 'preview',
-          'text' => 'Preview',
-          'link' => 'https://rundgang.udk-berlin.de/projects/{{ page.slug }}',
-          'theme' => 'blue-icon',
+            'icon' => 'preview',
+            'text' => 'Preview',
+            'link' => 'https://rundgang.udk-berlin.de/projects/{{ page.slug }}',
+            'theme' => 'blue-icon',
+            'target' => '_blank',
         ],
     ],
 

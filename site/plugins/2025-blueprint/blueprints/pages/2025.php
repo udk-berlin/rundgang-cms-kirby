@@ -113,7 +113,7 @@ return [
             'icon' => 'preview',
             'text' => 'Preview',
             'link' => 'https://rundgang.udk-berlin.de/projects/{{ page.slug }}',
-            'theme' => 'blue-icon',
+            'theme' => 'grey-icon',
             'target' => '_blank',
         ],
     ],

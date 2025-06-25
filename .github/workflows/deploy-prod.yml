@@ -1,4 +1,4 @@
-name: "⚠️‼️ deploy-prod → rundgang-cms.medienhaus.udk-berlin.de"
+name: "⚠️‼️ deploy-prod → rundgang-cms.udk-berlin.de"
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
 
     env:
       ssh_user: "deploy"
-      ssh_host: "rundgang-cms.medienhaus.udk-berlin.de"
+      ssh_host: "rundgang-cms.udk-berlin.de"
       ssh_key: ${{ secrets.SSH_DEPLOY_AT_RUNDGANG_CMS_MEDIENHAUS_UDK_BERLIN_DE }}
 
     steps:

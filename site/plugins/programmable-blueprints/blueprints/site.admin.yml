@@ -51,11 +51,31 @@ tabs:
                   en: |
                     Welcome <strong>{{ user.name }}</strong>,
 
-                    With kind regards.
+                    Here you can create your content for Rundgang 2025.
+
+                    To do this, click on <code>+ Add</code> below <strong>Content for Rundgang 2025</strong>.
+
+                    You can now enter all the key data for the event and your content (description texts, images, videos, etc.). These can still be added and updated until the start of the Rundgang on Friday, June 18 2025, at 4 pm.
+
+                    Have you completed all the entries? To display your contribution on the platform, you need to change its status from “Draft” to “Published”.
+
+                    Further content such as detailed description texts, images or videos can be added until the start of the Rundgang. During the Rundgang, updates or changes will no longer be possible.
+
+                    As the website is heavily image-based, we particularly welcome entries that contain visual material.
                   de: |
                     Willkommen <strong>{{ user.name }}</strong>,
 
-                    Mit freundlichen Grüßen.
+                    hier kannst du deine Inhalte für den Rundgang 2025 anlegen.
+
+                    Klicke hierfür unter <strong>Inhalte für den Rundgang 2025</strong> auf <code>+ Hinzufügen</code>.
+
+                    Nun kannst du alle Eckdaten der Veranstaltung und deine Inhalte (Beschreibungstexte, Bilder, Videos, etc.) eintragen. Diese können noch bis zum Start des Rundgangs am Freitag, den 18. Juli 2025, um 16 Uhr ergänzt und aktualisiert werden.
+
+                    Hast du alle Eintragungen gemacht? Damit dein Beitrag auf der Plattform angezeigt wird, musst du den Status von „Entwurf“ auf „Veröffentlicht“ ändern.
+
+                    Weitere Inhalte wie detaillierte Beschreibungstexte, Bilder oder Videos können bis zum Start des Rundgangs ergänzt werden. Während des Rundgangs sind keine Aktualisierungen mehr möglich.
+
+                    Da die Website stark bildbasiert ist, freuen wir uns besonders über Beiträge, die visuelles Material enthalten.
                 theme: text
 
               # docs: https://getkirby.com/docs/reference/panel/fields/info

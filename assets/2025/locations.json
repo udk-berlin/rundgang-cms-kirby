@@ -18,15 +18,6 @@
     "longitude": "13.3274551"
   },
   {
-    "id": "einsteinufer",
-    "name": "Einsteinufer 43-53",
-    "street": "Einsteinufer 43-53",
-    "postcode": "10587",
-    "city": "Berlin",
-    "latitude": "52.5165548",
-    "longitude": "13.3202177"
-  },
-  {
     "id": "jazz-institut_berlin",
     "name": "Jazz-Institut Berlin",
     "street": "Einsteinufer 43-53",
@@ -52,15 +43,6 @@
     "city": "Berlin",
     "latitude": "52.5093475",
     "longitude": "13.3276388"
-  },
-  {
-    "id": "hzt",
-    "name": "Hochschulübergreifendes Zentrum Tanz (HZT)",
-    "street": "Uferstraße 23",
-    "postcode": "13357",
-    "city": "Berlin",
-    "latitude": "52.5517727",
-    "longitude": "13.3700503"
   },
   {
     "id": "konzertsaal",
@@ -90,8 +72,8 @@
     "longitude": "13.357244"
   },
   {
-    "id": "strasse_des_17_juni",
-    "name": "Straße des 17. Juni",
+    "id": "strasse_des_17_juni_118",
+    "name": "Straße des 17. Juni 118",
     "street": "Straße des 17. Juni 118",
     "postcode": "10623",
     "city": "Berlin",
@@ -106,14 +88,5 @@
     "city": "Berlin",
     "latitude": "52.5101646",
     "longitude": "13.3278948"
-  },
-  {
-    "id": "mierendorffstrasse",
-    "name": "Mierendorffstraße 30",
-    "street": "Mierendorffstraße 30",
-    "postcode": "10589",
-    "city": "Berlin",
-    "latitude": "52.524442",
-    "longitude": "13.3027563"
   }
 ]

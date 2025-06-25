@@ -83,5 +83,15 @@ fields:
     help:
       en: "For more information, please see: [About CC Licenses](https://creativecommons.org/share-your-work/cclicenses/), [CC License Chooser](https://creativecommons.org/chooser/), [Rights Statements](https://rightsstatements.org/page/1.0/)"
       de: "Weitere Informationen: [Über CC Lizenzen (EN)](https://creativecommons.org/share-your-work/cclicenses/), [CC Lizenz-Wähler (EN)](https://creativecommons.org/chooser/), [Rights Statements (EN)](https://rightsstatements.org/page/1.0/)"
+    #required: true
+    translate: false
+  rights:
+    label:
+      en: Publication Rights
+      de: Veröffentlichungsberechtigung
+    type: toggle
+    text:
+      en: I hereby confirm that I am the owner of the image or have obtained the rights for publication for the image.
+      de: Hiermit versichere ich, dass ich Inhaber:in des Bildes bin oder die Rechte zur Veröffentlichung des Bildes eingeholt habe.
     required: true
     translate: false

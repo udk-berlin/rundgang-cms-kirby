@@ -246,8 +246,8 @@ return [
                                         'de' => 'Kontext',
                                     ],
                                     'help' => [
-                                        'en' => 'The context is, for example, the class or course in which the project was created.',
-                                        'de' => 'Der Kontext ist beispielsweise die Klasse oder der Kurs, in dem das Projekt entstanden ist.',
+                                        'en' => 'The context is, for example, the class, course, institute or realm  in which the project was created.',
+                                        'de' => 'Der Kontext ist beispielsweise die Klasse, der Kurs, das Institut oder der Bereich, in dem das Projekt entstanden ist.',
                                     ],
                                     #'max' => 1,
                                     'options' => $context_options,

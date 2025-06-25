@@ -66,25 +66,25 @@ fields:
   #  type: writer
   #  icon: text
   #  inline: true
-  license:
-    label:
-      en: License
-      de: Lizenz
-    type: select
-    options:
-      cc0: CC0 1.0
-      cc-by: CC BY 4.0
-      cc-by-sa: CC BY-SA 4.0
-      cc-by-nd: CC BY-ND 4.0
-      cc-by-nc: CC BY-NC 4.0
-      cc-by-nc-sa: CC BY-NC-SA 4.0
-      cc-by-nc-nd: CC BY-NC-ND 4.0
-      rs-inc: In Copyright
-    help:
-      en: "For more information, please see: [About CC Licenses](https://creativecommons.org/share-your-work/cclicenses/), [CC License Chooser](https://creativecommons.org/chooser/), [Rights Statements](https://rightsstatements.org/page/1.0/)"
-      de: "Weitere Informationen: [Über CC Lizenzen (EN)](https://creativecommons.org/share-your-work/cclicenses/), [CC Lizenz-Wähler (EN)](https://creativecommons.org/chooser/), [Rights Statements (EN)](https://rightsstatements.org/page/1.0/)"
-    #required: true
-    translate: false
+  #license:
+  #  label:
+  #    en: License
+  #    de: Lizenz
+  #  type: select
+  #  options:
+  #    cc0: CC0 1.0
+  #    cc-by: CC BY 4.0
+  #    cc-by-sa: CC BY-SA 4.0
+  #    cc-by-nd: CC BY-ND 4.0
+  #    cc-by-nc: CC BY-NC 4.0
+  #    cc-by-nc-sa: CC BY-NC-SA 4.0
+  #    cc-by-nc-nd: CC BY-NC-ND 4.0
+  #    rs-inc: In Copyright
+  #  help:
+  #    en: "For more information, please see: [About CC Licenses](https://creativecommons.org/share-your-work/cclicenses/), [CC License Chooser](https://creativecommons.org/chooser/), [Rights Statements](https://rightsstatements.org/page/1.0/)"
+  #    de: "Weitere Informationen: [Über CC Lizenzen (EN)](https://creativecommons.org/share-your-work/cclicenses/), [CC Lizenz-Wähler (EN)](https://creativecommons.org/chooser/), [Rights Statements (EN)](https://rightsstatements.org/page/1.0/)"
+  #  #required: true
+  #  translate: false
   rights:
     label:
       en: Publication Rights

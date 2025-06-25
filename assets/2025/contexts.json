@@ -415,7 +415,7 @@
               "type": "course",
               "classes": [
                 {
-                  "name": "Darstellungstechniken der Mode/Modezeichnen",
+                  "name": "Darstellungstechniken der Mode/ Modezeichnen",
                   "id": "darstellungstechniken_der_mode_modezeichnen",
                   "type": "class"
                 },
@@ -525,7 +525,7 @@
                   "type": "class"
                 },
                 {
-                  "name": "Theorie der Gestaltung/Gender Studies",
+                  "name": "Theorie der Gestaltung / Gender Studies",
                   "id": "theorie_der_gestaltung_gender_studies",
                   "type": "class"
                 }
@@ -974,8 +974,8 @@
           "type": "initiative"
         },
         {
-          "name": "UdK20230",
-          "id": "udk20230",
+          "name": "UdK2030",
+          "id": "udk2030",
           "type": "initiative"
         },
         {
@@ -986,7 +986,7 @@
       ]
     },
     {
-      "name": "Hochschulübergreifendes Zentrum für Tanz HZT",
+      "name": "Hochschulübergreifendes Zentrum für Tanz (HZT)",
       "id": "hochschuluebergreifendes_zentrum_fuer_tanz_hzt",
       "type": "faculty",
       "institutes": [
@@ -1086,8 +1086,8 @@
                   "type": "class"
                 },
                 {
-                  "name": "FSRs Fakultät 4 - Darstellende Kunst",
-                  "id": "fsrs_fakultaet_4_darstellende_kunst",
+                  "name": "FSR Fakultät 4 - Darstellende Kunst",
+                  "id": "fsr_fakultaet_4_darstellende_kunst",
                   "type": "class"
                 }
               ]
@@ -1109,7 +1109,7 @@
       "institutes": []
     },
     {
-      "name": "Jazz-Institut Berlin JIB",
+      "name": "Jazz-Institut Berlin (JIB)",
       "id": "jazz_institut_berlin_jib",
       "type": "faculty",
       "institutes": []
@@ -1183,8 +1183,8 @@
       "institutes": []
     },
     {
-      "name": "Hochschulübergreifend (unspecified faculty)",
-      "id": "hochschuluebergreifend_unspecified_faculty",
+      "name": "Hochschulübergreifend",
+      "id": "hochschuluebergreifend",
       "type": "faculty",
       "institutes": [
         {

@@ -6,7 +6,8 @@ $context_json = asset('assets/2025/contexts.json')->read();
 $context_data = json_decode($context_json, true);
 $context_options = [];
 
-// Sanitize method to remove all spaces from the string
+// sanitize string by removing all space characters
+//
 function sanitizeId(string $id): string
 {
     return str_replace(' ', '', $id);
@@ -25,7 +26,8 @@ foreach ($context_data['faculties'] as $faculty) {
         'info' => $faculty_info,
     ];
 
-    // continue if  if it has no institutes
+    // continue if faculty has no institutes
+    //
     if (!isset($faculty['institutes']) || empty($faculty['institutes'])) {
         continue;
     }
@@ -42,6 +44,7 @@ foreach ($context_data['faculties'] as $faculty) {
         ];
 
         // continue if institute has no courses
+        //
         if (!isset($institute['courses']) || empty($institute['courses'])) {
             continue;
         }
@@ -56,7 +59,9 @@ foreach ($context_data['faculties'] as $faculty) {
                 'text' => $course_text,
                 'info' => $course_info,
             ];
+
             // continue if course has no classes
+            //
             if (!isset($course['classes']) || empty($course['classes'])) {
                 continue;
             }

@@ -6,7 +6,8 @@ $context_json = asset('assets/2026/contexts.json')->read();
 $context_data = json_decode($context_json, true);
 $context_options = [];
 
-// Sanitize method to remove all spaces from the string
+// sanitize string by removing all space characters
+//
 function sanitizeId(string $id): string
 {
     return str_replace(' ', '', $id);
@@ -19,13 +20,15 @@ foreach ($context_data['faculties'] as $faculty) {
     $faculty_text = $faculty['name'];
     $faculty_info = $faculty['name'];
 
-    // Add faculty if it has no institutes
+    $context_options[] = [
+        'value' => $faculty_id,
+        'text' => $faculty_text,
+        'info' => $faculty_info,
+    ];
+
+    // continue if faculty has no institutes
+    //
     if (!isset($faculty['institutes']) || empty($faculty['institutes'])) {
-        $context_options[] = [
-            'value' => $faculty_id,
-            'text' => $faculty_text,
-            'info' => $faculty_info,
-        ];
         continue;
     }
 
@@ -34,13 +37,15 @@ foreach ($context_data['faculties'] as $faculty) {
         $institute_text = $institute['name'];
         $institute_info = $institute['name'] . ' - ' . $faculty['name'];
 
-        // Add institute if it has no courses
+        $context_options[] = [
+            'value' => $institute_id,
+            'text' => $institute_text,
+            'info' => $institute_info,
+        ];
+
+        // continue if institute has no courses
+        //
         if (!isset($institute['courses']) || empty($institute['courses'])) {
-            $context_options[] = [
-                'value' => $institute_id,
-                'text' => $institute_text,
-                'info' => $institute_info,
-            ];
             continue;
         }
 
@@ -49,13 +54,15 @@ foreach ($context_data['faculties'] as $faculty) {
             $course_text = $course['name'];
             $course_info = $course['name'] . ' - ' . $institute['name'] . ' - ' . $faculty['name'];
 
-            // Add course if it has no classes
+            $context_options[] = [
+                'value' => $course_id,
+                'text' => $course_text,
+                'info' => $course_info,
+            ];
+
+            // continue if course has no classes
+            //
             if (!isset($course['classes']) || empty($course['classes'])) {
-                $context_options[] = [
-                    'value' => $course_id,
-                    'text' => $course_text,
-                    'info' => $course_info,
-                ];
                 continue;
             }
 
@@ -110,10 +117,11 @@ return [
         'languages' => true,
         'status' => true,
         'preview' => [
-          'icon' => 'preview',
-          'text' => 'Preview',
-          'link' => 'https://rundgang.udk-berlin.de/projects/{{ page.slug }}',
-          'theme' => 'blue-icon',
+            'icon' => 'preview',
+            'text' => 'Preview',
+            'link' => 'https://rundgang.udk-berlin.de/projects/{{ page.slug }}',
+            'theme' => 'blue-icon',
+            'target' => '_blank',
         ],
     ],
 

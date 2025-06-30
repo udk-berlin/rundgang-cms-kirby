@@ -10,6 +10,11 @@ class DefaultPage extends Page
             return true;
         }
 
+        // Moderators should be able to access static pages
+        if (Str::endsWith($this->intendedTemplate()->name(), '_static') && $this->kirby()->user()->role()->name() == 'ModUser') {
+            return true;
+        }
+
         // Grant access if the current user is the author of the page
         if (($user = $this->author()->toUser()) && $user->is($this->kirby()->user())) {
             return true;

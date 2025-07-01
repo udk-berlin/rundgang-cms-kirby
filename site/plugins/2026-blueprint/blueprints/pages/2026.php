@@ -1052,8 +1052,8 @@ return [
         #
         'intro_tab' => [
             'label' => [
-                'en' => 'Short Description (EN/DE)',
-                'de' => 'Kurzbeschreibung (EN/DE)',
+                'en' => 'Short Description',
+                'de' => 'Kurzbeschreibung',
             ],
             'icon' => 'paragraph',
 
@@ -1083,8 +1083,8 @@ return [
                                     'label' => false,
                                     'icon' => 'translate',
                                     'text' => [
-                                        'en' => 'You can select the language for <strong>Short Description (EN/DE)</strong> in the dropdown menu above, next to the page title.',
-                                        'de' => 'Wähle die Sprache für <strong>Kurzbeschreibung (EN/DE)</strong> im Dropdown-Menü neben/unter dem Seiten-Titel aus.',
+                                        'en' => 'To enter the <strong>Short Description</strong> in <em>English</em> as well, first save the <em>German</em> version; then switch the language in the top right corner to `EN` and overwrite the <em>German</em> text with the <em>English</em> one.',
+                                        'de' => 'Um die <strong>Kurzbeschreibung</strong> auch auf <em>Englisch</em> anzugeben, speichere erst den <em>deutschen</em> Text ab; stelle danach die Sprache oben rechts auf `EN` und überschreibe den <em>deutschen</em> Text mit dem <em>englischen</em> Text.',
                                     ],
                                     'theme' => 'info',
                                 ],
@@ -1174,8 +1174,8 @@ return [
         #
         'content_tab' => [
             'label' => [
-                'en' => 'Content (EN/DE)',
-                'de' => 'Inhalt (EN/DE)',
+                'en' => 'Content',
+                'de' => 'Inhalt',
             ],
             'icon' => 'text',
 
@@ -1196,8 +1196,8 @@ return [
                             'label' => false,
                             'icon' => 'translate',
                             'text' => [
-                                'en' => 'You can select the language for <strong>Content (EN/DE)</strong> in the dropdown menu above, next to the page title.',
-                                'de' => 'Wähle die Sprache für <strong>Inhalt (EN/DE)</strong> im Dropdown-Menü neben/unter dem Seiten-Titel aus.',
+                                'en' => 'To enter the <strong>Content</strong> in <em>English</em> as well, first save the <em>German</em> version; then switch the language in the top right corner to `EN` and overwrite the <em>German</em> text with the <em>English</em> one.',
+                                'de' => 'Um den <strong>Inhalt</strong> auch auf <em>Englisch</em> anzugeben, speichere erst den <em>deutschen</em> Text ab; stelle danach die Sprache oben rechts auf `EN` und überschreibe den <em>deutschen</em> Text mit dem <em>englischen</em> Text.',
                             ],
                             'theme' => 'info',
                         ],

@@ -410,7 +410,7 @@
               "type": "course",
               "classes": [
                 {
-                  "name": "Darstellungstechniken der Mode/ Modezeichnen",
+                  "name": "Darstellungstechniken der Mode / Modezeichnen",
                   "id": "darstellungstechniken_der_mode_modezeichnen",
                   "type": "class"
                 },
@@ -651,19 +651,19 @@
       "type": "faculty",
       "institutes": [
         {
-          "name": "Institut für Künstlerische Ausbildung/Orchesterinstrumente und Dirigieren    ",
+          "name": "Institut für Künstlerische Ausbildung / Orchesterinstrumente und Dirigieren",
           "id": "institut_fuer_kuenstlerische_ausbildung_orchesterinstrumente_und_dirigieren",
           "type": "institute",
           "courses": []
         },
         {
-          "name": "Institut für Künstlerische Ausbildung/Klavier",
+          "name": "Institut für Künstlerische Ausbildung / Klavier",
           "id": "institut_fuer_kuenstlerische_ausbildung_klavier",
           "type": "institute",
           "courses": []
         },
         {
-          "name": "Institut für Künstlerische Ausbildung/Alte Musik",
+          "name": "Institut für Künstlerische Ausbildung / Alte Musik",
           "id": "institut_fuer_kuenstlerische_ausbildung_alte_musik",
           "type": "institute",
           "courses": []
@@ -687,7 +687,7 @@
           "courses": []
         },
         {
-          "name": "Institut für Musikwissenschaft, Musiktheorie, Komposition und Musikübertragung    ",
+          "name": "Institut für Musikwissenschaft, Musiktheorie, Komposition und Musikübertragung",
           "id": "institut_fuer_musikwissenschaft_musiktheorie_komposition_und_musikuebertragung",
           "type": "institute",
           "courses": []
@@ -705,7 +705,7 @@
           "courses": []
         },
         {
-          "name": "Staats- und Domchor ",
+          "name": "Staats- und Domchor",
           "id": "staats_und_domchor",
           "type": "institute",
           "courses": []
@@ -778,7 +778,7 @@
               "classes": []
             },
             {
-              "name": "Theaterpädagogik/Lehramt Theater",
+              "name": "Theaterpädagogik / Lehramt Theater",
               "id": "theaterpaedagogik_lehramt_theater",
               "type": "course",
               "classes": []
@@ -1031,7 +1031,7 @@
               "type": "course",
               "classes": [
                 {
-                  "name": "Hochschulübergreifendes Zentrum für Tanz HZT",
+                  "name": "Hochschulübergreifendes Zentrum für Tanz (HZT)",
                   "id": "hochschuluebergreifendes_zentrum_fuer_tanz_hzt",
                   "type": "class"
                 }

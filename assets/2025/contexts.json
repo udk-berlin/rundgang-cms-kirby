@@ -312,11 +312,6 @@
               "type": "course",
               "classes": [
                 {
-                  "name": "Audiovisuelle Kommunikation",
-                  "id": "audiovisuelle_kommunikation",
-                  "type": "class"
-                },
-                {
                   "name": "Kommunikations- und Medienforschung",
                   "id": "kommunikations_und_medienforschung",
                   "type": "class"
@@ -458,6 +453,18 @@
           "id": "institut_fuer_zeitbasierte_medien",
           "type": "institute",
           "courses": [
+            {
+              "name": "Gesellschafts- und Wirtschaftskommunikation",
+              "id": "gesellschafts_und_wirtschaftskommunikation",
+              "type": "course",
+              "classes": [
+                {
+                  "name": "Audiovisuelle Kommunikation",
+                  "id": "audiovisuelle_kommunikation",
+                  "type": "class"
+                }
+              ]
+            },
             {
               "name": "Kunst und Medien",
               "id": "kunst_und_medien",

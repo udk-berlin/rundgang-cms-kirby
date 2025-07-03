@@ -462,6 +462,11 @@
                   "name": "Audiovisuelle Kommunikation",
                   "id": "audiovisuelle_kommunikation",
                   "type": "class"
+                },
+                {
+                  "name": "Audiovisuelle Kommunikation / Neue Medien",
+                  "id": "audiovisuelle_kommunikation_neue_medien",
+                  "type": "class"
                 }
               ]
             },

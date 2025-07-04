@@ -571,6 +571,16 @@
                   "type": "class"
                 },
                 {
+                  "name": "Grundlagen New Media",
+                  "id": "grundlagen_new_media",
+                  "type": "class"
+                },
+                {
+                  "name": "Grundlagen und Prozesse des Entwerfens",
+                  "id": "grundlagen_und_prozesse_des_entwerfens",
+                  "type": "class"
+                },
+                {
                   "name": "Illustration",
                   "id": "illustration",
                   "type": "class"

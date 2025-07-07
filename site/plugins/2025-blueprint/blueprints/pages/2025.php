@@ -528,7 +528,7 @@ return [
                                         'url' => 'assets/2025/locations.json',
                                         'query' => 'sortBy("name", "asc")',
                                         'text' => '{{ item.name }}',
-                                        'value' => '{{ item.name.slug }}',
+                                        'value' => '{{ item.id }}',
                                     ],
                                     #'required' => true,
                                     'translate' => false,

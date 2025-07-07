@@ -10,7 +10,7 @@ fields:
     type: info
     icon: alert
     text:
-      en: "Note: The author or copyright holder and license of the image must be stated below."
+      en: "The author or copyright holder and license of the image must be stated below."
       de: "Autor:in bzw. Copyright-Halter:in und Lizenz des Bildes müssen angegeben werden."
     theme: warning
   #location:
@@ -29,6 +29,9 @@ fields:
     multiple: false
     image:
       back: pattern
+    help:
+      en: "Note: The image file size must be smaller than 2 MB."
+      de: "Hinweis: Die Bilddateigröße muss kleiner als 2 MB sein."
     required: true
     translate: false
     uploads:

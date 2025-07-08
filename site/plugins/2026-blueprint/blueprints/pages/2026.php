@@ -242,6 +242,27 @@ return [
                                     ],
                                     'theme' => 'passive',
                                 ],
+
+                                # docs: https://getkirby.com/docs/reference/panel/fields/toggle
+                                #
+                                'authorship_visibility' => [
+                                    'type' => 'toggle',
+                                    'label' => [
+                                        'en' => 'Authorship',
+                                        'de' => 'Autor:innenschaft',
+                                    ],
+                                    'help' => [
+                                        'en' => 'This option let’s you hide or show the authorship and co-author(s) on the website.',
+                                        'de' => 'Mit dieser Option kann die Autor:innenshaft auf der Website ein- oder ausgeblendet werden.',
+                                    ],
+                                    'default' => false,
+                                    'icon' => 'tag',
+                                    'text' => [
+                                        'en' => 'Hide <em>authorship</em> and <em>co-authors</em>?',
+                                        'de' => '<em>Autor:innenschaft</em> und <em>Co-Autor:innen</em> ausblenden?',
+                                    ],
+                                    'translate' => false,
+                                ],
                             ],
                         ],
 
@@ -743,6 +764,19 @@ return [
                                     ],
                                     'fields' => [
 
+                                        # docs: https://getkirby.com/docs/reference/panel/fields/info
+                                        #
+                                        'event_structure_field_friday_info' => [
+                                            'type' => 'info',
+                                            'label' => false,
+                                            'icon' => 'clock',
+                                            'text' => [
+                                                'en' => 'Please see <a href="https://www.udk-berlin.de/en/rundgang/translate-to-english-orte-und-oeffnungszeiten/" target="_blank">Locations and Opening Hours</a> for valid start and end times.',
+                                                'de' => 'Bitte prüfen Sie <a href="https://www.udk-berlin.de/rundgang/2025/orte-und-oeffnungszeiten/" target="_blank">Orte und Öffnungszeiten</a> für geltende Start- und Endzeiten.',
+                                            ],
+                                            'theme' => 'info',
+                                        ],
+
                                         # docs: https://getkirby.com/docs/reference/panel/fields/date
                                         #
                                         'event_structure_field_friday_date' => [
@@ -862,6 +896,19 @@ return [
                                     ],
                                     'fields' => [
 
+                                        # docs: https://getkirby.com/docs/reference/panel/fields/info
+                                        #
+                                        'event_structure_field_saturday_info' => [
+                                            'type' => 'info',
+                                            'label' => false,
+                                            'icon' => 'clock',
+                                            'text' => [
+                                                'en' => 'Please see <a href="https://www.udk-berlin.de/en/rundgang/translate-to-english-orte-und-oeffnungszeiten/" target="_blank">Locations and Opening Hours</a> for valid start and end times.',
+                                                'de' => 'Bitte prüfen Sie <a href="https://www.udk-berlin.de/rundgang/2025/orte-und-oeffnungszeiten/" target="_blank">Orte und Öffnungszeiten</a> für geltende Start- und Endzeiten.',
+                                            ],
+                                            'theme' => 'info',
+                                        ],
+
                                         # docs: https://getkirby.com/docs/reference/panel/fields/date
                                         #
                                         'event_structure_field_saturday_date' => [
@@ -980,6 +1027,19 @@ return [
                                         ],
                                     ],
                                     'fields' => [
+
+                                        # docs: https://getkirby.com/docs/reference/panel/fields/info
+                                        #
+                                        'event_structure_field_sunday_info' => [
+                                            'type' => 'info',
+                                            'label' => false,
+                                            'icon' => 'clock',
+                                            'text' => [
+                                                'en' => 'Please see <a href="https://www.udk-berlin.de/en/rundgang/translate-to-english-orte-und-oeffnungszeiten/" target="_blank">Locations and Opening Hours</a> for valid start and end times.',
+                                                'de' => 'Bitte prüfen Sie <a href="https://www.udk-berlin.de/rundgang/2025/orte-und-oeffnungszeiten/" target="_blank">Orte und Öffnungszeiten</a> für geltende Start- und Endzeiten.',
+                                            ],
+                                            'theme' => 'info',
+                                        ],
 
                                         # docs: https://getkirby.com/docs/reference/panel/fields/date
                                         #

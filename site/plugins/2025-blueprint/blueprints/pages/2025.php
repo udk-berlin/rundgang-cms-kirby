@@ -730,7 +730,7 @@ return [
                                             'de' => 'Bestimmte Uhrzeiten',
                                         ],
                                         'none' => [
-                                            'en' => 'No Appointments',
+                                            'en' => 'Nothing Planned',
                                             'de' => 'Keine Termine',
                                         ],
                                     ],
@@ -866,7 +866,7 @@ return [
                                             'de' => 'Bestimmte Uhrzeiten',
                                         ],
                                         'none' => [
-                                            'en' => 'No Appointments',
+                                            'en' => 'Nothing Planned',
                                             'de' => 'Keine Termine',
                                         ],
                                     ],
@@ -1002,7 +1002,7 @@ return [
                                             'de' => 'Bestimmte Uhrzeiten',
                                         ],
                                         'none' => [
-                                            'en' => 'No Appointments',
+                                            'en' => 'Nothing Planned',
                                             'de' => 'Keine Termine',
                                         ],
                                     ],

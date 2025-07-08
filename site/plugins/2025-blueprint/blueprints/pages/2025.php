@@ -768,6 +768,19 @@ return [
                                     ],
                                     'fields' => [
 
+                                        # docs: https://getkirby.com/docs/reference/panel/fields/info
+                                        #
+                                        'event_structure_field_friday_info' => [
+                                            'type' => 'info',
+                                            'label' => false,
+                                            'icon' => 'clock',
+                                            'text' => [
+                                                'en' => 'Please see <a href="https://www.udk-berlin.de/en/rundgang/translate-to-english-orte-und-oeffnungszeiten/" target="_blank">Locations and Opening Hours</a> for valid start and end times.',
+                                                'de' => 'Bitte prüfen Sie <a href="https://www.udk-berlin.de/rundgang/2025/orte-und-oeffnungszeiten/" target="_blank">Orte und Öffnungszeiten</a> für geltende Start- und Endzeiten.',
+                                            ],
+                                            'theme' => 'info',
+                                        ],
+
                                         # docs: https://getkirby.com/docs/reference/panel/fields/date
                                         #
                                         'event_structure_field_friday_date' => [
@@ -891,6 +904,19 @@ return [
                                     ],
                                     'fields' => [
 
+                                        # docs: https://getkirby.com/docs/reference/panel/fields/info
+                                        #
+                                        'event_structure_field_saturday_info' => [
+                                            'type' => 'info',
+                                            'label' => false,
+                                            'icon' => 'clock',
+                                            'text' => [
+                                                'en' => 'Please see <a href="https://www.udk-berlin.de/en/rundgang/translate-to-english-orte-und-oeffnungszeiten/" target="_blank">Locations and Opening Hours</a> for valid start and end times.',
+                                                'de' => 'Bitte prüfen Sie <a href="https://www.udk-berlin.de/rundgang/2025/orte-und-oeffnungszeiten/" target="_blank">Orte und Öffnungszeiten</a> für geltende Start- und Endzeiten.',
+                                            ],
+                                            'theme' => 'info',
+                                        ],
+
                                         # docs: https://getkirby.com/docs/reference/panel/fields/date
                                         #
                                         'event_structure_field_saturday_date' => [
@@ -1013,6 +1039,19 @@ return [
                                         ],
                                     ],
                                     'fields' => [
+
+                                        # docs: https://getkirby.com/docs/reference/panel/fields/info
+                                        #
+                                        'event_structure_field_sunday_info' => [
+                                            'type' => 'info',
+                                            'label' => false,
+                                            'icon' => 'clock',
+                                            'text' => [
+                                                'en' => 'Please see <a href="https://www.udk-berlin.de/en/rundgang/translate-to-english-orte-und-oeffnungszeiten/" target="_blank">Locations and Opening Hours</a> for valid start and end times.',
+                                                'de' => 'Bitte prüfen Sie <a href="https://www.udk-berlin.de/rundgang/2025/orte-und-oeffnungszeiten/" target="_blank">Orte und Öffnungszeiten</a> für geltende Start- und Endzeiten.',
+                                            ],
+                                            'theme' => 'info',
+                                        ],
 
                                         # docs: https://getkirby.com/docs/reference/panel/fields/date
                                         #

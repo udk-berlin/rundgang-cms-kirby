@@ -729,6 +729,10 @@ return [
                                             'en' => 'Specific Hours',
                                             'de' => 'Bestimmte Uhrzeiten',
                                         ],
+                                        'none' => [
+                                            'en' => 'No Appointments',
+                                            'de' => 'Keine Termine',
+                                        ],
                                     ],
                                     'default' => 'allday',
                                     'required' => true,
@@ -848,6 +852,10 @@ return [
                                             'en' => 'Specific Hours',
                                             'de' => 'Bestimmte Uhrzeiten',
                                         ],
+                                        'none' => [
+                                            'en' => 'No Appointments',
+                                            'de' => 'Keine Termine',
+                                        ],
                                     ],
                                     'default' => 'allday',
                                     'required' => true,
@@ -966,6 +974,10 @@ return [
                                         'datetime' => [
                                             'en' => 'Specific Hours',
                                             'de' => 'Bestimmte Uhrzeiten',
+                                        ],
+                                        'none' => [
+                                            'en' => 'No Appointments',
+                                            'de' => 'Keine Termine',
                                         ],
                                     ],
                                     'default' => 'allday',

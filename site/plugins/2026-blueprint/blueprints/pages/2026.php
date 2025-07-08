@@ -729,6 +729,10 @@ return [
                                             'en' => 'Specific Hours',
                                             'de' => 'Bestimmte Uhrzeiten',
                                         ],
+                                        'none' => [
+                                            'en' => 'Nothing Planned',
+                                            'de' => 'Keine Termine',
+                                        ],
                                     ],
                                     'default' => 'allday',
                                     'required' => true,
@@ -861,6 +865,10 @@ return [
                                             'en' => 'Specific Hours',
                                             'de' => 'Bestimmte Uhrzeiten',
                                         ],
+                                        'none' => [
+                                            'en' => 'Nothing Planned',
+                                            'de' => 'Keine Termine',
+                                        ],
                                     ],
                                     'default' => 'allday',
                                     'required' => true,
@@ -992,6 +1000,10 @@ return [
                                         'datetime' => [
                                             'en' => 'Specific Hours',
                                             'de' => 'Bestimmte Uhrzeiten',
+                                        ],
+                                        'none' => [
+                                            'en' => 'Nothing Planned',
+                                            'de' => 'Keine Termine',
                                         ],
                                     ],
                                     'default' => 'allday',

@@ -361,6 +361,11 @@
                   "type": "class"
                 },
                 {
+                  "name": "Design & Technologie",
+                  "id": "design_technologie",
+                  "type": "class"
+                },
+                {
                   "name": "Designforschung",
                   "id": "designforschung",
                   "type": "class"

@@ -1312,7 +1312,6 @@ return [
     #
     # NOTE: uncomment complete `options` block to prevent editing/modification
     # of pages after publication deadline and/or after the Rundgang is over !!
-    /*
     'options' => [
         //'access' => [
         //  "*" => false,
@@ -1371,5 +1370,4 @@ return [
             "admin" => true,
         ],
     ],
-    */
 ];

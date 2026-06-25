@@ -20,7 +20,7 @@
       </p>
       <hr />
       <p>
-        Hier findet ihr weitere <a href="https://www.udk-berlin.de/en/rundgang/" rel="external nofollow noreferrer" target="_blank">Informationen</a> zum Rundgang 2026 sowie die <a href="https://www.udk-berlin.de/rundgang/2026/orte-und-oeffnungszeiten/" rel="external nofollow noreferrer" target="_blank">Öffnungszeiten</a> der teilnehmenden Standorte.</p>
+        Hier findet ihr weitere <a href="https://www.udk-berlin.de/en/rundgang/" rel="external nofollow noreferrer" target="_blank">Informationen</a> zum Rundgang 2026 sowie die <a href="https://www.udk-berlin.de/rundgang/2025/orte-und-oeffnungszeiten-2/" rel="external nofollow noreferrer" target="_blank">Öffnungszeiten</a> der teilnehmenden Standorte.</p>
       </p>
       <hr />
       <p>

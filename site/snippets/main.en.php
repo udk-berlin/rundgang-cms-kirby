@@ -20,7 +20,7 @@
       </p>
       <hr />
       <p>
-        Here you can find more <a href="https://www.udk-berlin.de/en/rundgang/" rel="external nofollow noreferrer" target="_blank">informationen</a> about the Rundgang 2026 as well as the <a href="https://www.udk-berlin.de/rundgang/2026/orte-und-oeffnungszeiten/" rel="external nofollow noreferrer" target="_blank">opening hours</a> for the participating locations.
+        Here you can find more <a href="https://www.udk-berlin.de/en/rundgang/" rel="external nofollow noreferrer" target="_blank">informationen</a> about the Rundgang 2026 as well as the <a href="https://www.udk-berlin.de/rundgang/2025/orte-und-oeffnungszeiten-2/" rel="external nofollow noreferrer" target="_blank">opening hours</a> for the participating locations.
       </p>
       <hr />
       <p>

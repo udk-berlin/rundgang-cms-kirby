@@ -1,0 +1,92 @@
+[
+  {
+    "id": "hardenbergstrasse",
+    "name": "Hardenbergstraße 33",
+    "street": "Hardenbergstraße 33",
+    "postcode": "10623",
+    "city": "Berlin",
+    "latitude": "52.50933793730058",
+    "longitude": "13.32692471661706"
+  },
+  {
+    "id": "bundesallee",
+    "name": "Bundesallee 1-12",
+    "street": "Bundesallee 1-12",
+    "postcode": "10719",
+    "city": "Berlin",
+    "latitude": "52.498302967603074",
+    "longitude": "13.3300072631505"
+  },
+  {
+    "id": "jazz-institut_berlin",
+    "name": "Jazz-Institut Berlin",
+    "street": "Einsteinufer 43-53",
+    "postcode": "10587",
+    "city": "Berlin",
+    "latitude": "52.5171537213955",
+    "longitude": "13.323165745051124"
+  },
+  {
+    "id": "fasanenstrasse",
+    "name": "Fasanenstraße 1b",
+    "street": "Fasanenstraße 1b",
+    "postcode": "10623",
+    "city": "Berlin",
+    "latitude": "52.5093646903241",
+    "longitude": "13.328833872672934"
+  },
+  {
+    "id": "unit_theater",
+    "name": "UNI.T - Theater der UdK Berlin",
+    "street": "Fasanenstraße 1b",
+    "postcode": "10623",
+    "city": "Berlin",
+    "latitude": "52.50967995547447",
+    "longitude": "13.329073198015754"
+  },
+  {
+    "id": "konzertsaal",
+    "name": "Konzertsaal",
+    "street": "Hardenbergstraße, Fasanenstraße 33 (Ecke)",
+    "postcode": "10623",
+    "city": "Berlin",
+    "latitude": "52.50880798240358",
+    "longitude": "13.328033935883816"
+  },
+  {
+    "id": "lietzenburger_strasse",
+    "name": "Lietzenburger Straße 45",
+    "street": "Lietzenburger Straße 45",
+    "postcode": "10777",
+    "city": "Berlin",
+    "latitude": "52.49973333337867",
+    "longitude": "13.332670422941913"
+  },
+  {
+    "id": "medienhaus",
+    "name": "Medienhaus",
+    "street": "Grunewaldstraße 2-5",
+    "postcode": "10823",
+    "city": "Berlin",
+    "latitude": "52.49086596466041",
+    "longitude": "13.358839060747513"
+  },
+  {
+    "id": "strasse_des_17_juni_118",
+    "name": "Straße des 17. Juni 118",
+    "street": "Straße des 17. Juni 118",
+    "postcode": "10623",
+    "city": "Berlin",
+    "latitude": "52.5137819891317",
+    "longitude": "13.329340122671901"
+  },
+  {
+    "id": "universitaetsbibliothek",
+    "name": "Universitätsbibliothek im Volkswagen-Haus",
+    "street": "Fasanenstraße 88",
+    "postcode": "10623",
+    "city": "Berlin",
+    "latitude": "52.51018053864286",
+    "longitude": "13.330461099865209"
+  }
+]

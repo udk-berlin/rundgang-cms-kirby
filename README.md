@@ -47,10 +47,10 @@ For more information about KQL and how to use it, visit the official [KQL reposi
 
 The following custom API endpoints are provided to extend the functionality of the Kirby CMS and the Kirby Query Language (KQL). These endpoints are located in the `site/plugins/api/` folder.
 
-## **GET** `/api/2025/contexts`
+## **GET** `/api/2026/contexts`
 
 **Description:**
-Returns a nested JSON object with all available contexts of 2025.
+Returns a nested JSON object with all available contexts of 2026.
 
 **Response Example:**
 
@@ -86,10 +86,10 @@ Returns a nested JSON object with all available contexts of 2025.
 ]
 ```
 
-## **GET** `/api/2025/formats`
+## **GET** `/api/2026/formats`
 
 **Description:**
-Returns a JSON object with all available formats of 2025.
+Returns a JSON object with all available formats of 2026.
 
 **Response Example:**
 
@@ -109,10 +109,10 @@ Returns a JSON object with all available formats of 2025.
 ]
 ```
 
-## **GET** `/api/2025/locations`
+## **GET** `/api/2026/locations`
 
 **Description:**
-Returns a JSON object with all available locations of 2025.
+Returns a JSON object with all available locations of 2026.
 
 **Response Example:**
 

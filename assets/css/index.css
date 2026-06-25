@@ -139,3 +139,26 @@ nav .active {
     --color-highlight: 244 100% 70%;
   }
 }
+
+/* FSR Medienhaus ReMiX 2o26 */
+.handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 3.5px solid #00f;
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+}
+
+.handle[data-pos="tl"] { top: 0%; left: 0%; cursor: nwse-resize; }
+.handle[data-pos="tr"] { top: 0%; left: 100%; cursor: nesw-resize; }
+.handle[data-pos="bl"] { top: 100%; left: 0%; cursor: nesw-resize; }
+.handle[data-pos="br"] { top: 100%; left: 100%; cursor: nwse-resize; }
+
+.handle.rotate {
+  top: -25px;
+  left: 50%;
+  cursor: ew-resize;
+}

@@ -3,6 +3,7 @@
 Kirby::plugin('medienhaus/api', [
     'api' => [
         'routes' => [
+            /*
             [
                 'pattern' => '2025/contexts',
                 'action' => function () {
@@ -21,7 +22,7 @@ Kirby::plugin('medienhaus/api', [
                     return asset('assets/2025/locations.json')->read();
                 },
             ],
-            /*
+            */
             [
                 'pattern' => '2026/contexts',
                 'action' => function () {
@@ -40,7 +41,6 @@ Kirby::plugin('medienhaus/api', [
                     return asset('assets/2026/locations.json')->read();
                 },
             ],
-            */
         ],
     ],
 ]);

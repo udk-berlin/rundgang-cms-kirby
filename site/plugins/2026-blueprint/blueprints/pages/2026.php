@@ -245,7 +245,7 @@ return [
 
                                 # docs: https://getkirby.com/docs/reference/panel/fields/toggle
                                 #
-                                'authorship_visibility' => [
+                                'show_author_names' => [
                                     'type' => 'toggle',
                                     'label' => [
                                         'en' => 'Authorship',
@@ -255,11 +255,11 @@ return [
                                         'en' => 'This option let’s you hide or show the authorship and co-author(s) on the website.',
                                         'de' => 'Mit dieser Option kann die Autor:innenshaft auf der Website ein- oder ausgeblendet werden.',
                                     ],
-                                    'default' => false,
+                                    'default' => true,
                                     'icon' => 'tag',
                                     'text' => [
-                                        'en' => 'Hide <em>authorship</em> and <em>co-authors</em>?',
-                                        'de' => '<em>Autor:innenschaft</em> und <em>Co-Autor:innen</em> ausblenden?',
+                                        'en' => 'Show <em>authorship</em> and <em>co-authors</em>?',
+                                        'de' => '<em>Autor:innenschaft</em> und <em>Co-Autor:innen</em> anzeigen?',
                                     ],
                                     'translate' => false,
                                 ],

@@ -106,8 +106,7 @@ tabs:
             label:
               en: Content for Rundgang 2025
               de: Inhalte für Rundgang 2025
-            create:
-              - 2025
+            create: false
             template: 2025
 
           # docs: https://getkirby.com/docs/reference/panel/sections/pages
@@ -140,8 +139,7 @@ tabs:
         label:
           en: Pages for Rundgang 2025
           de: Seiten für Rundgang 2025
-        create:
-          - 2025_static
+        create: false
         template: 2025_static
 
       # docs: https://getkirby.com/docs/reference/panel/sections/pages

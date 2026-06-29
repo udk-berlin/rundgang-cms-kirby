@@ -94,8 +94,7 @@ columns:
         label:
           en: Pages for Rundgang 2025
           de: Seiten für Rundgang 2025
-        create:
-          - 2025_static
+        create: false
         template: 2025_static
 
       # docs: https://getkirby.com/docs/reference/panel/sections/pages

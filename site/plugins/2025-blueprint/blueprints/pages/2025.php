@@ -1319,27 +1319,21 @@ return [
         //],
         'changeSlug' => [
             "*" => false,
-            "admin" => true,
         ],
         'changeStatus' => [
             "*" => false,
-            "admin" => true,
         ],
         'changeTemplate' => [
             "*" => false,
-            "admin" => true,
         ],
         'changeTitle' => [
             "*" => false,
-            "admin" => true,
         ],
         'create' => [
             "*" => false,
-            "admin" => true,
         ],
         'delete' => [
             "*" => false,
-            "admin" => true,
         ],
         //'list' => [
         //  "*" => false,
@@ -1347,11 +1341,9 @@ return [
         //],
         'move' => [
             "*" => false,
-            "admin" => true,
         ],
         'duplicate' => [
             "*" => false,
-            "admin" => true,
         ],
         'preview' => [
             "*" => false,
@@ -1363,11 +1355,9 @@ return [
         ],
         'sort' => [
             "*" => false,
-            "admin" => true,
         ],
         'update' => [
             "*" => false,
-            "admin" => true,
         ],
     ],
 ];

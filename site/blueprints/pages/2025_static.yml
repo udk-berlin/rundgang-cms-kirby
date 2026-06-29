@@ -60,3 +60,15 @@ sections:
           #    - code
           #    #- markdown
         required: true
+
+options:
+  changeSlug: false
+  changeStatus: false
+  changeTemplate: false
+  changeTitle: false
+  create: false
+  delete: false
+  move: false
+  duplicate: false
+  sort: false
+  update: false

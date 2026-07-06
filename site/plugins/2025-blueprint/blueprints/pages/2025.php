@@ -6,13 +6,6 @@ $context_json = asset('assets/2025/contexts.json')->read();
 $context_data = json_decode($context_json, true);
 $context_options = [];
 
-// sanitize string by removing all space characters
-//
-function sanitizeId(string $id): string
-{
-    return str_replace(' ', '', $id);
-}
-
 // flatten the nested structure
 //
 foreach ($context_data['faculties'] as $faculty) {

@@ -89,16 +89,6 @@ columns:
 
       # docs: https://getkirby.com/docs/reference/panel/sections/pages
       #
-      content_2025:
-        type: pages
-        label:
-          en: Content for Rundgang 2025
-          de: Inhalte für Rundgang 2025
-        create: false
-        template: 2025
-
-      # docs: https://getkirby.com/docs/reference/panel/sections/pages
-      #
       content_2026:
         type: pages
         label:
@@ -107,3 +97,13 @@ columns:
         create:
           - 2026
         template: 2026
+
+      # docs: https://getkirby.com/docs/reference/panel/sections/pages
+      #
+      content_2025:
+        type: pages
+        label:
+          en: Archive of Rundgang 2025
+          de: Archiv vom Rundgang 2025
+        create: false
+        template: 2025

@@ -101,16 +101,6 @@ tabs:
 
           # docs: https://getkirby.com/docs/reference/panel/sections/pages
           #
-          content_2025:
-            type: pages
-            label:
-              en: Content for Rundgang 2025
-              de: Inhalte für Rundgang 2025
-            create: false
-            template: 2025
-
-          # docs: https://getkirby.com/docs/reference/panel/sections/pages
-          #
           content_2026:
             type: pages
             label:
@@ -119,6 +109,16 @@ tabs:
             create:
               - 2026
             template: 2026
+
+          # docs: https://getkirby.com/docs/reference/panel/sections/pages
+          #
+          content_2025:
+            type: pages
+            label:
+              en: Content for Rundgang 2025
+              de: Inhalte für Rundgang 2025
+            create: false
+            template: 2025
 
   # guide: https://getkirby.com/docs/guide/blueprints/layout
   #
@@ -134,16 +134,6 @@ tabs:
 
       # docs: https://getkirby.com/docs/reference/panel/sections/pages
       #
-      pages_2025:
-        type: pages
-        label:
-          en: Pages for Rundgang 2025
-          de: Seiten für Rundgang 2025
-        create: false
-        template: 2025_static
-
-      # docs: https://getkirby.com/docs/reference/panel/sections/pages
-      #
       pages_2026:
         type: pages
         label:
@@ -152,3 +142,14 @@ tabs:
         create:
           - 2026_static
         template: 2026_static
+
+      # docs: https://getkirby.com/docs/reference/panel/sections/pages
+      #
+      pages_2025:
+        type: pages
+        label:
+          en: Pages for Rundgang 2025
+          de: Seiten für Rundgang 2025
+        create: false
+        template: 2025_static
+
